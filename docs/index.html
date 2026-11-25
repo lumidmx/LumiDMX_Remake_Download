@@ -82,6 +82,18 @@ td.n{color:#ff8a80;font-weight:600}
 .fb svg{width:22px;height:22px;fill:#fff}
 .center{text-align:center}
 
+
+/* videos */
+.vids{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.vid{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vid .frame{position:relative;aspect-ratio:16/9;background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid .txt{padding:14px 18px 18px}
+.vid h4{margin:0 0 6px;font-size:17px}
+.vid p{margin:0;color:var(--mute);font-size:14.5px}
+.yt{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:#fff;background:#c4302b;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600}
+@media (max-width:860px){.vids{grid-template-columns:1fr}}
+
 footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
@@ -102,6 +114,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   <a class="logo" href="#top">Remake<b>Dmx</b></a>
   <nav>
     <a href="#features"><span class="en">Features</span><span class="ro">Funcții</span></a>
+    <a href="#videos"><span class="en">Videos</span><span class="ro">Clipuri</span></a>
     <a href="#versions"><span class="en">Full or Player</span><span class="ro">Full sau Player</span></a>
     <a href="#download"><span class="en">Download</span><span class="ro">Descărcare</span></a>
     <a href="manual/welcome.html"><span class="en">Manual</span><span class="ro">Manual</span></a>
@@ -187,6 +200,70 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     <div class="card"><h4>Art-Net &amp; USB DMX</h4><p class="en">Art-Net nodes, Open DMX (FTDI) and Soundlight USB interfaces.</p><p class="ro">Noduri Art-Net, interfețe USB Open DMX (FTDI) și Soundlight.</p></div>
     <div class="card"><h4><span class="en">X1 projects</span><span class="ro">Proiecte X1</span></h4><p class="en">Opens LumiDMX X1 projects with all their buttons and shows.</p><p class="ro">Deschide proiectele LumiDMX X1 cu toate butoanele și show-urile.</p></div>
   </div>
+</div></section>
+
+<section id="videos"><div class="wrap">
+  <h2><span class="en">See it in action</span><span class="ro">Vezi-l în acțiune</span></h2>
+  <p class="sub"><span class="en">Short videos from the YouTube channel, each showing one feature.</span><span class="ro">Clipuri scurte de pe canalul de YouTube, fiecare cu o funcție.</span></p>
+  <div class="vids">
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/pqeriySl0s0" title="Pan / Tilt Size and Reverse" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="txt">
+        <h4><span class="en">Pan / Tilt Size and Reverse</span><span class="ro">Pan / Tilt Size și Reverse</span></h4>
+        <p class="en">Make the moves of the chases you already have bigger or smaller with Pan / Tilt Size - live, without editing a single step - and play them backwards at any speed.</p>
+        <p class="ro">Mărești sau micșorezi mișcările chase-urilor pe care le ai deja cu Pan / Tilt Size – live, fără să editezi vreun pas – și le rulezi invers, la orice viteză.</p>
+      </div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/JBc4sBa67Us" title="Step Direction" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="txt">
+        <h4><span class="en">Step Direction</span><span class="ro">Step Direction</span></h4>
+        <p class="en">Choose, during the show, which way the chases of the moving heads run - forward or backward - and how fast, from one bar.</p>
+        <p class="ro">Alegi în timpul show-ului în ce sens merg chase-urile moving head-urilor – înainte sau înapoi – și cât de repede, dintr-o singură bară.</p>
+      </div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/CCmQgey3Wy8" title="Follow spot, Fan and Circle through center" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="txt">
+        <h4><span class="en">Follow spot, Fan and Circle through center</span><span class="ro">Follow spot, Fan și Circle through center</span></h4>
+        <p class="en">Fixture Control moves several heads together with one pad: all on the same point of the floor (follow spot), spread in a fan, or turning on a circle with every beam passing through the centre.</p>
+        <p class="ro">Fixture Control mișcă mai multe capete deodată dintr-un singur pad: toate pe același punct de pe podea (follow spot), desfăcute în evantai, sau rotindu-se pe un cerc cu fiecare fascicul trecând prin centru.</p>
+      </div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/rcPwxZ_RdYY" title="3D with the realistic engine" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="txt">
+        <h4><span class="en">3D with the realistic engine</span><span class="ro">3D cu motorul realist</span></h4>
+        <p class="en">The 3D visualiser with the realistic engine on: haze, bloom and shadows, so you see the show as it will look in the venue.</p>
+        <p class="ro">Vizualizarea 3D cu motorul realist pornit: fum, strălucire și umbre, ca să vezi show-ul cum va arăta în sală.</p>
+      </div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/U7m4iQUw0gM" title="Akai APC mini mk2 - two-way, with colours" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="txt">
+        <h4><span class="en">Akai APC mini mk2 - two-way, with colours</span><span class="ro">Akai APC mini mk2 – în ambele sensuri, cu culori</span></h4>
+        <p class="en">The APC mini mk2 works both ways: whatever starts a button - the mouse, the phone or the pads - the pads light up in their colours at once.</p>
+        <p class="ro">APC mini mk2 merge în ambele sensuri: orice pornește un buton – mouse-ul, telefonul sau pad-urile – pad-urile se aprind imediat în culorile lor.</p>
+      </div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/2KpSw4sY9NQ" title="APC mini mk2 - colour, group and function editor" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="txt">
+        <h4><span class="en">APC mini mk2 - colour, group and function editor</span><span class="ro">APC mini mk2 – editorul de culori, grupuri și funcții</span></h4>
+        <p class="en">Give every pad of the controller its colour, its group and its function.</p>
+        <p class="ro">Dai fiecărui pad de pe controller culoarea, grupul și funcția lui.</p>
+      </div>
+    </div>
+    <div class="vid">
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/mS2-0KSb62M?start=28" title="Button Designer - new buttons with auto exclusion" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="txt">
+        <h4><span class="en">Button Designer - new buttons with auto exclusion</span><span class="ro">Button Designer – butoane noi cu excludere automată</span></h4>
+        <p class="en">Make new buttons in the designer; the buttons of a group exclude each other on their own, so only one of them runs at a time.</p>
+        <p class="ro">Faci butoane noi în designer; butoanele unui grup se exclud singure între ele, ca să ruleze doar unul odată.</p>
+      </div>
+    </div>
+  </div>
+  <div class="center"><a class="yt" href="https://www.youtube.com/channel/UCUnAz-kjm-pjgZfrtDLY8VA" target="_blank" rel="noopener">&#9654; <span class="en">All videos on YouTube</span><span class="ro">Toate clipurile pe YouTube</span></a></div>
 </div></section>
 
 <section id="versions"><div class="wrap">
