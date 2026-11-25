@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>DMX Hardware</title>
+<meta name="keywords" content="DMX Hardware; interface; DMX interface; OpenDMX; Open DMX; FTDI; Art-Net; target IP; broadcast; Soundlight; DMX-IN; DMX in; Connect DMX-In; Listening; Auto-Connect: ON; waiting for the device; Disconnect; Refresh; not answering; reconnecting; universe of an interface">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/library.html" title="Previous: Library tools">&lt; Previous</a> <a href="../patch/midi.html" title="Next: MIDI">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <b>DMX Hardware</b></div></div><!--/NAV-->
+<div class="page">
+<h1>DMX Hardware</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The <span class="ui">DMX Hardware</span> tab of Setup &amp; Patch connects the DMX interfaces: the ways the DMX leaves
+the computer for the fixtures, and the way it can come in. An Open DMX or Soundlight interface sends the universe
+chosen for it; Art-Net sends every universe the project uses. Several can work together. The connections are settings
+of the program, not of the project.</p>
+
+<div class="pic"><img src="../img/patch_hardware.png" alt="The DMX Hardware tab"></div>
+<p class="cap">The tab on a computer with no interface plugged in.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>OpenDMX</b> - USB interfaces of the Open DMX kind (FTDI).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Art-Net</b> - DMX over the network.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Soundlight</b> - Soundlight USB interfaces.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>DMX-IN</b> - DMX received from another desk or program.</td></tr>
+</table>
+<p><b>OUT</b> marks the rows that send DMX.</p>
+
+<h2>OpenDMX and Soundlight</h2>
+<p>Both work the same way.</p>
+<ul>
+<li>Every interface plugged in and not used yet gets a row with its number and name, a <span class="ui">Universe</span>
+  box and <span class="ui">Connect</span>. Choose the universe it must send and press <span class="ui">Connect</span>.
+  With none: <i>No unassigned FTDI devices detected.</i> (or <i>Soundlight interfaces</i>).</li>
+<li>A connected interface shows <i>Universe N - device</i> and a <span class="ui">Disconnect</span> button.
+  <i>disconnected - reconnecting...</i> or <i>not answering...</i> next to it: the interface was pulled out or does not
+  answer; the program connects it again by itself when it comes back.</li>
+<li><span class="ui">Refresh</span> looks again for the interfaces plugged in.</li>
+</ul>
+<p>A connection is remembered: at the next start the program connects it again. When the interface is not there, its
+row shows <span class="ui">Auto-Connect: ON</span> and <i>waiting for the device...</i>, and it is connected as soon as
+it is plugged in. A click on <span class="ui">Auto-Connect: ON</span> forgets it; <span class="ui">Disconnect</span>
+disconnects and forgets too.</p>
+
+<h2>Art-Net</h2>
+<p>Write the <b>target IP</b> - the address of the Art-Net node, or a broadcast address of your network such as
+<code>192.168.10.255</code> (every node of the network then receives) - and press <span class="ui">Connect</span>. The
+button then reads <span class="ui">Disconnect</span>. The DMX goes to port 6454, the port of Art-Net. The target is
+remembered: at the next start the program connects again, showing <span class="ui">Auto-Connect: ON</span> and
+<i>waiting for the target...</i> until it can.</p>
+
+<h2>DMX-IN</h2>
+<p>DMX-IN receives the DMX of another desk or program, so that it can drive channels of this one.</p>
+<ul>
+<li><span class="ui">Source</span>: <span class="ui">artnet</span> (from the network) or <span class="ui">soundlight</span>
+  (the DMX input of a Soundlight interface; then <span class="ui">Device</span> - its number - appears too).</li>
+<li><span class="ui">Universe</span>: the universe received (1 to 16).</li>
+<li><span class="ui">Connect DMX-In</span> starts it; the button then reads <span class="ui">Listening</span> (a click
+  stops it). Next to it, <i>Connected</i> while DMX comes in, <i>no signal</i> when the input is there but nothing
+  comes.</li>
+</ul>
+<p>The channels received count only where they are switched to <b>IN</b> - the <span class="ui">IN</span> button of the
+function bar of Mixer &amp; Live (<span class="ui">MAN</span> is manual, <span class="ui">OUT</span> the program's
+own output). See <a href="../live/index.html">Mixer &amp; Live</a>.</p>
+
+<div class="tip"><p><b>Tip:</b> when the fixtures do not react, look here first: is the interface connected, on the
+right universe? Then check that the addresses of the fixtures are the ones of the patch (see
+<a href="list.html">The patch list</a>).</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/library.html" title="Previous">Library tools</a> &nbsp;|&nbsp; Up: <a href="../patch/index.html">Setup &amp; Patch</a> &nbsp;|&nbsp; <a href="../patch/midi.html" title="Next">MIDI</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

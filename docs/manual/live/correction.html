@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Correction Pan / Tilt and Focus</title>
+<meta name="keywords" content="Correction Pan / Tilt and Focus; correction; fixture correction; Pan correction; Tilt correction; Focus correction; lens; Enable Pan / Tilt and Focus correction; Reset Pan / Tilt; Fine adjust; Sensitivity; All Front; parallel beams; Fixture Control; S2L.dat">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/fixctl.html" title="Previous: Fixture Control">&lt; Previous</a> <a href="../live/effgen.html" title="Next: Effect Generator">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Correction Pan / Tilt and Focus</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Correction Pan / Tilt and Focus</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>Fixtures of the same type are seldom exactly alike, and they are not always hung straight. The last tab of Fixture
+Control, <span class="ui">Correction Pan / Tilt and Focus</span>, gives each fixture its own correction: a little more
+or a little less Pan, Tilt and Focus (the lens). The correction is added to everything the fixture plays - buttons,
+chases, movements, macros, commands, Sound2Light - so that the beams stand parallel and look alike, without changing
+any button.</p>
+
+<p>Open Fixture Control with the <span class="ui">Fixtures</span> button, pick the type on the tabs at the bottom, then
+the <span class="ui">Correction Pan / Tilt and Focus</span> tab, after Moving, Light, Color, Gobo and Other. The tab is
+there only for the types with Pan and Tilt or with a Focus channel.</p>
+
+<div class="pic"><img src="../img/live_correction.png" alt="The Correction Pan / Tilt and Focus tab of Fixture Control"></div>
+<p class="cap">The first Beam 5R of Andrei_edit ticked and corrected: +10.33 on Pan, +5 on Tilt, +10 on Focus.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The fixtures of the type. Click one to tick it: the pad, the Reset
+  buttons and the Focus slider work on the ticked ones.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The tab.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The pad: the middle is no correction, the edges are 40 DMX steps away
+  (left and down: -40, right and up: +40). Click or drag: the dot is the correction of the first ticked fixture, written
+  under the pad as <b>X (Pan)</b> and <b>Y (Tilt)</b>. With several fixtures ticked, all of them move by the same
+  amount, each keeping its own correction. Moving the dot never changes the values of the buttons, only the
+  correction.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Enable Pan / Tilt and Focus correction</span> -
+  ticked (as it starts), the corrections are added to what goes out; not ticked, the fixtures get exactly what is
+  played, and the corrections are kept for later. The pad then reads <i>Correction is off</i> and the table
+  <i>(off)</i>. Each project keeps its own setting.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Reset Pan / Tilt</span> - Pan and Tilt of the
+  ticked fixtures back to 0 (their Focus stays).</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Fine adjust</span> and
+  <span class="ui">Sensitivity</span>, as on the Moving tab: ticked, the dot goes by how far the mouse moves, not to
+  where it is - for the last small steps.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Focus</span> - the Focus correction of the ticked
+  fixtures, -40 to +40 DMX steps; under it its value and <span class="ui">Reset</span> (the Focus only). The slider
+  gets taller when the Fixtures panel is made taller.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td>The table: every fixture of the type with its universe
+  (<b>Un.</b>), its address and its corrections. The ticked ones have a tick and bold text. A click on a row ticks that
+  fixture only; Ctrl + click ticks or unticks it.</td></tr>
+</table>
+
+<h2>Lining the beams up</h2>
+<ol>
+<li>Start a button that sends all the fixtures to the same place - straight to the front, for example.</li>
+<li>Open Fixture Control, the type, and the <span class="ui">Correction Pan / Tilt and Focus</span> tab.</li>
+<li>Tick one fixture and move the pad until its beam stands exactly as the others; tick
+  <span class="ui">Fine adjust</span> for the last small steps. Then the next fixture.</li>
+<li>The same with the <span class="ui">Focus</span> slider, until all the beams look alike.</li>
+</ol>
+<p>From then on every button and every movement plays as programmed, with each fixture's correction added.</p>
+
+<h2>Good to know</h2>
+<ul>
+<li>The correction is added on the way out: after the offsets (<code>setOffset</code>) and Pan / Tilt Size, before
+  Invert Pan, Invert Tilt and Swap XY of the patch. The General Mixer shows the values as they are programmed,
+  and Rec writes them into the steps as they are programmed (the steps stay the same for every fixture); the DMX
+  Board with <span class="ui">Final Output</span>, the 3D and the DMX output show them corrected.</li>
+<li>With a fine channel, Pan and Tilt are corrected to 1/256 of a step (+3.25); without one, by whole steps.</li>
+<li>A value never goes below 0 or above 255: a fixture already at 0 cannot be corrected lower.</li>
+<li>The corrections are in the project (its <code>S2L.dat</code>) and can be set and saved in the Player too; the
+  project asks to be saved after a change. A correction belongs to the fixture at its universe and address: moved to
+  another address in Setup &amp; Patch, the fixture starts again from 0, and a fixture of another type put at that
+  address does not take it.</li>
+</ul>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/fixctl.html" title="Previous">Fixture Control</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/effgen.html" title="Next">Effect Generator</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

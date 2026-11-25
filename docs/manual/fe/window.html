@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The editor window</title>
+<meta name="keywords" content="Fixture Editor, window; Fixture Editor, toolbar; Fixture Editor, menus; Fixture Editor, keys; Fixture Editor, status bar; not saved!; Saved.; Recent Fixtures; Basic Informations; Selection">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../fe/index.html" title="Previous: LumiDMX Fixture Editor">&lt; Previous</a> <a href="../fe/channels.html" title="Next: Channels and presets">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../fe/index.html">LumiDMX Fixture Editor</a> &gt; <b>The editor window</b></div></div><!--/NAV-->
+<div class="page">
+<h1>The editor window</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>The window shows one profile. Its title is the file name of the profile, then <i>LumiDMX Fixture Editor</i>.</p>
+
+<div class="pic"><img src="../img/fe_window.png" alt="The Fixture Editor with a profile open"></div>
+<p class="cap">The editor with the profile of a moving head open.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>The menus</b> - <span class="ui">File</span>, <span class="ui">Edit</span>,
+  <span class="ui">Library</span>, <span class="ui">Help</span> (below).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>The toolbar</b> - the commands used most (below).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>The list</b> - the channels of the fixture in their DMX order, each with the
+  presets under it. A click selects a channel or a preset; <span class="ui">[-]</span> / <span class="ui">[+]</span>
+  closes or opens the presets of a channel. See <a href="channels.html">Channels and presets</a>.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>The status bar</b> - <i>Saved.</i> or <i>not saved!</i>, and the size of
+  the file.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>The two pages</b> - <span class="ui">Basic Informations</span>: the
+  fixture itself; <span class="ui">Selection</span>: the channel or the preset selected in the list.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>The page shown</b> - here <span class="ui">Basic Informations</span>. See
+  <a href="info.html">Fixture information and pictures</a>.</td></tr>
+</table>
+
+<h2>The toolbar</h2>
+<div class="pic"><img src="../img/fe_toolbar.png" alt="The toolbar of the Fixture Editor"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>New Fixture</b> - an empty profile.</td>
+    <td class="n"><span class="n">8</span></td><td><b>Move Up</b> - the selected channel (or the channel of the selected
+  preset) one place up.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Open Fixture</b> - opens a <code>.lfi2</code> or <code>.lfi</code>.</td>
+    <td class="n"><span class="n">9</span></td><td><b>Move Down</b> - one place down.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Save Fixture</b> - Test, then save (see <a href="test.html">Test and
+  Save</a>).</td>
+    <td class="n"><span class="n">10</span></td><td><b>Fill undefined Areas</b> - presets for the DMX values of the channel that
+  no preset covers.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>New DMX Channel</b> - a channel at the end.</td>
+    <td class="n"><span class="n">11</span></td><td><b>Import</b> - a profile from a manual, QLC+, Open Fixture Library or GDTF
+  (see <a href="import.html">Import</a>).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>New Function Preset</b> - a preset in the selected channel.</td>
+    <td class="n"><span class="n">12</span></td><td><b>Export</b> - report, HTML, PDF, pictures, JSON (see
+  <a href="export.html">Export</a>).</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>Delete</b> - the selected channel or preset.</td>
+    <td class="n"><span class="n">13</span></td><td><b>Check against the library</b> - see <a href="library.html">Check against
+  the library</a>.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><b>Test Fixture</b> - looks for problems.</td><td></td><td></td></tr>
+</table>
+<p>The buttons that cannot do anything for the selection are grey (for example
+<b>New Function Preset</b> when nothing is selected).</p>
+
+<h2>The menus</h2>
+<div class="pic"><img src="../img/fe_menu_file.png" alt="The File menu"> &nbsp;
+<img src="../img/fe_menu_edit.png" alt="The Edit menu"></div>
+<p class="cap">The menus <span class="ui">File</span> and <span class="ui">Edit</span>.</p>
+<table class="wide">
+<tr><th>Menu</th><th>Command</th><th>Keys</th></tr>
+<tr><td rowspan="8"><span class="ui">File</span></td><td>New Fixture</td><td><kbd>Ctrl</kbd>+<kbd>N</kbd></td></tr>
+<tr><td>Open Fixture</td><td><kbd>Ctrl</kbd>+<kbd>O</kbd></td></tr>
+<tr><td>Recent Fixtures - the last 8 profiles opened or saved</td><td></td></tr>
+<tr><td>Save Fixture</td><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td></tr>
+<tr><td>Save Fixture As...</td><td><kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>S</kbd></td></tr>
+<tr><td>Import, Export - the same lists as the toolbar's buttons</td><td></td></tr>
+<tr><td>Test Fixture</td><td><kbd>Ctrl</kbd>+<kbd>T</kbd></td></tr>
+<tr><td>Exit</td><td><kbd>Ctrl</kbd>+<kbd>Q</kbd></td></tr>
+<tr><td rowspan="7"><span class="ui">Edit</span></td><td>New DMX Channel</td><td><kbd>Ctrl</kbd>+<kbd>D</kbd></td></tr>
+<tr><td>New Function Preset</td><td><kbd>Ctrl</kbd>+<kbd>P</kbd></td></tr>
+<tr><td>Copy Channel - a copy of the selected channel, with its presets</td><td><kbd>Ctrl</kbd>+<kbd>C</kbd></td></tr>
+<tr><td>Delete</td><td><kbd>Ctrl</kbd>+<kbd>Del</kbd></td></tr>
+<tr><td>Move Up</td><td><kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>U</kbd></td></tr>
+<tr><td>Move Down</td><td><kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>D</kbd></td></tr>
+<tr><td>Fill undefined Areas</td><td><kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>F</kbd></td></tr>
+<tr><td rowspan="2"><span class="ui">Library</span></td><td>Library folder... - the folder of your profiles</td><td></td></tr>
+<tr><td>Check this fixture against the library</td><td><kbd>Ctrl</kbd>+<kbd>L</kbd></td></tr>
+<tr><td><span class="ui">Help</span></td><td>About</td><td><kbd>F1</kbd></td></tr>
+</table>
+<div class="note"><p><b>Note:</b> in a text field, <kbd>Ctrl</kbd>+<kbd>C</kbd> and <kbd>Ctrl</kbd>+<kbd>Del</kbd> work on the
+text, not on the channel.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../fe/index.html" title="Previous">LumiDMX Fixture Editor</a> &nbsp;|&nbsp; Up: <a href="../fe/index.html">LumiDMX Fixture Editor</a> &nbsp;|&nbsp; <a href="../fe/channels.html" title="Next">Channels and presets</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

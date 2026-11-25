@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Plot-View and How to use</title>
+<meta name="keywords" content="Plot-View; Parallel View; Save Plot; plan of the rig; How to use (3D); How to Add fixtures; RRLoop; RLLoop; RLoopOff; RIndex; slow>fast; fast>slow; Rainbow (3D); Frost (3D); Prism (3D); Warm White; Cold White; LED colours; profile and 3D">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../view3d/visuals.html" title="Previous: Visuals and Configuration">&lt; Previous</a> <a href="../remote/index.html" title="Next: Remote, controllers and MIDI">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../view3d/index.html">3D Previsualisation</a> &gt; <b>Plot-View and How to use</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Plot-View and How to use</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<h2>Plot-View</h2>
+<div class="pic"><img src="../img/view3d_plot.png" alt="Plot-View: the rig in black and white"></div>
+
+<p>Plot-View draws the stage and the rig as a plan: white background, black lines, the fixtures with their addresses.
+It is meant for the crew that hangs the fixtures.</p>
+<ul>
+<li><span class="ui">Parallel View</span> - a view without perspective: equal distances look equal, as on a technical drawing. Use it with the View buttons (Front, Top ...).</li>
+<li><span class="ui">Save Plot</span> - saves the plan as a picture (JPEG or bitmap), for printing or sending.</li>
+<li>The six View buttons - the same as in Live Mode.</li>
+</ul>
+
+<h2>How to use</h2>
+<div class="pic"><img src="../img/view3d_howto.png" alt="The How to use tab"></div>
+
+<p>This tab explains how the 3D reads a fixture profile. Each small button opens the help window at its part; the two big
+buttons in <span class="ui">Help</span> open the whole help: <span class="ui">How to use</span> (the profiles) and <span class="ui">How to Add fixtures</span> (building the scene, see <a href="design.html">Design Mode</a>).</p>
+<p>What it tells is important when you make or check a profile in the <a href="../fe/index.html">Fixture Editor</a>: the 3D
+moves the wheels, the gobos and the prisms by the <b>picture</b> and by the <b>name</b> of each preset.</p>
+
+<h3>Turning - the picture</h3>
+<table class="wide">
+<tr><th>Picture of the preset</th><th>What the 3D does</th></tr>
+<tr><td>Right loop (RRLoop.bmp)</td><td>Turns clockwise. A wheel goes on through its colours / gobos.</td></tr>
+<tr><td>Left loop (RLLoop.bmp)</td><td>Turns counter-clockwise. A wheel goes back through them.</td></tr>
+<tr><td>Stop loop (RLoopOff.bmp)</td><td>Stops where it is - a wheel can stay between two colours or gobos.</td></tr>
+<tr><td>Index (RIndex.bmp)</td><td>A gobo or a prism stands at the angle the DMX value gives: 0&deg; at the start of the range, 360&deg; at its end.</td></tr>
+<tr><td>R0deg ... R360deg</td><td>Stands at that angle.</td></tr>
+</table>
+
+<p>It is the picture that is seen that counts.</p>
+
+<h3>Speed - the name</h3>
+<table class="wide">
+<tr><th>In the name of the preset</th><th>Speed</th></tr>
+<tr><td>slow&gt;fast (or nothing)</td><td>Slow at the start of the range, fast at its end.</td></tr>
+<tr><td>fast&gt;slow</td><td>Fast at the start, slow at the end - still turning at the last value.</td></tr>
+</table>
+
+<p>The fastest is 500&deg; a second. Example: "Rotation slow&gt;fast" on 128-191 (64 values): DMX 128 about 8&deg;/s, 160 about 258&deg;/s, 191 500&deg;/s.</p>
+
+<h3>Effects</h3>
+<table class="wide">
+<tr><th>Effect</th><th>What the 3D does</th></tr>
+<tr><td>Rainbow</td><td>The glass of 6 colours (red, green, blue, magenta, orange, lavender). With the prism in, every ray has another colour.</td></tr>
+<tr><td>Frost</td><td>The beam opens up to 12&deg; and goes soft; past half of the frost no gobo is projected. A frost range from 0 (Frost ON 0-255) grows with the value.</td></tr>
+<tr><td>Prism</td><td>The beam is split into as many rays as the prism picture shows; the prism rotation turns them.</td></tr>
+</table>
+
+
+<h3>LED light - the name of the channel</h3>
+<table class="wide">
+<tr><th>Channel name</th><th>Light</th></tr>
+<tr><td>White, Warm White, Cold White</td><td>Light of that white, 0 to 255. Warm / Hot about 3000 K, Cold / Cool about 8000 K, White pure white.</td></tr>
+<tr><td>Amber, UV, Yellow, Orange, Violet, Pink, Lime ...</td><td>Light of that colour, besides the RGB.</td></tr>
+<tr><td>Adding up</td><td>The light of all the channels adds up, as in the fixture: Red + White = light pink, Warm + Cold = neutral white. With a Dimmer channel, the Dimmer is the intensity.</td></tr>
+</table>
+
+<p>A name that also says Strobe, Shutter, Macro, Speed, Mode, Effect, Fine and so on is a function, not a light. The help
+window in the 3D has the full list and the formulas.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../view3d/visuals.html" title="Previous">Visuals and Configuration</a> &nbsp;|&nbsp; Up: <a href="../view3d/index.html">3D Previsualisation</a> &nbsp;|&nbsp; <a href="../remote/index.html" title="Next">Remote, controllers and MIDI</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

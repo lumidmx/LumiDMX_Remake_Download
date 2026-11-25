@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Pixel Chase</title>
+<meta name="keywords" content="Pixel Chase; dimmer chase; strobe chase; matrix (Pixel Chase); Block; Strobe (Pixel Chase); Mirror (Pixel Chase); Scan Line; Active groups; Channels (Pixel Chase); Demo; Clear; Direction (Pixel Chase); Cue List; Save Cue; Loop (Pixel Chase); Generate (Pixel Chase); MERGED; Guide; 2D View - Hide; Flip Horizontal; Preview Rotate">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/effgen.html" title="Previous: Effect Generator">&lt; Previous</a> <a href="../live/colchase.html" title="Next: Color Chase">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Pixel Chase</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Pixel Chase</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>Pixel Chase is a tab of the <a href="effgen.html">Effect Generator</a>. It makes dimmer and strobe chases that run
+<b>across the fixtures</b> of several groups, like a running light: you draw on a matrix which fixture is on in which step,
+and the preview plays it - on the output too, live. <span class="ui">Generate</span> writes it as a light sequence into the
+<a href="library.html">Library</a>. The groups are those of the Patch.</p>
+<div class="tip"><p>The <span class="ui">Guide</span> button opens a short guide with all of this, inside the program.</p></div>
+
+<div class="pic"><img src="../img/live_pixchase.png" alt="Pixel Chase"></div>
+<p class="cap">Andrei_edit after Demo: three groups, three blocks (B1, B2, B3), one cue saved.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Pause</span> / <span class="ui">Play</span> - stops or starts the preview (Space). Paused, the step shown stays on the output.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Direction</span> - how the scan line goes over the matrix: left to right, right to left, top to bottom, bottom to top.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Demo</span> fills the matrix with an example; <span class="ui">Clear</span> empties it (Ctrl+Z takes it back).</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Channels</span> - the table of the Dimmer and Shutter channels of each group (below). A blinking ! means something is missing there.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Guide</span> - the quick guide.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Fade</span> / <span class="ui">Wait Time</span> - the fade and the hold of each step.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">2D View - Hide</span> / <span class="ui">Unhide</span> - leaves the preview out, so the cue list gets more room.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">Scan Line</span> - the step that plays (the dot - drag it while paused). <span class="ui">S</span> and <span class="ui">E</span> under the bar: where the chase starts and ends (drag them).</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">Active groups</span> - which groups take part. ✓ All / ✕ All tick or untick every one. A hidden group keeps its data and is not written.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td>The matrix: one block of columns for each group, one row for each fixture of it. A lit cell = that fixture is on in that step.</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td>The blocks (B1, B2 ...) and strobes (S1 ...): columns that light together; click a line to select it, Del deletes it.</td></tr>
+<tr><td class="n"><span class="n">12</span></td><td><span class="ui">Block</span>, <span class="ui">Strobe</span>, <span class="ui">Mirror</span>, <span class="ui">Cancel</span>, <span class="ui">Delete</span> - the buttons for the columns selected (below).</td></tr>
+<tr><td class="n"><span class="n">13</span></td><td>The step bar: <span class="ui">▲</span> / <span class="ui">▼</span> one step back or forward; the step shown under it (1/14).</td></tr>
+<tr><td class="n"><span class="n">14</span></td><td>The preview: each fixture as a circle that lights as on the output. <span class="ui">◀</span> <span class="ui">▶</span> turn it, <span class="ui">Flip Horizontal</span> mirrors it - only the picture, not the chase.</td></tr>
+<tr><td class="n"><span class="n">15</span></td><td>The Cue List: the cues saved, each with its Fade, Wait, how many times it plays (× 1) and its range (→1-14). The eye: click = view it, double-click = edit it. ✕ deletes it.</td></tr>
+<tr><td class="n"><span class="n">16</span></td><td><span class="ui">Save Cue</span> saves what the matrix shows as a new cue; <span class="ui">Loop</span> plays all the cues in order, as Generate will write them.</td></tr>
+<tr><td class="n"><span class="n">17</span></td><td><span class="ui">Generate</span> - asks a name and writes the light sequence into the Library: exactly what the preview shows, every cue as many times as it is set to.</td></tr>
+</table>
+
+
+<h2>Drawing</h2>
+<table class="keys wide">
+<tr><td><b>click</b></td><td>A cell on or off.</td></tr>
+<tr><td><b>drag</b></td><td>Paints across the cells.</td></tr>
+<tr><td><b>right-click</b></td><td>A cell off.</td></tr>
+<tr><td><b>Ctrl+click / Shift+drag</b></td><td>Selects one cell, or several at once - then <span class="ui">Strobe</span> makes them strobe (an S on the cell).</td></tr>
+<tr><td><b>click a number</b></td><td>Under the matrix: selects that column.</td></tr>
+<tr><td><b>Block</b></td><td>With 2 or more columns selected: they light together, as one step.</td></tr>
+<tr><td><b>Strobe</b></td><td>With 1 or more columns selected: the shutter strobes on those columns.</td></tr>
+<tr><td><b>Mirror</b></td><td>Ticked: what you draw goes on the mirrored fixture too (the first and the last, the second and the one before the last ...).</td></tr>
+<tr><td><b>double-click a header</b></td><td>The whole group as one column (MERGED), and back.</td></tr>
+<tr><td><b>drag a header</b></td><td>Changes the order of the groups.</td></tr>
+</table>
+
+
+<h2>The keys</h2>
+<table class="keys wide">
+<tr><td><b>Space</b></td><td>Pause / Play.</td></tr>
+<tr><td><b>← →</b></td><td>One step (it pauses first).</td></tr>
+<tr><td><b>Del</b></td><td>Deletes the selected block.</td></tr>
+<tr><td><b>Esc</b></td><td>Cancels the selection.</td></tr>
+<tr><td><b>Ctrl+Z</b></td><td>Undo - painting, blocks, Clear, a deleted cue (50 steps back).</td></tr>
+</table>
+
+
+<h2>Channels</h2>
+<p>For each group the program finds the Dimmer and the Shutter channel in its .lfi2 profile, with the shutter values for
+<i>open</i> and <i>strobe</i>. When one cannot be found, the button blinks with a <b>!</b>: open the table and choose them.
+What you choose is remembered for that profile, in the settings of the program.</p>
+
+<h2>From the drawing to a button</h2>
+<ol>
+<li>Tick the groups, draw the first picture (or press <span class="ui">Demo</span>) and set Fade and Wait.</li>
+<li><span class="ui">Save Cue</span>. Change the drawing, <span class="ui">Save Cue</span> again - as many cues as you like; set "× N" for those that must repeat.</li>
+<li><span class="ui">Loop</span> and watch it on the preview and on the fixtures.</li>
+<li><span class="ui">Generate</span>, type the name. The light sequence appears in the Library - drag it onto the Live panel.</li>
+</ol>
+<p><span class="ui">Save Effect...</span> / <span class="ui">Load Effect...</span> on the toolbar keep the whole page in an effect file. With
+<span class="ui">Combine ON</span> Generate joins it with the other tabs of the Effect Generator. Untick <span class="ui">Enabled</span> in the header and the
+page goes grey: nothing of it is sent to the output.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/effgen.html" title="Previous">Effect Generator</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/colchase.html" title="Next">Color Chase</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

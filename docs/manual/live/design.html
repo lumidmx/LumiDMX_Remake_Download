@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Design Live-Panel</title>
+<meta name="keywords" content="Design Live-Panel; Write in cue steps; Undo cue steps; Cue steps (designer); several objects sized together; group resize; rename a button; designer; Close Designer; Add Live-Page; Delete Page; Rename Page; Add Object; Add Slider; Delete; Undo; Redo; Copy; Paste; Duplicate + Rename; Exclusion Group; Import Picture; Zoom; Snap to grid; New Button; Move to Page; Align; Gap; Export Page; Import Page; .x1page; Draw; Properties; shortcuts of the designer">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/lock.html" title="Previous: Lock Live-panel">&lt; Previous</a> <a href="../show/index.html" title="Next: Show Editor">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Design Live-Panel</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Design Live-Panel</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p><span class="ui">Design Live-Panel</span> (on the function bar) turns the Live panel into its designer: buttons,
+sliders and pictures can be added, moved, sized, coloured and set up, and pages added. The button then reads
+<span class="ui">Close Designer</span>; pressed, it gives the panel back for playing. The changes go into the open
+project at once; <span class="ui">Save</span> writes them into its file. In the Player the button says <i>Modify here
+not available</i>.</p>
+
+<div class="pic"><img src="../img/live_designer.png" alt="Design Live-Panel"></div>
+<p class="cap">The designer on the main page, nothing selected.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The pages, the objects and the editing (first row, below).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Pages</span> - the pages of the panel; a click shows
+  one.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>Placing (second row, below).</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td>The page: select, move and size its objects here.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Properties</span> - of what is selected:
+  <span class="ui">Name</span>, <span class="ui">X</span>, <span class="ui">Y</span>, <span class="ui">Width</span>,
+  <span class="ui">Height</span>, <span class="ui">Color</span> (<span class="ui">Choose...</span>); for a button also
+  its commands, the number of its steps (<span class="ui">Cues</span>, <span class="ui">View...</span> shows them), its
+  trigger and its other settings (scroll the panel). <span class="ui">Apply</span> (or <kbd>Enter</kbd> in a box) sets
+  them. A new name for a button that is used elsewhere asks first: see <a href="props.html#rename">Object Propertys - A new name</a>
+  (here <span class="ui">Undo</span> takes back the rename and everything changed with it).</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Shortcuts</span> - a reminder of the mouse and the
+  keys.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Cue steps</span> - <span class="ui">Write in cue
+  steps</span>: a channel into all the steps of the selected buttons (see <a href="#wcs">below</a>).</td></tr>
+</table>
+
+<h2 id="wcs">Write in cue steps</h2>
+<p>A channel set the same in every step of several buttons at once, without opening each one: for example the second
+dimmer of a fixture that was left out of the buttons, to full.</p>
+<div class="pic"><img src="../img/live_design_wcs.png" alt="Write in cue steps"></div>
+<p class="cap">Three buttons selected, Write in cue steps ON, a channel already written.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The buttons selected (<kbd>Ctrl</kbd> + click, or a frame drawn round
+  them). While it is ON their frame is red.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Write in cue steps: OFF / ON</span> - tick it to start,
+  untick it to stop.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>While it is ON: how many buttons and steps it writes into.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Undo cue steps</span> - every step of these buttons back as
+  it was before you ticked (grey until something was written).</td></tr>
+</table>
+<ol>
+<li>Select the buttons.</li>
+<li>Tick <span class="ui">Write in cue steps</span>.</li>
+<li>Set the channel in the <a href="mixer.html">General Mixer</a>, in <a href="fixctl.html">Fixture Control</a>
+  (<span class="ui">Fixtures</span>) or in the <a href="dmxboard.html">DMX Board</a>. Only the channels you move are
+  written, into every step of every selected button, whether a button has 1 step or 50; the other channels of the steps
+  stay as they were.</li>
+<li>Untick it. <span class="ui">Save</span> writes the project.</li>
+</ol>
+<ul>
+<li>A value of 0 takes the channel out of the steps (a channel at 0 in a step is not used by it).</li>
+<li>A channel that a running button sends is not written - unless you put it on MAN; as in
+  <a href="cuesteps.html">Edit Cue Steps</a>.</li>
+<li>It stops by itself when the selection changes, when Edit Cue Steps selects a step, when the project is saved and
+  when you press <span class="ui">Close Designer</span>.</li>
+<li>Only buttons already in the project: a new one (just made or pasted) gets it after <span class="ui">Save</span>.
+  Two buttons that play the same steps get them once.</li>
+<li>Every channel you move goes into all the selected buttons, also the ones that did not use that fixture: select only
+  the buttons you mean.</li>
+</ul>
+
+<h2 id="group">Several objects sized together</h2>
+<div class="pic"><img src="../img/live_design_group.png" alt="Several objects sized together"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>With two or more objects selected (buttons, sliders, pictures), a dashed
+  frame goes round all of them, with 8 handles.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>Drag a handle: all the objects grow or shrink together, as one block -
+  their sizes and the spaces between them, so they stay in line and do not go over one another. The opposite side of
+  the frame stays where it is.</td></tr>
+</table>
+<p><span class="ui">Snap to grid</span> works on the edge you drag. No object gets smaller than 8 pixels.
+<kbd>Ctrl</kbd>+<kbd>Z</kbd> takes it back. The spaces grow with the objects: to have them as before, press an
+<span class="ui">Align</span> arrow with your <span class="ui">Gap (px)</span> afterwards. A bigger block can go over
+the objects next to it; move them or the block.</p>
+
+<h2>The two rows of buttons</h2>
+<div class="pic"><img src="../img/live_designer_bar_1.png" alt="The rows of the designer, left part"></div>
+<div class="pic"><img src="../img/live_designer_bar_2.png" alt="The rows of the designer, right part"></div>
+<p class="cap">The two rows of the designer, in two parts. On a screen 1366 wide their last buttons are past its
+right edge.</p>
+<h3>The first row</h3>
+<table class="wide">
+<tr><th>Button</th><th>What it does</th></tr>
+<tr><td><span class="ui">Add Live-Page</span>, <span class="ui">Delete Page</span>, <span class="ui">Rename
+  Page</span></td><td>The pages of the panel.</td></tr>
+<tr><td><span class="ui">+ Add Object</span></td><td>Opens the Library: a light sequence dragged from it onto the page
+  becomes a new button there.</td></tr>
+<tr><td><span class="ui">+ Add Slider</span></td><td>A new slider at the mouse (<i>New Slider</i>), as wide as
+  <span class="ui">New Button X</span>, 100 high. Set it up with a right click (see
+  <a href="sliders.html">Sliders</a>).</td></tr>
+<tr><td><span class="ui">Delete</span></td><td>Deletes what is selected.</td></tr>
+<tr><td><span class="ui">Undo</span>, <span class="ui">Redo</span>, <span class="ui">Copy</span>,
+  <span class="ui">Paste</span></td><td>As their names say.</td></tr>
+<tr><td><span class="ui">Duplicate + Rename</span></td><td>New buttons made from the selected ones: in their names
+  <span class="ui">Text to find</span> is replaced with <span class="ui">Replace with</span>, they are placed at
+  <span class="ui">Offset (X, Y)</span> from the originals. They have no steps of their own (On Start is their new
+  name). The window can also write the macros that make the new buttons stop each other.</td></tr>
+<tr><td><span class="ui">Exclusion Group</span></td><td>For two or more selected buttons: each one, when it starts,
+  stops all the others. It writes the macro of each button again (its list of <code>stopobject</code>); a button with
+  an empty On Start gets its own name there.</td></tr>
+<tr><td><span class="ui">Import Picture</span></td><td>A picture file onto the page; the file is copied into the
+  project.</td></tr>
+<tr><td><span class="ui">Zoom out</span>, <span class="ui">Zoom in</span>, <span class="ui">1:1</span></td><td>The size
+  of the view; 1:1 is the size the panel has when playing.</td></tr>
+</table>
+
+<h3>The second row</h3>
+<table class="wide">
+<tr><th>Part</th><th>What it does</th></tr>
+<tr><td><span class="ui">Snap to grid</span></td><td>Moving and sizing go by the step in the box next to it.</td></tr>
+<tr><td><span class="ui">New Button</span> <span class="ui">X</span>, <span class="ui">Y</span></td><td>The width (X) and
+  the height (Y) of the new buttons and sliders.</td></tr>
+<tr><td><span class="ui">Move to Page</span>, <span class="ui">Move</span></td><td>Moves the selected objects to the page
+  chosen.</td></tr>
+<tr><td><span class="ui">Align</span></td><td>The selected objects lined up on the left, centre or right, on the top,
+  middle or bottom - and placed one after another, <span class="ui">Gap (px)</span> apart. <span class="ui">A</span>:
+  all to the same (average) size, in a grid of rows and columns, Gap apart.</td></tr>
+<tr><td><span class="ui">Export Page</span>, <span class="ui">Import Page</span></td><td>A page with its objects and
+  their macros into a <code>.x1page</code> file, and from one into this project.</td></tr>
+<tr><td><span class="ui">Draw</span></td><td>Ticked, a frame of that size (1366 x 768) is drawn on the page: what fits
+  on such a screen.</td></tr>
+</table>
+
+<h2>Mouse and keys</h2>
+<table class="wide">
+<tr><th>Do</th><th>To</th></tr>
+<tr><td>Click</td><td>select one object</td></tr>
+<tr><td><kbd>Ctrl</kbd> + click</td><td>add it to the selection, or take it out</td></tr>
+<tr><td>Drag on an empty place</td><td>select the objects inside the frame drawn</td></tr>
+<tr><td><kbd>Shift</kbd> + drag</td><td>select every object the mouse passes over</td></tr>
+<tr><td>Drag what is selected</td><td>move it</td></tr>
+<tr><td>Drag a corner</td><td>size it; with several selected, a corner of the frame round them sizes them all (see <a href="#group">above</a>)</td></tr>
+<tr><td>Right click</td><td>the settings of the object; with several of the same kind selected, one window for all of
+  them (see <a href="props.html">Object Propertys</a>)</td></tr>
+<tr><td>Right drag on an empty place</td><td>move the view</td></tr>
+<tr><td>Wheel, <kbd>Ctrl</kbd> + wheel</td><td>scroll, zoom</td></tr>
+<tr><td>Arrows (<kbd>Shift</kbd> + arrows)</td><td>move what is selected 1 pixel (10 pixels)</td></tr>
+<tr><td><kbd>Delete</kbd></td><td>delete what is selected</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>V</kbd></td><td>copy, paste</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd>, <kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>undo, redo</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>D</kbd></td><td>Duplicate + Rename</td></tr>
+</table>
+<p>The keys do not act while you type in a box.</p>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/lock.html" title="Previous">Lock Live-panel</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../show/index.html" title="Next">Show Editor</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Setup &amp; Patch</title>
+<meta name="keywords" content="Setup &amp; Patch; patch; tabs of Setup &amp; Patch; Option tab; +Add Fixture; DMX Hardware; MIDI tab; patch list; Modify here not available; settings of the program; group of fixtures">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../start/projects.html" title="Previous: Opening and saving a project">&lt; Previous</a> <a href="../patch/list.html" title="Next: The patch list">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <b>Setup &amp; Patch</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Setup &amp; Patch</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p><span class="ui">Setup &amp; Patch</span>, in the toolbar of the main window, holds what a project needs before it
+is played: its fixtures and their DMX addresses - the <b>patch</b> - and the DMX interfaces, MIDI and the options of
+the program.</p>
+
+<div class="pic"><img src="../img/patch_overview.png" alt="Setup &amp; Patch with a project open"></div>
+<p class="cap">Setup &amp; Patch with Andrei_edit.x1 open: the Option tab on the left, the patch list on the right.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>The tabs</b> - <span class="ui">Option</span>,
+  <span class="ui">+Add Fixture</span>, <span class="ui">DMX Hardware</span>, <span class="ui">MIDI</span> (below).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>The tab shown</b> - here <span class="ui">Option</span>.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>The hint of the patch list</b> - what can be done in it.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>The patch list</b> - the groups of the project, their fixtures and the channels of
+  each, with where they are and four settings of each fixture. It stays on the right whatever tab is shown. See
+  <a href="list.html">The patch list</a>.</td></tr>
+</table>
+
+<h2>The tabs</h2>
+<table class="wide">
+<tr><th>Tab</th><th>What it holds</th></tr>
+<tr><td><span class="ui">Option</span></td><td>The options of the program: the project opened at the start, the lock
+  screen, the animation of the buttons, the flash buttons, Fade Sequence, the background of the Live panel.
+  See <a href="option.html">The Option tab</a>.</td></tr>
+<tr><td><span class="ui">+Add Fixture</span><br><span class="badge full">Full</span></td><td>The Patch Address Editor:
+  new fixtures; moving, cloning and deleting them; a group taken from another project; Mirror / Offset; the tools
+  between projects; the library tools. See <a href="addfixture.html">+Add Fixture</a>.</td></tr>
+<tr><td><span class="ui">DMX Hardware</span></td><td>The DMX interfaces - Open DMX, Art-Net, Soundlight - and DMX-IN for
+  the DMX received. See <a href="hardware.html">DMX Hardware</a>.</td></tr>
+<tr><td><span class="ui">MIDI</span></td><td>The MIDI ports, how MIDI values are scaled, the APC mini mk2 feedback.
+  See <a href="midi.html">MIDI</a>.</td></tr>
+</table>
+
+<h2>Full and Player</h2>
+<p>In the Player, <span class="ui">+Add Fixture</span> shows only <i>Modify here not available</i>: the fixtures of a
+project and their addresses stay as they are. The other tabs and the patch list work the same in both programs.</p>
+
+<h2>Where the changes are kept</h2>
+<ul>
+<li><b>In the project</b> - the patch: the fixtures, their groups, universes and addresses, and Invert Pan,
+  Invert Tilt, X&lt;&gt;Y and Fade. A change counts at once in the program and is written to the project file with
+  <span class="ui">Save</span> (see <a href="../start/projects.html">Opening and saving a project</a>).</li>
+<li><b>In the program</b> - the options, the DMX interfaces and the MIDI ports: kept at once in
+  <code>dmx_simulator_settings.json</code>, the same for every project (see
+  <a href="../start/folder.html">The program folder and its files</a>).</li>
+</ul>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../start/projects.html" title="Previous">Opening and saving a project</a> &nbsp;|&nbsp; Up: <a href="../welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="../patch/list.html" title="Next">The patch list</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

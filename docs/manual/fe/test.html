@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Test and Save</title>
+<meta name="keywords" content="Test Fixture; Critical problems found. You can't save it.; No problems found.; wrong DMX values; dmx values are in same range; PAN Channel missing; TILT Channel missing; No Fixture name; No Fixture manufacturer; Save Fixture; Save Fixture As; save, profile">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../fe/info.html" title="Previous: Fixture information and pictures">&lt; Previous</a> <a href="../fe/import.html" title="Next: Import from other formats">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../fe/index.html">LumiDMX Fixture Editor</a> &gt; <b>Test and Save</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Test and Save</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p><span class="ui">File &gt; Test Fixture</span> (<kbd>Ctrl</kbd>+<kbd>T</kbd>) looks for the mistakes that would make the
+profile wrong in the Remake. The result stays open next to the editor; after a correction, Test again fills it
+again.</p>
+
+<div class="pic"><img src="../img/fe_test_problems.png" alt="Test found problems"> &nbsp;
+<img src="../img/fe_test_ok.png" alt="Test found no problems"></div>
+<p class="cap">Left: problems found (the window's title: <i>Critical problems found. You can't save it.</i>).
+Right: <i>No problems found.</i></p>
+
+<h2>What Test checks</h2>
+<table class="wide">
+<tr><th>The message</th><th>What it means</th><th>What to do</th></tr>
+<tr><td>No Channels found.</td><td>The profile has no channel.</td><td>Add the channels.</td></tr>
+<tr><td>Function on PAN Channel not allowed!<br>(and TILT, &micro;PAN, &micro;TILT, TriColor)</td>
+  <td>A Pan, Tilt, Pan Fine, Tilt Fine, Cyan, Magenta, Yellow, Red, Green or Blue channel has presets.</td>
+  <td>Delete its presets, or give the channel the type it really has.</td></tr>
+<tr><td>More than one PAN Channel found!<br>(and TILT, &micro;Pan, &micro;Tilt)</td>
+  <td>Two channels have the same of these types.</td><td>The second one is usually the fine one: Pan Fine / Tilt Fine.</td></tr>
+<tr><td>TILT Channel missing! / PAN Channel missing!<br>(and the fine ones)</td>
+  <td>A Pan without a Tilt, or the other way round.</td><td>Add the missing one, or correct the types.</td></tr>
+<tr><td>ch: 6 fc: 2 wrong DMX values!</td>
+  <td>In channel 6, preset 2: <span class="ui">DMX from</span> is bigger than <span class="ui">DMX to</span>, or the
+  default is outside the range.</td><td>Correct the three values on the preset's page.</td></tr>
+<tr><td>ch: 6 fu: 2 &amp; 3 dmx values are in same range!</td>
+  <td>Two presets of channel 6 cover the same values.</td><td>Make the ranges follow each other without
+  overlapping.</td></tr>
+<tr><td>No Fixture name! / No Fixture manufacturer!</td>
+  <td>The field is empty.</td><td>Fill it on <span class="ui">Basic Informations</span>.</td></tr>
+</table>
+<p>The channels and presets are counted from 1, as in the list (<b>ch: 6</b> = <b>#6</b>).</p>
+
+<h2>Saving</h2>
+<p><span class="ui">File &gt; Save Fixture</span> (<kbd>Ctrl</kbd>+<kbd>S</kbd>) runs Test first. With problems, the Test window
+shows them and the profile is <b>not</b> saved; without problems, it is saved at once and the status bar says
+<i>Saved.</i></p>
+<ul>
+<li>A new profile has no file yet: the first save asks for its name and folder.</li>
+<li><span class="ui">Save Fixture As...</span> (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>S</kbd>) saves it as a new file;
+  when a file of that name is already there, it asks before it writes over it.</li>
+<li>Profiles are saved as <code>.lfi2</code>. For an old <code>.lfi</code> that was opened, Save asks where to save it,
+  with the same name as <code>.lfi2</code> proposed; the <code>.lfi</code> stays as it was.</li>
+<li>Every change marks the profile <i>not saved!</i>. Closing the editor, opening or importing another profile then
+  asks whether to save it first; when the answer is Yes and the profile has problems, nothing is closed, so nothing
+  is lost.</li>
+</ul>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../fe/info.html" title="Previous">Fixture information and pictures</a> &nbsp;|&nbsp; Up: <a href="../fe/index.html">LumiDMX Fixture Editor</a> &nbsp;|&nbsp; <a href="../fe/import.html" title="Next">Import from other formats</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Tap Tempo</title>
+<meta name="keywords" content="Tap Tempo; TAP; tap the beat; Sync (Tap Tempo); Pioneer Pro DJ Link; Pro DJ Link; CDJ; DJM; MIDI Clock; Ableton Link; rekordbox; Serato; Traktor; VirtualDJ; Auto (Tap Tempo); Sound2Light BPM (Tap Tempo); dimmer games (Tap Tempo); step on the beat; BPM (Tap Tempo); whole bars; bars; Keep move speed; One step a beat; Moves (Tap Tempo); half / double tempo; Reset Tap; follow the TAP; Step on Remote (Tap Tempo); All running buttons (Tap Tempo); speed slider (Tap Tempo); key (TAP); MIDI (TAP)">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/monitor.html" title="Previous: The Monitor">&lt; Previous</a> <a href="../live/stageview.html" title="Next: Stage View">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Tap Tempo</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Tap Tempo</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+<p>Tap the beat of the music on <b>TAP</b> and the buttons you choose follow it. Each button keeps its own character, and
+lands on the beat in its own way: a dimmer game blinks on every beat, a colour change on every beat, a move over whole bars. Nothing ever
+restarts: every new speed goes on from where each button is. Its speed slider moves with it. The tempo is the same one as the
+<b>BPM</b> of Sound2Light. Tick <span class="ui">Tap Tempo</span> in the Move Controls of Monitor settings to show the TAP row
+in the Monitor.</p>
+<div class="pic"><img src="../img/live_monitor_tap.png" alt="The TAP row in the Monitor"></div>
+<p class="cap">The TAP rows of the Monitor, Sync on a Pioneer player at 128 BPM.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>TAP</b> (orange): tap it 3 - 4 times on the beat, with the mouse. Each tap counts when it is pressed. A pause of more than 2 seconds starts a new count. Right-click: its key and MIDI (see below).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The tempo, in BPM - always the same number as the BPM of Sound2Light ("--" before the second tap).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Auto: ON / OFF</b> (green while it is on), on Sync's row: the Auto of Sound2Light's BPM - "From Sound2Light" beside it is only a text. The tempo then comes from the music; the speeds change when it moves by 1 BPM or more. A TAP ends Auto.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>&frac12;</b> and <b>&times;2</b>: half or double the tempo, without tapping again - everything that follows runs at half or double speed. On Auto they stay as a factor (Sound2Light detects 70 in a song of 140: &times;2).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>Reset</b>: every speed and every slider back to how it was before the first TAP; the tempo here is cleared (Auto goes off; Sound2Light keeps its BPM).</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>The line under TAP: what follows the TAP now, and how ("Nothing follows the TAP now" when nothing does). While Sync is on it shows instead, in green, where Sync takes the tempo from, the player or the app, and the beat in the bar (beat 1 - 4 of 4); a long text goes on a second line.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><b>Sync</b>: ON (green) / OFF - the tempo and the beat from the DJ (see <a href="#sync">Sync</a> below). Left click: on / off; right click: where from.</td></tr>
+</table>
+
+<h3 id="sync">Sync: the tempo from the DJ</h3>
+<p>With Sync on, nobody taps: the tempo <b>and the beat</b> come from the DJ's players, mixer or laptop, and the buttons that
+follow land on the DJ's beats (a dimmer game blinks on every beat of the music, a move lasts whole bars). When the DJ changes
+the song or moves the pitch, the speeds follow at once; nothing restarts.</p>
+<div class="pic"><img src="../img/live_monitor_sync_menu.png" alt="Sync - where from"></div>
+<table class="wide">
+<tr><th>Where from</th><th>What it needs</th><th>What it gives</th></tr>
+<tr><td><b>Pioneer Pro DJ Link</b> (CDJ-3000, CDJ-2000NXS2, XDJ, DJM)</td><td>The PC on the same network as the players: a network cable to the switch / router of the players (or to the LINK port of the mixer). Nothing to set on the players.</td><td>The tempo of the player that plays (with its pitch), and its beat in the bar. When two players play, the one followed stays until it stops; then the other one. The program only listens: it does not appear as a player on the Pioneer network.</td></tr>
+<tr><td><b>MIDI Clock</b> - input: ...</td><td>A mixer or a laptop that sends MIDI Clock, on USB or a MIDI cable (for example the MIDI OUT of a DJM, or a DJ program with MIDI Clock out). Choose the input in the list.</td><td>The tempo (24 clocks a beat). The beat 1 comes with the Start of the clock; without a Start Sync gives only the tempo - then a TAP gives the beat and Sync goes on with the tempo.</td></tr>
+<tr><td><b>Ableton Link</b> (rekordbox, Serato, Traktor, VirtualDJ, Ableton ...)</td><td>The laptop with Link turned on in its program, on the same Wi-Fi / network as the PC (or on the same PC).</td><td>The tempo and the beat of the Link session (bars of 4). The program only listens: it never changes the tempo of the session.</td></tr>
+</table>
+
+<ul>
+<li>A <b>TAP</b>, <b>Auto</b>, <b>Reset</b> or a Tap / Manual change in Sound2Light ends Sync (the hand wins); left click on Sync
+puts it back.</li>
+<li><b>&frac12;</b> and <b>&times;2</b> work with Sync too: they stay as a factor ("(&times;0.5)" after the source).</li>
+<li>Sound2Light shows the same BPM.</li>
+<li>Sync and its source are remembered: Sync left on starts again with the program.</li>
+<li>The green line under TAP says what happens: "waiting for a player that plays", "waiting for the clock", "looking for a
+session", "tempo only (no Start)", "the port 50001 is taken (rekordbox on this PC?)".</li>
+<li>Windows may ask the first time whether LumiDMX may use the network: allow it (Private networks).</li>
+</ul>
+
+<h3>One tempo with Sound2Light</h3>
+<p>The TAP here and the <b>BPM</b> of Sound2Light are one tempo, shown with the same number in both places:</p>
+<table class="wide">
+<tr><th>Where</th><th>What happens</th></tr>
+<tr><td>TAP (Monitor)</td><td>Sound2Light goes to <span class="ui">Tap</span> and shows the same BPM.</td></tr>
+<tr><td><span class="ui">Tap</span> in Sound2Light</td><td>The Monitor takes the BPM; the speeds follow at once.</td></tr>
+<tr><td><span class="ui">Manual</span> in Sound2Light (typed, or &#9650; &#9660;)</td><td>The Monitor takes the value.</td></tr>
+<tr><td><span class="ui">Auto</span> (Monitor or Sound2Light)</td><td>The same switch in both places; the BPM detected from the music (with Start in Sound2Light).</td></tr>
+</table>
+
+<h3>What follows the TAP</h3>
+<div class="pic"><img src="../img/live_monitor_tap_set.png" alt="Tap Tempo in Monitor settings"></div>
+<table class="wide">
+<tr><th>Choice</th><th>What follows</th></tr>
+<tr><td><span class="ui">Step on Remote buttons follow the TAP</span></td><td>Only the buttons that have the Trigger set on "Step on Remote" (Live-Object Propertys) and that Step Direction drives. The direction stays the one of Step Direction, and its ON / OFF works as before - the TAP does not change it. Grey while <span class="ui">All running buttons follow the TAP</span> is ticked. When you tick <span class="ui">Tap Tempo</span> and neither box is ticked, this one is ticked for you. Ticking this box (or the next one) while <span class="ui">Tap Tempo</span> is off ticks <span class="ui">Tap Tempo</span> too, so the TAP shows in the Monitor window.</td></tr>
+<tr><td><span class="ui">All running buttons follow the TAP</span></td><td>Every button playing, and the ones you start after the TAP - the Step on Remote ones too, with the same rule (direction and ON / OFF from Step Direction). Ticking it unticks <span class="ui">Step on Remote buttons follow the TAP</span> and makes it grey: it is already included.</td></tr>
+<tr><td><span class="ui">Moves</span>: <span class="ui">Keep move speed</span> / <span class="ui">One step a beat</span></td><td>How the moves (Pan / Tilt) follow: keeping about their own speed, the loop whole bars, or one step on each beat as the colours (see the table above). Kept with the project. Changing it applies at once.</td></tr>
+</table>
+
+<p>The speed sliders (setSeqSpeed) follow with their buttons: there is nothing to tick for them. When a button follows the
+TAP, its speed slider moves to the new speed; a slider of a button that does not play stays where it is.</p>
+<h3>How each button lands on the beat</h3>
+<p>The program looks at the steps of each button (once, when it first follows) and picks one of three ways:</p>
+<table class="wide">
+<tr><th>The button</th><th>On the beat</th><th>Shown under TAP</th></tr>
+<tr><td>Dimmer games (Light 3ON-3OFF, Light Fill, WG ...): a dimmer goes up to 255 (from lower) on some steps - Pan / Tilt or not</td><td>Every blink on a beat, so <b>Dimmer BPM</b> shows the same tempo as the TAP.</td><td>dimmer game on the beat</td></tr>
+<tr><td>Moves: Pan / Tilt changing, no blink</td><td>As chosen in Monitor settings, <span class="ui">Moves</span>: <b>Keep move speed</b> (the default) - the loop lasts the whole bars (4, 8, 12 ... beats) nearest its own length at the first TAP, so the move keeps about the speed it was made with; later taps change its speed, not its bars. <b>One step a beat</b> - as the colours: every step takes one beat, its fade made longer or shorter in the same proportion (the move goes on from where it is to the next point in one beat), so a move with few long steps gets much faster and one with many short steps slower.</td><td>59 bars / step on the beat</td></tr>
+<tr><td>Everything else: colours, gobos, the dimmer open on every step (shutter open)</td><td>Every step on a beat.</td><td>step on the beat</td></tr>
+</table>
+
+<p><b>On the beat, not only in its rhythm.</b> At every tap (here, or Tap in Sound2Light) and at &frac12; / &times;2, each
+dimmer game or button that steps on the beat is sped up or slowed down a little for what is left of its current step - a dimmer
+game up to its next blink - so that this change falls exactly on a beat; then it goes on at its own speed. It never
+restarts and never jumps (tested: the change came 5 ms after the beat). Moves and Step on Remote buttons are left as they are.
+Auto and Manual give no beat moment: they change only the speed.</p>
+<p>The loop of a button is the sum of fade + wait of all its steps, at speed 1. A move shorter than a bar is rounded to 2, 1,
+&frac12; or &frac14; beat. A button that starts to follow later is looked at when it starts. <b>Reset</b> forgets all this;
+the next TAP looks again.</p>
+<p>Dimmer BPM counts a dimmer of the group reaching 255 from lower. A button that holds the same dimmers at 255 on every step
+(All Colors Change, for example) running at the same time hides the blinks from it: Dimmer BPM then shows "--".</p>
+<p><b>The last touched wins.</b> Move a slider that follows the TAP by hand, or move the value of Step Direction, and those
+chases take your speed again, until the next TAP. The instant reverse of Step Direction only turns the direction; the TAP
+speed stays. Unticking <span class="ui">Tap Tempo</span> works as <b>Reset</b>.</p>
+<div class="pic"><img src="../img/live_monitor_tap_keys.png" alt="TAP - key and MIDI"></div>
+<table class="wide">
+<tr><th>Part</th><th>What it does</th></tr>
+<tr><td><span class="ui">Set...</span></td><td>Press the key that taps (Esc cancels). <span class="ui">Clear</span> takes it away. The key works in the main window and in the Monitor; held down it taps once.</td></tr>
+<tr><td><span class="ui">MIDI</span></td><td>Click the yellow text, then press the pad or the key of your MIDI controller (an APC mini pad too). Untick to switch it off.</td></tr>
+</table>
+
+<p>The Flash buttons (Live-Object Propertys: Flash) are left out: they light only while you hold them, and held down they run at their own speed - the TAP never starts them, lights them or changes their speed.</p>
+<p>The two "follow" boxes are kept in the S2L.dat of the project; Tap Tempo, the key and the MIDI
+in the settings of the program.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/monitor.html" title="Previous">The Monitor</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/stageview.html" title="Next">Stage View</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

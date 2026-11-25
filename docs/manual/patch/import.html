@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Import from another X1</title>
+<meta name="keywords" content="Import from another X1; import a group; Open source X1 file; Pick a group to import; New group name; Overwrite; Merge; LCM; Preview; Same-name buttons; Buttons with NO match here; skip (write nothing); new LivePanel button; merge into; Confirm import; Import sliders; Sliders found">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/newfixture.html" title="Previous: Adding new fixtures">&lt; Previous</a> <a href="../patch/mirror.html" title="Next: Mirror / Offset">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <a href="../patch/addfixture.html">+Add Fixture</a> &gt; <b>Import from another X1</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Import from another X1</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p><span class="ui">Import from another X1</span> (in <a href="addfixture.html">+Add Fixture</a>) brings one group of
+fixtures from another project into the open one - the fixtures, and what the Live panel buttons of that project hold
+for them. The other project can be an <code>.x1</code> or an <code>.xR</code>; it is only read.</p>
+
+<h2>1. The project and the group</h2>
+<p><i>Open source X1 file</i> asks for the other project. When one was read before, a small window offers
+<span class="ui">Pick a group from it</span> or <span class="ui">Load a different file</span>. Then the groups of its
+patch are listed:</p>
+<div class="pic"><img src="../img/patch_import1.png" alt="Pick a group to import"></div>
+<p class="cap">The groups of Andrei_edit_old.x1, with their universe, addresses and number of fixtures.</p>
+<p>Select one group and press <span class="ui">Next</span>.</p>
+
+<h2>2. Where it goes</h2>
+<div class="pic"><img src="../img/patch_import2.png" alt="The import window of a group"></div>
+<p class="cap">The group Blinder SMD Atomic 12_Ch going to universe 1, address 225.</p>
+<ul>
+<li><span class="ui">New group name</span>, <span class="ui">Universe</span>, <span class="ui">Start address</span> - where
+  the group goes in this project. The place must be free.</li>
+<li><b>If a chase/button with the same name already exists here</b>:
+  <ul>
+  <li><span class="ui">Overwrite</span> - the button of this project takes the steps of the other one, moved to the
+    new addresses;</li>
+  <li><span class="ui">Merge</span> - what the button holds stays and the imported fixtures are laid over it. When the
+    two buttons have a different number of steps, both run whole (the new number of steps is the least common
+    multiple, LCM), so neither is cut short.</li>
+  </ul></li>
+</ul>
+<p>Only the Live panel buttons are read and written. The buttons with no button of the same name here are decided in
+the next window.</p>
+
+<h2>3. Preview</h2>
+<div class="pic"><img src="../img/patch_import3.png" alt="The Preview of the import"></div>
+<p class="cap">The Preview: 39 buttons of the same name, none without one.</p>
+<ul>
+<li>At the top: how many buttons will be touched, and the mode chosen.</li>
+<li><b>Same-name buttons (automatic)</b> - each button that has its namesake here: <i>Same length</i> or <i>DIFFERENT
+  length</i>, the steps of the other project, of this one, and of the result.</li>
+<li><b>Buttons with NO match here</b> - each button of the other project that uses the group and has no namesake here.
+  Select one or more (<kbd>Ctrl</kbd> / <kbd>Shift</kbd>), then choose with the buttons under the list:
+  <span class="ui">skip (write nothing)</span> - as they all are at first; <span class="ui">new LivePanel button</span>
+  - a full copy; <span class="ui">merge into...</span> - laid over a button of this project you pick.</li>
+<li><span class="ui">Confirm import</span> does it; <span class="ui">Back</span> returns to the window before;
+  <span class="ui">Cancel</span> does nothing.</li>
+</ul>
+<p>When it is done, a message sums it up: the fixtures imported, and the buttons new, merged, overwritten or
+skipped.</p>
+
+<h2>4. The sliders</h2>
+<p>When sliders of the other project also control the group - a dimmer master, for example - the program asks whether to
+look at them. <b>Import sliders</b> lists them, with for each: <span class="ui">Skip</span>, <span class="ui">New
+slider</span> (with only the addresses of the imported fixtures - no slider of this project is touched) or
+<span class="ui">Merge into...</span> a slider of this project (it then controls both the old and the new fixtures).
+A slider of the same name is offered as a merge at first, the others as new sliders.</p>
+
+<div class="tip"><p><b>Tip:</b> the import is one change and the sliders another: <span class="ui">Undo</span> takes
+them back one at a time. <span class="ui">Save</span> writes them into the project file.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/newfixture.html" title="Previous">Adding new fixtures</a> &nbsp;|&nbsp; Up: <a href="../patch/addfixture.html">+Add Fixture</a> &nbsp;|&nbsp; <a href="../patch/mirror.html" title="Next">Mirror / Offset</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

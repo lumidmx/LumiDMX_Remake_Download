@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>3D Previsualisation</title>
+<meta name="keywords" content="3D; 3D LumiDmx Remake; Launch 3D; 3D: receiving; 3D: no reader; 3D: off; previsualisation; status bar (3D); Fullscreen (3D); File menu (3D); Fixture Library (ScanLib); ScanLib; .3dp; 3D LumiDmx Remake.json">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../view2d/index.html" title="Previous: 2D View">&lt; Previous</a> <a href="../view3d/live.html" title="Next: Live Mode and DMX Input">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <b>3D Previsualisation</b></div></div><!--/NAV-->
+<div class="page">
+<h1>3D Previsualisation</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p><b>3D LumiDmx Remake</b> shows the fixtures of the patch on a stage in 3D, with the light that LumiDMX Remake sends:
+the beams, the colours, the gobos, the prisms and the movements. A show can be prepared and checked away from the room,
+and the 3D picture can be saved for the client or for the crew.</p>
+
+<h2>Starting it</h2>
+<ol>
+<li>In LumiDMX Remake press <span class="ui">Launch 3D</span>. The 3D program starts and connects by itself.</li>
+<li>Watch the small indicator next to the button: <span class="ui">3D: off</span> (not started), <span class="ui">3D: no reader</span> (started, but it does
+not read the light yet) and <span class="ui">3D: receiving</span> (it gets the light - all is well).</li>
+<li>The first time, or after the 3D program was moved, right-click <span class="ui">Launch 3D</span>: the menu shows the program it opens (ticked)
+and <span class="ui">Browse...</span> to choose it again.</li>
+</ol>
+<p>The order does not matter: the 3D can be started before or after LumiDMX Remake. It reads the light of all 16 universes
+directly from LumiDMX on the same computer (see <a href="live.html">Live Mode and DMX Input</a> for Art-Net from another computer).</p>
+<div class="note"><p>The 3D program has its own activation key, separate from the one of LumiDMX Remake. It is kept next to
+the program in <b>3D LumiDmx Remake.json</b>, with the other settings of the 3D.</p></div>
+
+<h2>The window</h2>
+<div class="pic"><img src="../img/view3d_window.png" alt="The window of 3D LumiDmx Remake in Design Mode"></div>
+<p class="cap">Andrei Girbo 3d.3dp in Design Mode: one fixture selected (orange frame), its address on the stage.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">File</span> and the five tabs: <span class="ui">Live Mode</span>, <span class="ui">Design Mode</span>, <span class="ui">Visuals</span>, <span class="ui">Plot-View</span>, <span class="ui">How to use</span>. The buttons at the very top: new, open (with the last used projects under its arrow) and save.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The buttons of the tab that is open. Each tab is explained on its own page (see the table below).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The 3D view. Left drag turns the camera, right drag moves the picture, the mouse wheel brings it nearer or further.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td>The four buttons over the list (Design Mode): new folder, 3D object, DMX transformation node, delete.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The list of the scene: folders, 3D objects (stage parts, truss) and fixtures.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>The pages of what is selected: <span class="ui">Visual</span>, <span class="ui">Propertys</span>, <span class="ui">Tools</span>.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td>The status bar (see below).</td></tr>
+</table>
+
+<p>The list and the pages on the right are shown in Design Mode. In Live Mode the 3D view takes the whole window.</p>
+
+<h2>The status bar</h2>
+<div class="pic"><img src="../img/view3d_status.png" alt="The status bar of the 3D"></div>
+<table class="wide">
+<tr><th>Part</th><th>What it shows</th></tr>
+<tr><td><b>60.0 fps</b></td><td>How many pictures a second are drawn. It is shown all the time, in every mode.</td></tr>
+<tr><td><span class="ui">Fullscreen</span></td><td>A click hides the tabs and makes the window full screen, in Live Mode. Another click brings the tabs back.</td></tr>
+<tr><td><b>100%</b></td><td>How much of the project is loaded.</td></tr>
+<tr><td>the path</td><td>The project that is open: its name and its folder.</td></tr>
+<tr><td>the last part</td><td>The fixture selected: its name, universe and address (U1.161), pan, tilt, intensity and colour (rgb). Notes such as "saved" or missing profiles also appear here.</td></tr>
+</table>
+
+
+<h2>The File menu</h2>
+<div class="pic"><img src="../img/view3d_file.png" alt="The File menu of the 3D"></div>
+<table class="wide">
+<tr><th>Item</th><th>What it does</th></tr>
+<tr><td><span class="ui">New 3D-File</span></td><td>An empty scene.</td></tr>
+<tr><td><span class="ui">Open...</span></td><td>Opens a 3D project (.3dp). The last used ones are under the arrow of the open button at the top.</td></tr>
+<tr><td><span class="ui">Save</span> / <span class="ui">Save As</span></td><td>Saves the scene: the stage, the objects, the fixtures with their place and address. Nothing is saved by itself.</td></tr>
+<tr><td><span class="ui">Configuration</span></td><td>The quality of the picture and how the light is read. See <a href="visuals.html">Visuals and Configuration</a>.</td></tr>
+<tr><td><span class="ui">Fixture Library (ScanLib)...</span></td><td>Opens a folder browser: choose the folder that holds the fixture profiles (.lfi2). Its subfolders count too, so a library split by manufacturer works. The 3D takes the beams, colours, gobos and prisms from these profiles.</td></tr>
+<tr><td><span class="ui">Close</span></td><td>Closes the 3D program.</td></tr>
+</table>
+
+
+<h2>In this chapter</h2>
+<table class="wide">
+<tr><th>Page</th><th>What it explains</th></tr>
+<tr><td><a href="live.html">Live Mode and DMX Input</a></td><td>Watching the show: camera, rotation, screenshot, views; where the light comes from (LumiDMX or Art-Net).</td></tr>
+<tr><td><a href="design.html">Design Mode</a></td><td>Building the scene: adding fixtures, Update Patch, objects, folders, the stage; moving, turning, arrays.</td></tr>
+<tr><td><a href="visuals.html">Visuals and Configuration</a></td><td>Ambient light, haze, beam range, bloom, shadows, quality, the realistic engine.</td></tr>
+<tr><td><a href="howto.html">Plot-View and How to use</a></td><td>The black and white plan of the rig; how the 3D reads the profiles.</td></tr>
+</table>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../view2d/index.html" title="Previous">2D View</a> &nbsp;|&nbsp; Up: <a href="../welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="../view3d/live.html" title="Next">Live Mode and DMX Input</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

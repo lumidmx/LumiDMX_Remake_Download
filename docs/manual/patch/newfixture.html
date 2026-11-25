@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Adding new fixtures</title>
+<meta name="keywords" content="New Fixture; add a fixture; Add fixture; Choose a fixture library (.lfi2); Group name; Start address; Quantity (pieces); Spacing (channels); Create fixture(s); New Fixture with show-ready function in Live-Panel; show-ready; Configure; Beam colours; colour channels; colour sections; BackGround; Principal; Gobo; Special buttons; Movement buttons; Movement Chase; Apply configuration; Skip (don't write anything); Changelog; Change type; fixture type; BEAM; WASH; PAR">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/addfixture.html" title="Previous: +Add Fixture">&lt; Previous</a> <a href="../patch/import.html" title="Next: Import from another X1">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <a href="../patch/addfixture.html">+Add Fixture</a> &gt; <b>Adding new fixtures</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Adding new fixtures</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>Two buttons of <a href="addfixture.html">+Add Fixture</a> add fixtures to the project:</p>
+<ul>
+<li><span class="ui">New Fixture</span> - adds them to the patch, nothing else;</li>
+<li><span class="ui">New Fixture with "show-ready" function in Live-Panel</span> - adds them, then writes them into the
+  buttons the project already has (colours, gobos, strobes, movements), so that they play with the show at once.</li>
+</ul>
+<p>Both begin the same way: <i>Choose a fixture library (.lfi2)</i> asks for the profile of the fixture, then the window
+below says where the new fixtures go.</p>
+
+<h2>Where they go</h2>
+<div class="pic"><img src="../img/patch_newfixture.png" alt="The window Add fixture"></div>
+<p class="cap">One more Blinder SMD Atomic for Andrei_edit.x1, at 145: the first free place of universe 1.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>The profile</b> - its channels, each with its functions and their DMX ranges
+  (the triangle opens them). Above: its name, and how many channels and functions it has.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Group name</b> - the name of the new group; the name of the profile at
+  first. A name the project already has gets (2), (3) ... after it.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Universe</b> - the universe of the first fixture.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Start address</b> - the first address of the first fixture.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>Quantity (pieces)</b> - how many fixtures.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>Spacing (channels)</b> - from the first address of one fixture to the first
+  address of the next; at first the number of channels (one right after the other).</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><b>Create fixture(s)</b> - adds them, as a new group; <b>Cancel</b> adds
+  nothing.</td></tr>
+</table>
+<p><span class="ui">Universe</span> and <span class="ui">Start address</span> are filled in with the first free place where
+all the fixtures fit, from the universe shown in the grid on; they follow <span class="ui">Quantity</span> and
+<span class="ui">Spacing</span> when those change. The Fade of each channel comes from the profile.</p>
+<div class="important"><p><b>Important:</b> the project keeps only the file name of the profile. Copy the
+<code>.lfi2</code> into the folder of the project, so that the program finds it the next time the project is opened
+(see <a href="../start/folder.html">The program folder and its files</a>).</p></div>
+
+<h2>Show-ready</h2>
+<p>With <span class="ui">New Fixture with "show-ready" function in Live-Panel</span>, after <span class="ui">Create
+fixture(s)</span> the program decides what kind of fixture it is - <b>Beam</b>, <b>Wash</b>, <b>Par</b> or <b>Other
+Effect</b> - from the name of the profile, and asks when it cannot tell. Then the <b>Configure</b> window shows what can be
+written into the buttons of the project for the new fixtures.</p>
+<div class="pic"><img src="../img/patch_configure.png" alt="The Configure window"></div>
+<p class="cap">A Beam 5R Girbo 16_Ch added to Andrei_edit.x1 with show-ready.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>What was added</b> and the kind found (here BEAM).
+  <span class="ui">Changelog</span>: what is written into each kind of button. <span class="ui">Change type</span>:
+  choose the kind yourself - or a button prefix of your own, for fixtures that should use colour buttons as Par and
+  Wash do.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Beam colours</b> (<b>Wash colours</b>, <b>Par colours</b>) - each colour
+  button of the project, with the colour of the new fixture it will get: dimmer 255, shutter open and that colour. The
+  colours are matched by name and can always be changed in the lists; <i>weak match - check</i> and <i>pick
+  manually</i> mark the ones to look at. The buttons matched well are hidden; <span class="ui">Unhide</span> shows
+  them.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Gobo</b> - each G0N button gets only the gobo value (no dimmer, no shutter):
+  G01 is the open position of the wheel (no gobo), G02 on are the real gobos, in order.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Special buttons</b> - the strobes, Lights ON / OFF and the like found in the
+  project; and boxes that add the Dimmer or the Prism-Rotate channel of the new fixture to the sliders of the project
+  that control those.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>Movement buttons</b> - the movement buttons of the project (Slow Move, Cerc
+  fata, Pozitii fixe and the others) get the pan and tilt of a fixture you choose with <span class="ui">Pick source
+  fixture(s)...</span>: its values are copied into each of those buttons for the new fixture.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>Movement Chase (12-fixture reference)</b> - which of the 12 reference
+  positions of the project go to the new fixtures, in address order. Ticking one ticks its mirror too (1 and 12, 2 and
+  11 ...).</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Apply configuration</span> writes everything ticked into the
+  buttons; <span class="ui">Skip (don't write anything)</span> leaves the buttons as they are (the fixtures stay
+  added).</td></tr>
+</table>
+<h2 id="wpchannels">The colour channels of a Wash / Par</h2>
+<p>Next to the colour buttons of <b>Wash colours</b> (<b>Par colours</b>) a table shows which channels of the fixture the
+colour buttons write: a row for <b>Dimmer</b>, <b>Red</b>, <b>Green</b>, <b>Blue</b>, <b>White</b> (and <b>Amber</b> when
+the fixture has it), a column for <b>Principal</b> and one for every other colour section found in the names of the
+channels - <i>BackGround Red / Green / Blue / White</i> is the section <b>BackGround</b>, <i>Red 2 / Green 2 ...</i> is
+<b>Section 2</b>, <i>Ring R / Ring G / Ring B</i> is <b>Ring</b>.</p>
+<div class="pic"><img src="../img/patch_wpchannels.png" alt="The colour channels table"></div>
+<p class="cap">Beam Dual-Sided RGBW 17_Ch added as a Wash: its front (ch 8-11) and its BackGround (ch 12-15).</p>
+<ul>
+<li>Every colour button (the colours, Color change, Slow fade, Curcubeu, White STROBE, Lights ON / OFF, Lumina pe Ring,
+  Blitz) writes the same values on every column: the whole fixture lights in that colour.</li>
+<li>Every cell is a list of all the channels of the fixture, <span class="ui">ch N / name</span>, and
+  <span class="ui">(none)</span>: a channel the program did not find, or found wrong, is chosen here.
+  <span class="ui">(none)</span> in a column leaves that part of the fixture off.</li>
+<li>A fixture without such sections has only the <b>Principal</b> column: the buttons get what they got before.</li>
+<li>When the columns do not fit, a bar under the table moves it sideways.</li>
+<li>A channel chosen twice is asked about at <span class="ui">Apply configuration</span>: <span class="ui">Yes</span>
+  applies anyway, <span class="ui">No</span> goes back to the window.</li>
+<li>The choice is made only here, when the fixture is added. Effects on the sections one by one are made with the
+  Pixel Chase.</li>
+</ul>
+<p>After <span class="ui">Apply configuration</span> the log lists what was written; what could not be written (a colour
+or a value the new fixture does not have) is listed in a message. A project with no Live panel buttons has nothing to
+configure: the fixtures are only added.</p>
+
+<div class="tip"><p><b>Tip:</b> one <span class="ui">Undo</span> takes back the new fixtures together with what the
+configuration wrote.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/addfixture.html" title="Previous">+Add Fixture</a> &nbsp;|&nbsp; Up: <a href="../patch/addfixture.html">+Add Fixture</a> &nbsp;|&nbsp; <a href="../patch/import.html" title="Next">Import from another X1</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

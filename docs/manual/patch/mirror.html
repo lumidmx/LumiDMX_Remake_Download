@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Mirror / Offset</title>
+<meta name="keywords" content="Mirror / Offset; mirror movements; mirrored group; SELECT SOURCE; SELECT DESTINATION; CHANNEL MAPPING; FINAL CHECK; WHICH BEAM CONTROLS WHICH; Force Mirror; Straight; FINAL PARAMETERS; All Front; C1; C2; SCHEDULE THE MODIFIED SHOW; Processing Settings; MOVES only; DIMMER only; BOTH; Enable Mirror MOVES; Enable Mirror DIMMER; Pan Offset; Tilt Offset; Mirror Steps; Moves list; Dimmer list; APPLY CONFIGURATION; recalibrate pan">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/import.html" title="Previous: Import from another X1">&lt; Previous</a> <a href="../patch/between.html" title="Next: Between projects">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <a href="../patch/addfixture.html">+Add Fixture</a> &gt; <b>Mirror / Offset</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Mirror / Offset</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p><span class="ui">Mirror / Offset</span> (in <a href="addfixture.html">+Add Fixture</a>) changes the movement and dimmer
+buttons of the open project, window after window:</p>
+<ul>
+<li>from <b>one group to another</b> - the movements of a group copied onto a second group as their mirror image, for
+  example the left side of the stage onto the right side;</li>
+<li>inside <b>the same group</b> - the movements or the dimmer of a group mirrored half onto half, and its pan and
+  tilt moved by an offset.</li>
+</ul>
+<p>Every window has <span class="ui">&lt; Back</span> (after the first); closing one does nothing. The whole change is one
+entry of <span class="ui">Undo</span>, and it goes into the project file with <span class="ui">Save</span>.</p>
+
+<h2>1 and 2. The two groups</h2>
+<div class="pic"><img src="../img/patch_mirror.png" alt="Mirror / Offset - SELECT SOURCE"></div>
+<p class="cap">The first window with the groups of Andrei_edit.x1.</p>
+<p><b>SELECT SOURCE (Group 1, 2, 3...)</b>: the group whose buttons are the model. Each group shows its fixtures (FX),
+their channels (CH), universe and addresses, and its status; a click shows under the list its profile, its Pan / Tilt
+/ Dimmer channels, the values of its <i>All Front</i> button and every fixture. <span class="ui">CONFIRM
+SELECTION</span>. Then <b>SELECT DESTINATION (Mirrored Group)</b>: another group, or the same one.</p>
+
+<h2>Another group</h2>
+<table class="wide">
+<tr><th>Window</th><th>What you do</th></tr>
+<tr><td><b>CHANNEL MAPPING</b></td><td>Which channel of the source goes to which channel of the destination: click a blue dot
+  (source), then a yellow dot (destination) - a line joins them; the mouse over a yellow dot and <kbd>Delete</kbd>
+  takes its line away. Pan, fine Pan, Tilt and fine Tilt are joined at first, found from the profiles.
+  <span class="ui">SAVE CHANNEL MAPPING</span>.</td></tr>
+<tr><td><b>FINAL CHECK: WHICH BEAM CONTROLS WHICH?</b></td><td>Which fixture of the source drives which fixture of the
+  destination: a blue dot, then an orange dot. At first the mirror image - the first source fixture drives the last
+  one of the destination, the second the one before it, and so on. <span class="ui">Mirror</span>,
+  <span class="ui">Force Mirror</span>, <span class="ui">Straight</span> (first to first) and <span class="ui">Clear</span>
+  set all the lines at once. <span class="ui">SAVE BEAM CONFIGURATION</span>.</td></tr>
+<tr><td><b>FINAL PARAMETERS</b></td><td>The pan and the tilt at which each group looks to the front: <b>C1</b> for the source,
+  <b>C2</b> for the destination, read from the <i>All Front</i> button (128 when the project has none) and changeable.
+  <b>Buttons to process</b>: the names of the movement buttons to change, as text. <span class="ui">SCHEDULE THE
+  MODIFIED SHOW</span> writes them.</td></tr>
+</table>
+
+<h2>The same group</h2>
+<table class="wide">
+<tr><th>Window</th><th>What you do</th></tr>
+<tr><td><b>Channel Mapping</b></td><td>Which channels of the group are Pan, fine Pan, Tilt, fine Tilt and Dimmer; found from
+  the profile at first. <span class="ui">CONFIRM CHANNELS</span>.</td></tr>
+<tr><td><b>Processing Settings</b></td><td>
+  <ul>
+  <li><b>Select what is calculated</b>: <span class="ui">MOVES only</span>, <span class="ui">BOTH</span> or
+    <span class="ui">DIMMER only</span>.</li>
+  <li><b>MOVES (Pan / Tilt)</b>: the <i>All Front</i> values read; <span class="ui">Enable Mirror MOVES</span> and the
+    centre of the mirror - <span class="ui">85 (China)</span>, <span class="ui">128 (Brand)</span> or
+    <span class="ui">Manual</span>; <span class="ui">Pan Offset (+/-)</span> and <span class="ui">Tilt Offset
+    (+/-)</span>; the <b>Moves list</b> - the buttons to change (<span class="ui">Edit</span>); the <b>Mirror Steps</b>
+    - which fixtures are copied onto which (tick the source and the destination fixtures, then
+    <span class="ui">+ Add Step</span>; <span class="ui">Quick select</span> picks the first half, the second half, all
+    or none).</li>
+  <li><b>DIMMER</b>: the <i>All Front</i> dimmer; <span class="ui">Enable Mirror DIMMER</span> (first to last, second to
+    the one before the last, and so on); the <b>Dimmer list</b> (<span class="ui">Edit</span>); its Mirror Steps.</li>
+  </ul>
+  <span class="ui">APPLY CONFIGURATION</span> writes them.</td></tr>
+</table>
+<p>At the end a message says how many buttons and steps were changed, and names the buttons of the lists the project
+does not have.</p>
+
+<div class="tip"><p><b>Tip:</b> to turn every movement of a group a little - after the fixtures were hung a few degrees
+off, for example - choose the same group twice, <span class="ui">MOVES only</span>, untick <span class="ui">Enable Mirror
+MOVES</span> and give a <span class="ui">Pan Offset</span>.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/import.html" title="Previous">Import from another X1</a> &nbsp;|&nbsp; Up: <a href="../patch/addfixture.html">+Add Fixture</a> &nbsp;|&nbsp; <a href="../patch/between.html" title="Next">Between projects</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

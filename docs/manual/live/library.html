@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The Library</title>
+<meta name="keywords" content="Library; Library window; Shows (Library); Light Sequences; BPM List (Library); Live-Panel (Library); Audio Objects; New Show; New Light Sequence; New Audio Object; Delete (Library); Copy (Library); Bpm Lists; Search (Library); rename (Library); drag (Library); Combine Selected Chase; Add to Bpm list; XML Merge Pro; Merge; Copy (Merge); Delete All Steps; Delete Chase; Operation log; Import (Library); Import from project; .x1 (import); second laptop">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/cuesteps.html" title="Previous: Edit Cue Steps">&lt; Previous</a> <a href="../live/mixer.html" title="Next: The General Mixer">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>The Library</b></div></div><!--/NAV-->
+<div class="page">
+<h1>The Library</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The <span class="ui">Library</span> button opens a small window that stays on top of the program: everything the project holds -
+shows, light sequences, BPM lists, the chases of the Live panel and the audio objects. From here new buttons are made,
+sequences are copied and combined, and chases go into Sound2Light. Press <span class="ui">Library</span> again to close it.</p>
+<div class="pic"><img src="../img/live_library.png" alt="The Library window"></div>
+<p class="cap">A project with the folders closed, except Shows.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">New</span> - a menu: <span class="ui">New Show...</span>, <span class="ui">New Light Sequence...</span>, <span class="ui">New Audio Object...</span> (see below).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Delete</span> - deletes the item selected. It asks first; it cannot be undone. A light sequence is also taken out of every BPM list.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Copy</span> - a copy of the light sequence selected, with all its steps, named with the next free number: "Cerc fata 01", "Cerc fata 02" ...</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Bpm Lists</span> - opens or closes the window with the BPM lists of Sound2Light (see <a href="../s2l/lists.html">BPM lists</a>).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Merge</span> - XML Merge Pro (see below).</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Import</span> - light sequences and shows from another .x1 project (see <a href="#import">Import from project</a> below).</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Search</span> - type a part of a name: the tree shows only what matches, at every key.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td>The tree, in five folders (see the table below).</td></tr>
+</table>
+<table class="wide">
+<tr><th>Folder</th><th>What it holds</th></tr>
+<tr><td>Shows</td><td>The shows of the Show Editor. Double-click: the show opens in the <a href="../show/index.html">Show Editor</a>.</td></tr>
+<tr><td>Light Sequences</td><td>The sequences of the project (files in its light folder). Double-click: <a href="cuesteps.html">Edit Cue Steps</a>. Drag one onto the Live panel: a new button that plays it.</td></tr>
+<tr><td>BPM List</td><td>The copies that the BPM lists of Sound2Light play, named "list - chase". With
+  <span class="ui">Hide list name in Bpm list entries</span> ticked (<a href="../patch/option.html">the Option tab</a>; on at
+  first) they are in a folder for every list, shown without the list's name; the copies that are in no list now are in
+  <b>(no list)</b>. Rename, Delete, Copy and the drag work on the whole name as before. See the picture below the table.</td></tr>
+<tr><td>Live-Panel</td><td>The chases of the buttons on the Live panel. Double-click: Edit Cue Steps of that button.</td></tr>
+<tr><td>Audio Objects</td><td>Music and other files for the Show Editor. They can be dragged only onto the timeline of the Show Editor.</td></tr>
+</table>
+<div class="pic"><img src="../img/lib_hidelist.png" alt="The Library's BPM List folder with and without Hide list name"></div>
+<p class="cap">The BPM List folder with <span class="ui">Hide list name in Bpm list entries</span> ticked (left, on at first) and unticked (right).</p>
+
+
+<h2>Selecting, renaming, dragging</h2>
+<table class="keys wide">
+<tr><td><b>click</b></td><td>Selects an item. Ctrl+click adds one, Shift+click takes everything between.</td></tr>
+<tr><td><b>click again</b></td><td>On the only item selected, after a moment: its name can be changed in place. Enter keeps it, Esc leaves it. A name that another object has, or one with ' * / : &lt; &gt; ? \ | " &amp;, is refused and the old name stays.</td></tr>
+<tr><td><b>double-click</b></td><td>Opens it (see the table above).</td></tr>
+<tr><td><b>drag</b></td><td>A light sequence onto the Live panel - a new button; onto the Show Editor - a block on the timeline; onto Sound2Light - into a BPM list.</td></tr>
+</table>
+
+
+<h2>New</h2>
+<div class="pic"><img src="../img/live_library_new.png" alt="The New menu of the Library"></div>
+<table class="wide">
+<tr><th>Item</th><th>What it makes</th></tr>
+<tr><td><span class="ui">New Show...</span></td><td>An empty show, with the name you type.</td></tr>
+<tr><td><span class="ui">New Light Sequence...</span></td><td>A light sequence with one step, all channels at 0. Double-click it to fill it in Edit Cue Steps.</td></tr>
+<tr><td><span class="ui">New Audio Object...</span></td><td>Brings a file into the project: music (.mp3, .wav), a light sequence (.seq), a show or a macro file. It needs a project that is open.</td></tr>
+</table>
+
+<p>An empty name or one that is already used is refused: <i>Pick a name that isn't blank or already used.</i></p>
+
+<h2>The right-click menu</h2>
+<div class="pic"><img src="../img/s2l_lib_menu.png" alt="The right-click menu of the Library"></div>
+<table class="wide">
+<tr><th>Item</th><th>What it does</th></tr>
+<tr><td><span class="ui">Combine Selected Chase...</span></td><td>Makes one new light sequence from the chases selected (see below).</td></tr>
+<tr><td><span class="ui">Add to Bpm list...</span></td><td>Puts the chases selected into a BPM list of Sound2Light; you type the name of the list.</td></tr>
+<tr><td><span class="ui">Add to Bpm - Move List</span>, <span class="ui">Dimmer Games</span>, <span class="ui">Color Games</span>, <span class="ui">Gobo Games</span></td><td>The same, straight into one of the four usual lists. See <a href="../s2l/lists.html">BPM lists</a>.</td></tr>
+</table>
+
+
+<h2>Combine Selected Chase</h2>
+<div class="pic"><img src="../img/live_library_combine.png" alt="Combine Selected Chase"></div>
+
+<p>Select two or more chases (Ctrl+click), right-click, <span class="ui">Combine Selected Chase...</span>, type a name (it proposes
+"Combined 1") and press <span class="ui">Ok</span>. The new light sequence plays them all at once:</p>
+<ul>
+<li>It has as many steps as it takes for all of them to come round together: 6 steps and 4 steps give 12, 18 and 18 give 18.</li>
+<li>In each step a channel takes the value of the chases where it is not 0; when several have it, the one lower in the list wins.</li>
+<li>The fade of a step is the shortest of their fades; the wait the shortest wait that is not 0.</li>
+</ul>
+<div class="tip"><p>Combine a movement with a colour chase and a dimmer chase of other channels: one button plays all three, always in step.</p></div>
+
+<h2 id="import">Import from project</h2>
+<p>Make new effects without touching the show that runs: work on a <b>copy of the same project</b> - on a second laptop, or in
+LumiDMX X1 on this one - save it, and bring what you made here. <span class="ui">Import</span> asks for the .x1 file, then
+shows what it has:</p>
+<div class="pic"><img src="../img/live_library_import.png" alt="Import from project"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The project the items come from. <span class="ui">Change...</span> takes another one. Only .x1 projects.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Patch: OK</b> - the same fixtures, universes and addresses as here. <b>Patch: DIFFERS</b> (red) tells the first difference: the steps would land on other channels. You can still import.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Search</span>: the list shows only the names that have what you type. The ticks stay when you search again.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td>One list, with <b>Light Sequences</b> and <b>Shows</b>: how many there are, how many are shown, how many ticked. Scroll with the bar or the mouse wheel; click a row to tick it or untick it.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>NEW</b>: not in this project - ticked.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>-&gt; name 2</b>: this project has the name with other steps - ticked, it comes in as "name 2" (as Generate names). <b>same</b> (grey): already here, identical - not ticked.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td>What the show clicked last brings with it: its songs, taken from the .x1 when this project has not got them. <i>Audio file not found</i> when that .x1 had not got one either.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">Import (N)</span>: N = everything ticked, also what the search hides now. <span class="ui">Cancel</span> (or Esc) imports nothing.</td></tr>
+</table>
+<ul>
+<li>Import only adds: the light sequences go to <b>Light Sequences</b> (at the end of the folder, as Generate puts them), the
+shows to <b>Shows</b>. Nothing starts and the DMX output is not touched, so it can be done during the show.</li>
+<li>A show keeps its own sequences inside itself, so it needs nothing else from the Library.</li>
+<li>The project shows as changed: <span class="ui">Save</span> it to keep what you imported.</li>
+<li>LumiDMX X1 on the same laptop: give it no DMX interface and no MIDI (the Akai), and keep its Sound2Light off, so it does
+not take them from LumiDMX Remake. Work on a copy of the .x1, not on the file LumiDMX Remake has open.</li>
+</ul>
+
+<h2>XML Merge Pro</h2>
+<div class="pic"><img src="../img/live_merge.png" alt="XML Merge Pro"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Save</span> saves the project (with a backup of the old file); <span class="ui">Undo</span> takes back the last change of a chase (Ctrl+S, Ctrl+Z).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>LEFT (Source): the chases of the project - <span class="ui">light/ XML</span> (the light sequences) or <span class="ui">LivePanel</span> (the chases of the buttons). Search, then pick one. A heading sorts by that column.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>RIGHT (Destination): the same lists, for the chase that receives.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">MERGE</span> and <span class="ui">COPY</span> from left to right.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">MERGE</span> and <span class="ui">COPY</span> from right to left.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Delete All Steps</span> empties the chases selected (they stay, with no steps); <span class="ui">Delete Chase</span> removes them completely. It cannot be undone.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td>The Operation log: what was done, with the time. <span class="ui">Copy log</span>, <span class="ui">Clear log</span>.</td></tr>
+</table>
+
+<p><b>Merge</b> combines two chases: the steps are multiplied until both have formed a perfect loop (as Combine above).
+<b>Copy</b> replaces the destination with an exact copy of the source. A changed chase gets a <b>*</b> and goes to the top
+of its list. The changes go into the open project at once - the Library, the Live panel and Edit Cue Steps see them;
+<span class="ui">Save</span> writes the project to disk. Right-click a chase: Edit Cue Steps, Rename, its steps and duration.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/cuesteps.html" title="Previous">Edit Cue Steps</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/mixer.html" title="Next">The General Mixer</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

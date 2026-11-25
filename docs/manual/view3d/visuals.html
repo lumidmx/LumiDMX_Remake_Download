@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Visuals and Configuration</title>
+<meta name="keywords" content="Visuals (3D); Max Frames; Stop Rendering; Ambient Light; Haze; Beam range; Bloom effect; Fog (3D); Shadows (3D); Advanced Mode; Reset Shader; Show Debug; Stay on top; Configuration (3D); Advanced Render; Resolution (3D); Shadow Quality; Max FPS; FOV; Light Beam Quality; Realistic engine; SSAO; Exposure; Floor mirror; Soft shadows; CheckDMXIn like Original Lumidmx">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../view3d/design.html" title="Previous: Design Mode">&lt; Previous</a> <a href="../view3d/howto.html" title="Next: Plot-View and How to use">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../view3d/index.html">3D Previsualisation</a> &gt; <b>Visuals and Configuration</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Visuals and Configuration</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The Visuals tab sets how the light looks in the room. The Configuration window (<span class="ui">File &gt; Configuration</span>)
+sets the quality of the picture.</p>
+<div class="pic"><img src="../img/view3d_visuals.png" alt="The Visuals tab with the Ambient Light slider open"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Max Frames</span> - draws as fast as the computer can, to test its speed; the fps in the status bar shows the best. The processor goes up to 100%.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Stop Rendering</span> - stops drawing (to free the computer for something else).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Ambient Light</span> - the light of the room, 0 to 255 (80 at the start). The little arrow opens the slider.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Haze</span> - how thick the haze is, so how strong the beams are seen: 0 to 50.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Beam range</span> - how far the beams are seen: 0 to 500.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Bloom effect</span> - the glow round very strong light (a lens seen from the front, the spot on the floor): 0 to 50. <b>3 looks realistic.</b> It needs the realistic engine with Bloom effect ticked in Configuration.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Fog</span> - shows only the middle line of each beam (lighter for the computer).</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">Shadows</span> - the lamps cast shadows. Pressed at the start.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">Advanced Mode</span> - the better looking beams. Pressed at the start; release it if the computer is too slow.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td><span class="ui">Reset Shader</span> / <span class="ui">Show Debug</span> - for problems with the graphics card.</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td><span class="ui">Stay on top</span> - the 3D window stays over the other windows (useful on one screen with LumiDMX Remake).</td></tr>
+</table>
+
+<p>A pressed button has an orange background - and its name tells what it does, so the state is also clear without the colour.</p>
+
+<h2>Configuration - Advanced Render</h2>
+<div class="pic"><img src="../img/view3d_config.png" alt="Configuration, Advanced Render"></div>
+<table class="wide">
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td>Resolution (1-10)</td><td>The detail of the picture. Higher = finer, but slower.</td></tr>
+<tr><td>Shadow Quality (1-10)</td><td>How sharp the shadows are.</td></tr>
+<tr><td>Max FPS</td><td>The most pictures a second (140 here).</td></tr>
+<tr><td>Near / Far Clipping, FOV</td><td>What the camera sees: the nearest and furthest distance, and the angle of view (60).</td></tr>
+<tr><td>Light Glow</td><td>The glow of the lenses.</td></tr>
+<tr><td>Bloom effect</td><td>The glow round strong light (its strength: the Bloom effect slider on the Visuals tab).</td></tr>
+<tr><td>Lamps casting shadows, Volumetric Lights</td><td>Shadows of the lamps; the beams seen in the haze.</td></tr>
+<tr><td>Light Beam Quality (1-6)</td><td>How many points along a beam: smoother beams, more work.</td></tr>
+<tr><td>Extended Light Beams</td><td>Longer, finer beams.</td></tr>
+<tr><td>Realistic engine</td><td>The realistic picture - see the next tab.</td></tr>
+<tr><td>SSAO</td><td>Darker corners and edges, as in a real room.</td></tr>
+</table>
+
+<p><span class="ui">Apply</span> uses the settings at once; <span class="ui">Abort</span> leaves them as they were.</p>
+
+<h2>Configuration - Realistic Engine</h2>
+<div class="pic"><img src="../img/view3d_config_real.png" alt="Configuration, Realistic Engine"></div>
+<table class="wide">
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td>Exposure (EV)</td><td>Brighter or darker picture, as on a camera (0.0 = normal).</td></tr>
+<tr><td>The camera's own exposure</td><td>The picture adjusts its brightness by itself, as a camera does.</td></tr>
+<tr><td>Floor mirror</td><td>A glossy stage floor that mirrors the light.</td></tr>
+<tr><td>Soft shadows</td><td>Shadows with soft edges, as wide as the lens.</td></tr>
+<tr><td>Wide beams at half size (faster)</td><td>Lighter for the computer, with wide beams.</td></tr>
+</table>
+
+<p>The text on the right of the tab tells what the realistic engine also takes from Advanced Render (resolution, shadows, bloom,
+the beams) and from the stage (ambient light, haze, beam range).</p>
+
+<h2>CheckDMXIn like Original Lumidmx</h2>
+<p>Not ticked (the default): the light of LumiDMX on this computer is read in one piece, all 16 universes at once, at every
+picture - the efficient way. Ticked: it is read channel by channel every 20 ms, the way the original LumiDMX 3D reads it.
+It costs more processor time; use it only when you need it. <span class="ui">Info</span> next to it explains the same.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../view3d/design.html" title="Previous">Design Mode</a> &nbsp;|&nbsp; Up: <a href="../view3d/index.html">3D Previsualisation</a> &nbsp;|&nbsp; <a href="../view3d/howto.html" title="Next">Plot-View and How to use</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

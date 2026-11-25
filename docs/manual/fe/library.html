@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Check against the library</title>
+<meta name="keywords" content="library; Check this fixture against the library; Library folder; Identical; Same channels; Same types; Similar; Same name only; doubles; duplicate profiles; other name; other presets; other type; only in this one; only in the library one; Open it in a new window; Show it in its folder">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../fe/import.html" title="Previous: Import from other formats">&lt; Previous</a> <a href="../fe/export.html" title="Next: Export">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../fe/index.html">LumiDMX Fixture Editor</a> &gt; <b>Check against the library</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Check against the library</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>Before you make a profile, or after you imported one, it is worth knowing whether your library already has the
+same fixture - often under another name or another maker (one fixture often carries several brands).
+<span class="ui">Library &gt; Check this fixture against the library</span> (<kbd>Ctrl</kbd>+<kbd>L</kbd>, or the last
+button of the toolbar) compares the fixture in the editor with every profile of your library folder, channel by
+channel.</p>
+
+<div class="pic"><img src="../img/fe_menu_library.png" alt="The Library menu"></div>
+<p><span class="ui">Library folder...</span> chooses the folder of your profiles; its subfolders are read too. The first
+check asks for it when it was not chosen yet.</p>
+
+<div class="pic"><img src="../img/fe_library_check.png" alt="The result of the check"></div>
+<p class="cap">An imported MH-X25 against a library of 1264 profiles: seven alike.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The library folder and how many profiles it has; <span class="ui">Change
+  folder...</span>; <span class="ui">Check again</span> (after a change in the editor, or in the folder).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The fixture in the editor: its name, its channels, whether it is saved.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The profiles of the library that are alike, the closest first (the kinds below),
+  with the channels that differ in words and the file.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Channel by channel</b> - left the fixture in the editor, right the profile selected
+  in 3, with the difference of each row in the middle. The rows that differ are marked, their differing cells in
+  bold. The mouse on a row of presets shows all of them.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>What the marks of the rows mean.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Open it in a new window</span> - the selected profile opens in a second
+  editor window, with Save grey until a Save As, so that the library's file is not changed by mistake.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Show it in its folder</span> - opens its folder in Explorer with the file
+  selected.</td></tr>
+</table>
+
+<h2>How alike</h2>
+<table class="wide">
+<tr><th>Match</th><th>The two profiles have</th></tr>
+<tr><td><b>= Identical</b></td><td>the same channels: types, presets (ranges and names) and names.</td></tr>
+<tr><td><b>= Same channels</b></td><td>the same types and the same preset ranges; the names may differ.</td></tr>
+<tr><td><b>= Same types</b></td><td>the same types of channels in the same order; the presets differ.</td></tr>
+<tr><td><b>~ Similar: n of m</b></td><td>n of the m channels the same, in the same order (at least 3 of 4).</td></tr>
+<tr><td><b>! Same name only</b></td><td>the same maker and name, but other channels: maybe another DMX mode, maybe a
+  mistake.</td></tr>
+</table>
+
+<h2>The marks of the rows</h2>
+<table class="wide">
+<tr><th>Mark</th><th>The channel</th></tr>
+<tr><td><b>= same</b></td><td>the same type, presets and names on both sides.</td></tr>
+<tr><td><b>~ other name</b></td><td>the same type and presets; the name of the channel differs.</td></tr>
+<tr><td><b>~ other preset names</b></td><td>the same type and ranges; the names of the presets differ.</td></tr>
+<tr><td><b>~ other presets</b></td><td>the same type; the presets differ.</td></tr>
+<tr><td><b>x other type</b></td><td>another type.</td></tr>
+<tr><td><b>+ only in this one</b></td><td>only the fixture in the editor has it.</td></tr>
+<tr><td><b>- only in the library one</b></td><td>only the library's profile has it.</td></tr>
+</table>
+<p>The marks are written in words and signs; the colour of the rows only repeats them.</p>
+
+<div class="tip"><p><b>Tip:</b> the library is read the first time and kept while the editor is open; each check reads
+again only the files that are new or changed, so the next checks are quick.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../fe/import.html" title="Previous">Import from other formats</a> &nbsp;|&nbsp; Up: <a href="../fe/index.html">LumiDMX Fixture Editor</a> &nbsp;|&nbsp; <a href="../fe/export.html" title="Next">Export</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

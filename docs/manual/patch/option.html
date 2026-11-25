@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="Replace Freeze with Out loop; Out loop (Option); IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The Option tab</title>
+<meta name="keywords" content="Option tab; options; Load last Project on Start; Start with Lock Screen; lock screen; Animation on buttons ON; Hz; Speed; Show value in slider when moving it; Flash button take priority over Sound2Light; Flash Buttons use always Maximum Dimmer; Fade Sequence; release time; Hide list name in Bpm list entries; 3D buttons; Custom Background Color; background of the Live panel; Remote shortcut keys; Fixtures folder (.lfi2); Monitor settings">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/list.html" title="Previous: The patch list">&lt; Previous</a> <a href="../patch/addfixture.html" title="Next: +Add Fixture">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <b>The Option tab</b></div></div><!--/NAV-->
+<div class="page">
+<h1>The Option tab</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The options of the program. They are kept as soon as they are changed, in the settings of the program - not in the
+project - so they are the same for every project. <span class="ui">Options &gt; Option</span> in the quick bar, at the
+top of the window, opens this tab too.</p>
+
+<div class="pic"><img src="../img/patch_option.png" alt="The Option tab"></div>
+<p class="cap">The Option tab (Replace Freeze with Out loop ticked here; it is off when the program is new).</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>Load last Project on Start</b> - the program opens the project that was
+  open last. Off at first: the program starts empty.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Start with Lock Screen</b> - the program starts as after
+  <span class="ui">Lock Live-panel</span>: only the Live panel and its pages, on the whole screen, ready for the show;
+  <kbd>Esc</kbd> brings the rest back. Off at first.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Animation on buttons ON</b> - the moving dots around the buttons that run
+  or are held. <span class="ui">Hz</span> (1 to 60): how many times a second they are drawn; <span class="ui">Speed</span>
+  (0.05 to 2.0): how many turns around the button they make in a second. On at first, 14 Hz, speed 0.30. Fewer Hz
+  ask less of a slow computer.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Show value in slider when moving it</b> - while a slider of the Live panel
+  is moved, its value is shown on it (it goes 2 seconds after the last move). On at first.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>Flash button take priority over Sound2Light</b> - while a Flash button is
+  held (with the mouse, a key or MIDI), Sound2Light does not react to the music; it goes on when the button is let go.
+  So a flash is not mixed with steps made by the beat. On at first.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>Flash Buttons use always Maximum Dimmer</b> - the channels of a held Flash
+  button go out at their full value, whatever the master sliders say. Off: they follow the masters as everything else.
+  On at first.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><b>Fade Sequence</b> and <b>release time (sec)</b> - a button of the Live panel
+  that has its own <i>Fade Sequence</i> ticked (in its Live-Object Propertys) goes down in this time when it stops,
+  however it stops: its own click, a Flash let go, a key, MIDI, a macro, its last step. What it held goes down to 0,
+  or over to the button running under it. From 0.1 to 10 seconds; 1 at first. Unticked: every button stops at
+  once.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><b>Hide list name in Bpm list entries</b> - the copies of the
+  BPM lists of Sound2Light are shown with their own name only: <i>Slow Move</i>, not <i>Move List - Slow Move</i> - in
+  the lists of the Sound2Light tab, in the <span class="ui">Bpm Lists</span> window and in the Library, where the
+  <b>BPM List</b> folder then has a folder for every list (and <b>(no list)</b> for the copies that are in no list now).
+  Only what is shown changes: the names in the project stay as they are, and a rename in the Library shows the whole
+  name. On at first. Unticked: everything as before. See <a href="../s2l/lists.html">BPM lists</a>.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><b>3D buttons</b> - the buttons of the Live panel (and of
+  Design Live-Panel) look raised: a light line at the top and the left and a darker shadow at the bottom and the
+  right, drawn inside the button. A running button keeps the same look, with its white outline and its dots. The
+  face, the text, FLASH / STEP / FADE and the gaps between the buttons stay as they are. The sliders get the same
+  look: the frame sunken (darker at the top and the left) and the handle raised, still see-through, so the scale
+  and the name are seen under it; the sliders' size and place do not change. On at first; untick it for flat
+  buttons and sliders. Kept in the program's settings (all the projects).<div class="pic"><img src="../img/live_3dbuttons.png" alt="3D buttons"></div></td></tr>
+<tr><td class="n"><span class="n">10</span></td><td><b>Replace Freeze with Out loop</b> - on the function bar,
+  <span class="ui">Freeze</span> becomes <b>Out loop</b>: the interfaces play a recording of the running buttons while
+  you work in the program. Off at first. Kept in the program's settings (all the projects). See
+  <a href="../live/outloop.html">Out loop</a>.</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td><b>Custom Background Color</b> - the background of the Live panel in a colour of
+  your own; <span class="ui">Choose...</span> picks it (and ticks the box). Unticked: the usual dark background.</td></tr>
+<tr><td class="n"><span class="n">12</span></td><td><b>The three buttons</b> (below).</td></tr>
+</table>
+
+<h2>The three buttons</h2>
+<table class="wide">
+<tr><th>Button</th><th>What it opens</th></tr>
+<tr><td><span class="ui">Remote shortcut keys</span></td><td>The keys and the MIDI of the remote player:
+  <span class="ui">Back</span>, <span class="ui">Play</span>, <span class="ui">Forward</span>. The right click on those
+  three buttons opens the same window. See <a href="../remote/index.html">Remote, controllers and MIDI</a>.</td></tr>
+<tr><td><span class="ui">Fixtures folder (.lfi2)</span></td><td>Chooses the folder of the fixture profiles, when they are
+  not with the project. The program reads the profiles of the open project from there at once and says for how many
+  fixtures, or which profiles it still did not find. Until the program is closed, the projects opened after it look in
+that folder first, then next to the project, the folder above it and ScanLib in the program's folder. See
+  <a href="../start/folder.html">The program folder and its files</a>.</td></tr>
+<tr><td><span class="ui">Monitor</span></td><td>The settings of the Monitor window: its sliders, the Dimmer BPM, the time
+  code, the DMX Visualizer, the move controls. See <a href="../live/index.html">Mixer &amp; Live</a>.</td></tr>
+</table>
+
+<div class="note"><p><b>Note:</b> the profiles tell the program which channel of a fixture is the dimmer, the pan, the
+tilt and so on. Without them the General Mixer, Invert Pan / Invert Tilt and the tools that look for those channels
+cannot work for that fixture.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/list.html" title="Previous">The patch list</a> &nbsp;|&nbsp; Up: <a href="../patch/index.html">Setup &amp; Patch</a> &nbsp;|&nbsp; <a href="../patch/addfixture.html" title="Next">+Add Fixture</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Opening and saving a project</title>
+<meta name="keywords" content="project; open a project; save; save as; new project; last used projects; recent projects; .x1; .xR; Unsaved changes; Close X1; project menu">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../start/mainwindow.html" title="Previous: The main window">&lt; Previous</a> <a href="../patch/index.html" title="Next: Setup &amp; Patch">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../start/index.html">Getting started</a> &gt; <b>Opening and saving a project</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Opening and saving a project</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>A project is one file that holds everything of a show: the patch, the pages of the Live panel with their
+buttons and sliders, the light sequences, the shows, the macros, the Sound2Light lists and the pictures of the
+panel. Only the fixture profiles (<code>.lfi2</code>) are kept outside it (see
+<a href="folder.html">The program folder</a>).</p>
+
+<h2>The project menu</h2>
+<div class="pic"><img src="../img/rm_project_menu.png" alt="The project menu with the last used projects"></div>
+<p class="cap">The project menu (the book at the left of the toolbar), with the last used projects.</p>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><span class="ui">New Project</span></td><td>Starts an empty project. It has no name and no folder yet: the first
+  <span class="ui">Save</span> asks for them.</td></tr>
+<tr><td><span class="ui">Open a Project</span></td><td>Opens a project file. Pointing at it shows the <b>Last used
+  projects</b>: a click opens one of them.</td></tr>
+<tr><td><span class="ui">Save</span></td><td>Saves the project in its file (see below for <code>.x1</code> and
+  <code>.xR</code>).</td></tr>
+<tr><td><span class="ui">Save as...</span></td><td>Saves the project in a new file, which is then the open project.</td></tr>
+<tr><td><span class="ui">Options</span></td><td>The <a href="../patch/option.html">Option tab</a> of Setup &amp; Patch.</td></tr>
+<tr><td><span class="ui">Close X1</span></td><td>Closes the program.</td></tr>
+</table>
+<p>Save and Open are also the first two buttons of the quick bar.</p>
+
+<h2>Unsaved changes</h2>
+<p>Before another project is opened or the program is closed, the window <b>Unsaved changes</b> lists what was
+changed since the last save and asks whether to save it first: <span class="ui">Yes</span> asks where to save it
+(as <span class="ui">Save as...</span>), <span class="ui">No</span> goes on without saving, <span class="ui">Cancel</span>
+stays where you were.</p>
+
+<h2>.x1 and .xR</h2>
+<table class="wide">
+<tr><th></th><th>.x1</th><th>.xR</th></tr>
+<tr><td>What it is</td><td>The project file of LumiDMX X1.</td><td>The project file of LumiDMX Remake Full.</td></tr>
+<tr><td>Opened by</td><td>LumiDMX Remake Full, LumiDMX Remake Player, LumiDMX X1</td><td>LumiDMX Remake Full only</td></tr>
+<tr><td>Saved by</td><td>LumiDMX Remake Player</td><td>LumiDMX Remake Full</td></tr>
+</table>
+<p><span class="badge full">Full</span> When the Full saves a project that was opened as <code>.x1</code>, it writes
+it as <code>.xR</code> next to it, with the same name: <code>Club.x1</code> is saved as <code>Club.xR</code>, and
+<code>Club.x1</code> stays as it was. From then on the open project is the <code>.xR</code>. When such a file is
+already there, the Full asks before it replaces it.</p>
+<p><span class="badge player">Player</span> The Player opens and saves <code>.x1</code> only. It has no tools that
+change the patch or the Live panel, so what it saves are the settings it can change.</p>
+
+<div class="tip"><p><b>Tip:</b> keep the <code>.x1</code> you started from: it is the copy that LumiDMX X1 and the
+Player can open.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../start/mainwindow.html" title="Previous">The main window</a> &nbsp;|&nbsp; Up: <a href="../start/index.html">Getting started</a> &nbsp;|&nbsp; <a href="../patch/index.html" title="Next">Setup &amp; Patch</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Edit Cue Steps</title>
+<meta name="keywords" content="Edit Cue Steps; cue; step; steps; Fade Time; Wait Time; sequence; light sequence; preview a step; Add; Delete; Up; Down; Duplicate; Edit Times; Play; Stop; Add Clean Step; Invert Cuelist; Copy; Paste; rename a step; select every 2nd">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/sliders.html" title="Previous: Sliders">&lt; Previous</a> <a href="../live/library.html" title="Next: The Library">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Edit Cue Steps</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Edit Cue Steps</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The steps of a button, one under another: right click on the button &gt; <span class="ui">Edit Cue Steps...</span>.
+A step holds the values of the channels, a <b>Fade Time</b> - how long the light takes to get to it - and a <b>Wait
+Time</b> - how long it stays before the next step. Every change is applied to the open project at once;
+<span class="ui">Save</span> writes it into the project's file.</p>
+
+<div class="pic"><img src="../img/live_cuesteps.png" alt="The Edit Cue Steps window"></div>
+<p class="cap">The steps of <span class="ui">Cerc fata</span> while it runs: the step playing is marked (here 15). At
+the bottom the button, the time it is at, the time of all its steps and the number of steps.</p>
+
+<h2>Changing a step live</h2>
+<p>Click <b>one</b> step: its values are put on the channels - the General Mixer, the fixtures and the 3D show it - and
+every channel you move afterwards, in the General Mixer, in Fixture Control or on the DMX Board
+(<span class="ui">Reset</span>, <span class="ui">Set &gt;255</span>, its fader), is written into that step. With
+several steps selected, what you move is written into all of them - for example: select the steps, select the
+channels on the DMX Board, <span class="ui">Reset</span>: those channels become 0 in every selected step. Select several with <kbd>Shift</kbd> or
+<kbd>Ctrl</kbd> and a click, or by dragging over them.</p>
+<p>A button you start while a step is selected (a move, for example) does not write into the step: the channels it
+sends stay as the step has them, also after it stops - unless you move them yourself (by hand they become MAN and go
+in). After <span class="ui">Edit Times...</span> the steps stay selected, so you can see where what you move goes.</p>
+<p>To rename a step, click its first column again when it is already selected; type the name, then <kbd>Enter</kbd>
+(or a click elsewhere) keeps it, <kbd>Esc</kbd> cancels.</p>
+
+<h2>The buttons</h2>
+<table class="wide">
+<tr><th>Button</th><th>What it does</th></tr>
+<tr><td><span class="ui">+ Add</span></td><td>A new step after the selected one (or at the end), with the channels as they
+  are now and the last times used. The new step is selected: what you move next goes into it.</td></tr>
+<tr><td><span class="ui">Delete</span></td><td>Deletes the selected steps.</td></tr>
+<tr><td><span class="ui">&#9650; Up</span>, <span class="ui">&#9660; Down</span></td><td>Move the selected steps one
+  place.</td></tr>
+<tr><td><span class="ui">Duplicate...</span></td><td>Copies of the selected steps, after the last of them:
+  <i>Multiplier (how many copies)</i>.</td></tr>
+<tr><td><span class="ui">Edit Times...</span></td><td>Sets the <span class="ui">Fade Time</span> and the
+  <span class="ui">Wait Time</span> (hours : minutes : seconds : milliseconds; hold an arrow to count fast).
+  <span class="ui">Set time for</span>: the fade, the wait or both; <span class="ui">Change for</span>: the selected
+  steps or all of them.</td></tr>
+<tr><td><span class="ui">Play</span> / <span class="ui">Stop</span></td><td>Starts or stops the button, without closing
+  the window.</td></tr>
+</table>
+
+<h2>The right-click menu</h2>
+<ul>
+<li><span class="ui">Edit Selected Steps...</span> - the same as <span class="ui">Edit Times...</span>.</li>
+<li><span class="ui">Duplicate Steps...</span> - the same as <span class="ui">Duplicate...</span>;
+  <span class="ui">Duplicate Steps</span> &gt; <span class="ui">2x</span> ... <span class="ui">100x</span> - that many
+  copies of the selected steps at the end of the list.</li>
+<li><span class="ui">Select</span> &gt; <span class="ui">All</span> (<kbd>Ctrl</kbd>+<kbd>A</kbd>),
+  <span class="ui">Every 2nd</span>, <span class="ui">Every 3rd</span>, <span class="ui">Every 4th</span>,
+  <span class="ui">Every 5th</span>.</li>
+<li><span class="ui">Copy</span> (<kbd>Ctrl</kbd>+<kbd>C</kbd>), <span class="ui">Paste</span>
+  (<kbd>Ctrl</kbd>+<kbd>V</kbd>: after the last selected step, or at the end), <span class="ui">Delete</span>.</li>
+<li><span class="ui">Add Clean Step</span> - a step with every channel at 0 at the end, fade and wait of one
+  second. It is selected at once: what you move next goes into it. The channels a running button holds
+  (a move's Pan / Tilt, for example) are not written into it - set only a colour and the step holds only that
+  colour. A channel at 0 in every step is not taken by the button.</li>
+<li><span class="ui">Invert Cuelist</span> - all the steps in the opposite order.</li>
+</ul>
+<p>The same window opens from the Library for its light sequences, and from the Show Editor for the objects of a
+show.</p>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/sliders.html" title="Previous">Sliders</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/library.html" title="Next">The Library</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

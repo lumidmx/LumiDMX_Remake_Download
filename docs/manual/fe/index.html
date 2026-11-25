@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>LumiDMX Fixture Editor</title>
+<meta name="keywords" content="Fixture Editor; LumiDMX Fixture Editor; profile; .lfi2; .lfi; ScanEdit; Library tools; Fixture Filter, Open in Fixture Editor; fixture profile, make; fixture profile, change">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../macros/commands.html" title="Previous: Commands">&lt; Previous</a> <a href="../fe/window.html" title="Next: The editor window">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <b>LumiDMX Fixture Editor</b></div></div><!--/NAV-->
+<div class="page">
+<h1>LumiDMX Fixture Editor</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>Every fixture of a project needs its <b>profile</b>: a <code>.lfi2</code> file that says what each of its DMX
+channels does (see <a href="../start/dmx.html">DMX in a few words</a>). The LumiDMX Fixture Editor makes new
+profiles and corrects existing ones. It works like the fixture editor of LumiDMX X1 (ScanEdit) and writes the same
+files, so a profile made here is read by LumiDMX X1 too. It also opens the older <code>.lfi</code> profiles.</p>
+
+<p>What it adds:</p>
+<ul>
+<li><a href="import.html">Import</a> - a profile made from the DMX table of the fixture's manual (copied and
+  pasted), or from a QLC+, Open Fixture Library or GDTF file;</li>
+<li><a href="library.html">Check against the library</a> - the profiles of your library with the same channels,
+  or nearly the same, compared channel by channel;</li>
+<li><a href="export.html">Export</a> - a report, an HTML page, a PDF, the pictures or a JSON file of the profile;</li>
+<li>safety: <a href="test.html">Test</a> runs before every save, and a profile with problems is not saved;
+  every change is marked <i>not saved!</i>; Save As asks before it writes over another file.</li>
+</ul>
+
+<h2>Opening the editor</h2>
+<ul>
+<li>From LumiDMX Remake Full: <span class="ui">Setup &amp; Patch &gt; +Add Fixture &gt; Library tools &gt; LumiDMX
+  Fixture Editor (.lfi2 editor)</span> (see <a href="../patch/library.html">Library tools</a>).</li>
+<li>From Fixture Filter (the library browser of the same menu): right click on a result &gt;
+  <span class="ui">Open in Fixture Editor</span>. The profile opens with <span class="ui">Save</span> grey: save it
+  with <span class="ui">Save Fixture As...</span> first, so that the file of the library is not changed by mistake
+  (<kbd>Ctrl</kbd>+<kbd>S</kbd> does Save As then).</li>
+<li>On its own: <code>LumiDMX_Fixture_Editor.exe</code> in the program folder. A <code>.lfi2</code> file dropped on
+  its window opens; a QLC+, Open Fixture Library or GDTF file dropped on it is imported.</li>
+</ul>
+<div class="important"><p><b>Important:</b> the editor opens only where LumiDMX Remake Full is activated: it must be in
+the same folder as the Full (it reads the Full's <code>dmx_simulator_settings.json</code>). Otherwise it says
+<i>Please register LumiDMX Remake.</i></p></div>
+
+<h2>In this chapter</h2>
+<ul class="toc">
+<li><a href="window.html">The editor window</a> - the menus, the toolbar, the list, the pages on the right.</li>
+<li><a href="channels.html">Channels and presets</a> - adding, changing, ordering; types, functions, Fade.</li>
+<li><a href="info.html">Fixture information and pictures</a> - name, type, pan and tilt, the pictures and gobos.</li>
+<li><a href="test.html">Test and Save</a> - what Test checks, saving.</li>
+<li><a href="import.html">Import from other formats</a> - manual, QLC+, Open Fixture Library, GDTF.</li>
+<li><a href="library.html">Check against the library</a> - the same fixture already in the library.</li>
+<li><a href="export.html">Export</a> - report, HTML, PDF, pictures, JSON.</li>
+<li><a href="files.html">Files and settings</a> - where the editor keeps what.</li>
+</ul>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../macros/commands.html" title="Previous">Commands</a> &nbsp;|&nbsp; Up: <a href="../welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="../fe/window.html" title="Next">The editor window</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

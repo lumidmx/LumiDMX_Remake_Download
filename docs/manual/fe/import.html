@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Import from other formats</title>
+<meta name="keywords" content="Import; DMX table from the manual; paste; QLC+; .qxf; Open Fixture Library; OFL; .json; GDTF; .gdtf; gobo pictures from GDTF; lib\images\gdtf; gdtf_gobos; Tables found; Lines not used; modes; DMX mode; Create the fixture; drop a file">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../fe/test.html" title="Previous: Test and Save">&lt; Previous</a> <a href="../fe/library.html" title="Next: Check against the library">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../fe/index.html">LumiDMX Fixture Editor</a> &gt; <b>Import from other formats</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Import from other formats</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>A profile can be made from what the maker of the fixture gives, instead of typing every channel:</p>
+<div class="pic"><img src="../img/fe_import_menu.png" alt="The Import list"></div>
+<table class="wide">
+<tr><th>Import</th><th>From</th></tr>
+<tr><td><span class="ui">DMX table from the manual (paste)...</span></td><td>the DMX table of the manual (PDF, web page,
+  text), copied and pasted</td></tr>
+<tr><td><span class="ui">QLC+ fixture (.qxf)...</span></td><td>a fixture file of QLC+</td></tr>
+<tr><td><span class="ui">Open Fixture Library (.json)...</span></td><td>a fixture of the Open Fixture Library
+  (open-fixture-library.org)</td></tr>
+<tr><td><span class="ui">GDTF file (.gdtf)...</span></td><td>a GDTF file (gdtf-share.com, or the maker's site)</td></tr>
+</table>
+<p>The list opens from the toolbar's <span class="ui">Import</span> button and from <span class="ui">File &gt; Import</span>.
+A <code>.qxf</code>, <code>.json</code> or <code>.gdtf</code> file can also be dropped on the editor's window.</p>
+<p>In each case a window shows the fixture that will be made, before anything is changed. <span class="ui">Create the
+fixture</span> puts it in the editor as a <b>new profile, not saved yet</b>: check it, correct what is needed, run
+<a href="test.html">Test</a> and save it.</p>
+
+<h2>The DMX table of the manual</h2>
+<div class="pic"><img src="../img/fe_import_paste.png" alt="Import: the DMX table pasted"></div>
+<p class="cap">A manual with three DMX modes pasted; the 16 channel mode is the one imported.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Manufacturer</span>, <span class="ui">Name</span>,
+  <span class="ui">Fixture type</span> - of the profile that will be made. The name proposed is the model and the
+  number of channels.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The text of the manual. Paste it here (<kbd>Ctrl</kbd>+<kbd>V</kbd>); it can
+  also be typed or corrected here: the right side follows every change.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Paste</span> puts in what is in the clipboard,
+  <span class="ui">Clear</span> empties the box.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Tables found</span> - a manual often has one table for each DMX
+  mode. Choose the one to import; the channels count again from 1 in each table.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Lines not used</span> - the lines that are neither a channel nor a
+  DMX range, with their line numbers, so you can see that nothing was missed.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>The fixture that will be made: the channels, the types and the presets.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Create the fixture</span>.</td></tr>
+</table>
+
+<h3>What is understood in the text</h3>
+<ul>
+<li><b>A channel</b> is a line that starts with its number: <code>1</code>, <code>CH1</code>, <code>Ch. 1</code>,
+  <code>Channel 1</code>, <code>Kanal 1</code>, <code>#1</code>. The text after the number is the name of the channel.
+  Lines such as <code>CH16 Channel Description</code> or <code>16 channel mode</code> are titles: they start a new
+  table.</li>
+<li><b>A DMX range</b> is written <code>0-7</code>, <code>000-007</code>, <code>0~7</code>, <code>0 - 7</code>,
+  <code>0 to 7</code> or <code>0..7</code>; the text after it is the name of the preset. A line with ranges and no
+  channel number belongs to the channel above it. Values with a unit (<code>0-100%</code>, <code>0-540&deg;</code>,
+  <code>0-20Hz</code>) are not ranges.</li>
+<li>A channel with one range 0-255 (or none) gets <b>no presets</b>: it is a channel that goes smoothly, such as
+  Dimmer, Red or Pan.</li>
+<li>A table copied from a PDF often comes one cell on each line: that is understood too.</li>
+<li>When a channel number is missing, an empty channel is put in its place, so the next channels keep their
+  numbers.</li>
+<li>The angle written on a Pan or Tilt line (<code>540&deg;</code>) becomes <span class="ui">Max Pan</span> /
+  <span class="ui">Max Tilt</span>.</li>
+</ul>
+
+<h2>QLC+, Open Fixture Library and GDTF files</h2>
+<div class="pic"><img src="../img/fe_import_qlc.png" alt="Import: a QLC+ file"></div>
+<p class="cap">A QLC+ file with two modes; the 12 channel mode is selected.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Manufacturer</span>, <span class="ui">Name</span>,
+  <span class="ui">Fixture type</span> - from the file; they can be changed.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The file; <span class="ui">Other file...</span> opens another one.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The <b>modes</b> of the file: the profile is made from the one selected (one profile
+  for each mode; import the file again for another mode).</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Notes</b> - what the file does not have and what was guessed.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The fixture that will be made.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Create the fixture</span>.</td></tr>
+</table>
+<p>The Open Fixture Library and GDTF windows are the same. From the files come the channels and their types, the fine
+channels, the presets with their names and colours, the beam angle and the pan and tilt angles. Fixtures with many
+pixels (LED bars, matrices) are made channel by channel.</p>
+
+<h2>The gobo pictures of a GDTF file</h2>
+<p>A GDTF file carries the pictures of its gobo wheels. The editor takes them: every gobo preset gets its picture and
+its gobo file, as <span class="ui">Gobo...</span> on the preset's page would give it.</p>
+<div class="pic"><img src="../img/fe_import_gdtf_gobos.png" alt="The gobos of a GDTF file in the editor"></div>
+<p class="cap">A fixture made from a GDTF file: the gobo wheel with its pictures.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The picture of each gobo (32 x 32), on black: white is where the light goes
+  through.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The function is <span class="ui">Gobo...</span>, the name comes from the file
+  (<code>Gobo 7</code>).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">High Res. Gobo</span>: the full picture, saved as a .png in
+  <code>lib\images\gdtf\&lt;manufacturer name&gt;\</code> of the LumiDMX folder. The 3D shows the gobo from this
+  file.</td></tr>
+</table>
+<ul>
+<li>The files are written when you press <span class="ui">Create the fixture</span> (the list before it only shows
+  them).</li>
+<li>The LumiDMX folder is the editor's folder when it has <code>lib\images</code>; otherwise the folder the 3D
+  next to it takes its data from. When neither has <code>lib\images</code>, the pictures go to
+  <code>gdtf_gobos</code> next to the editor and the <b>Notes</b> say that the 3D will not see them there.</li>
+<li>The open slot of a wheel keeps the usual <b>Open</b> picture.</li>
+<li>QLC+ and Open Fixture Library files have no gobo pictures.</li>
+</ul>
+
+<h2>What the editor guesses</h2>
+<ul>
+<li><b>The type of a channel</b>, when the source has none (always for a pasted table), from its name: Dimmer, Shutter,
+  Red, Pan, Gobo ... A name it does not know gets <b>None</b>.</li>
+<li><b>The pictures of the presets</b>: a preset whose name says a function (Shutter Open, Strobe, Left loop ...) gets
+  the picture of that function; one whose name is a colour gets that colour (two colours: half each).</li>
+<li><b>The default function</b>: the first preset of each channel; <b>Fade</b>: by the usual rule (see
+  <a href="channels.html">Channels and presets</a>).</li>
+</ul>
+<div class="important"><p><b>Important:</b> always check the types in the list after <span class="ui">Create the
+fixture</span>. QLC+ and Open Fixture Library files have no gobo pictures: give them in the editor (<span class="ui">Gobo...</span>
+on the preset's page, see <a href="info.html">Fixture information and pictures</a>).</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../fe/test.html" title="Previous">Test and Save</a> &nbsp;|&nbsp; Up: <a href="../fe/index.html">LumiDMX Fixture Editor</a> &nbsp;|&nbsp; <a href="../fe/library.html" title="Next">Check against the library</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

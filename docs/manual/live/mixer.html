@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The General Mixer</title>
+<meta name="keywords" content="General Mixer; Mixer Panel; fader; channel; universe; Set all; Reset all; Push left; Push right; LTP; HTP; MIXED; mix mode; IN; MAN; OUT; AUTO; channel mode; S; M; link channels; preset; Freeze; Blackout">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/library.html" title="Previous: The Library">&lt; Previous</a> <a href="../live/fixctl.html" title="Next: Fixture Control">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>The General Mixer</b></div></div><!--/NAV-->
+<div class="page">
+<h1>The General Mixer</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The <span class="ui">General Mixer</span> button of the function bar shows or hides the mixer under the Live panel:
+the 512 channels of one universe as faders, grouped by fixture. Drag the line above it to make it taller or lower.
+Under it, <span class="ui">Mixer Panel</span> and <span class="ui">Fixture Control</span> switch between the mixer and
+Fixture Control (the <span class="ui">Fixtures</span> button).</p>
+
+<div class="pic"><img src="../img/live_mixer.png" alt="The General Mixer"></div>
+<p class="cap">The General Mixer with the first fixture of Andrei_edit. <span class="ui">Cerc fata</span> runs: its
+pan and tilt channels (10 to 13) read AUTO.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Universe</span> - the universe shown (1 to 16).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Set all</span> - every channel of the universe to
+  full; <span class="ui">Reset all</span> - every value to 0, without stopping any button and without changing OUT /
+  MAN / IN; <span class="ui">Push left</span>, <span class="ui">Push right</span> - every value one channel to the
+  left or to the right.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The settings of the channels (below): <span class="ui">LTP</span>,
+  <span class="ui">HTP</span>, <span class="ui">MIXED</span>, <span class="ui">IN</span>, <span class="ui">MAN</span>,
+  <span class="ui">OUT</span>.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Set All from Current Univers</span> - gives the
+  setting chosen at 3 to all the channels of the universe.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The picture of the channel, from the fixture's profile. For a channel
+  with presets (colours, gobos ...), a click on it lists them: the one chosen sets the channel.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>The value, 0 to 255.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td>The fader, with the name of the channel along it. Drag it, or click
+  anywhere on its track.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><b>S</b> - full or nothing, held by hand (MAN): a channel under half
+  goes to 255, the others to 0. <b>M</b> - link: the channels with M move together when one of them is
+  dragged.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td>The state of the channel (below), with its number above it.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td>The fixture: its name over its channels. The faders of one fixture
+  have one colour, those of the next fixture the other; channels of no fixture are grey.</td></tr>
+</table>
+
+<h2>The state of a channel: OUT, AUTO, MAN, IN</h2>
+<table class="wide">
+<tr><th>State</th><th>What it means</th></tr>
+<tr><td><b>OUT</b></td><td>The program's own output: the buttons and the faders set it.</td></tr>
+<tr><td><b>AUTO</b></td><td>An OUT channel a running button drives now.</td></tr>
+<tr><td><b>MAN</b></td><td>Held by hand at its value: the buttons do not change it.</td></tr>
+<tr><td><b>IN</b></td><td>Taken from the DMX input (see <a href="../patch/hardware.html">DMX Hardware</a>, DMX-IN).</td></tr>
+</table>
+<ul>
+<li>A click on the state changes it: OUT, then MAN (at the value it has), then IN, then OUT again.</li>
+<li>Dragging the fader of a channel a running button drives (AUTO) puts it on MAN, so the button no longer moves it.
+  Dragging an idle OUT channel sets its value and leaves it OUT: the next button that uses it changes it.</li>
+<li><span class="ui">IN</span>, <span class="ui">MAN</span> and <span class="ui">OUT</span> on the function bar give that
+  state to every channel of the universe shown in the mixer, nothing else.</li>
+</ul>
+
+<h2>LTP, HTP, MIXED</h2>
+<p>How the values of several buttons on one channel are put together: <b>LTP</b> - the latest wins, <b>HTP</b> - the
+highest value wins, <b>MIXED</b> - their average.</p>
+<p>To change the setting of channels, press the setting at 3 (it stays pressed): a tick box appears on every channel,
+ticked where the channel has it already. Tick the channels that must get it - or tick
+<span class="ui">Set All from Current Univers</span> for all of them -, then press the setting again to finish. The
+same works for IN, MAN and OUT. The commands <code>setChMixMode</code> and <code>setChMode</code> do it too (see
+<a href="../macros/commands.html">Commands</a>).</p>
+
+<h2>Freeze and Blackout</h2>
+<p><span class="ui">Freeze</span> (function bar) holds the light that goes out as it is now; pressed again, it lets it
+go. The buttons go on running underneath. The command <code>blackout</code> switches all the output off and on again
+in the same way; <code>freeze</code> is the command of Freeze.</p>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/library.html" title="Previous">The Library</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/fixctl.html" title="Next">Fixture Control</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

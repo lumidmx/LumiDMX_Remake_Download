@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="one tab (Web Remote); another tab (Web Remote); Use this tab; IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Web Remote (the phone)</title>
+<meta name="keywords" content="Web Remote; phone; remote on the phone; tablet; browser; Wi-Fi; router; IP address; port 8080; code (Web Remote); pair a phone; Forget the phones; Move (Web Remote); pinch zoom; landscape; firewall; keyboard (Web Remote); shortcut keys on the phone; Arrange (Web Remote keyboard); hide a key (Web Remote)">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/stageview.html" title="Previous: Stage View">&lt; Previous</a> <a href="../live/outloop.html" title="Next: Out loop">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Web Remote (the phone)</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Web Remote (the phone)</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+<p>The Live Panel on your phone: the phone shows the page exactly as it is on the PC, and you press its buttons and move its
+sliders with your finger. On the right are the page, TAP, Auto, &frac12;, &times;2 and Reset Tap of <a href="taptempo.html">Tap Tempo</a>. The phone
+and the PC must be on the <b>same router (Wi-Fi)</b>; no internet is needed and no app is installed - the phone uses its
+browser (Chrome, Safari).</p>
+<h2>Switching it on (on the PC)</h2>
+<p><span class="ui">Options</span> &gt; <span class="ui">Web Remote (phone)</span>:</p>
+<div class="pic"><img src="../img/live_webremote_win.png" alt="Web Remote - the phone"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">On</span> - the server for the phone. <b>Off by default</b>: it starts only when you tick it. Left ticked, it starts again with the program; untick it to stop it. Under it: ON with the port, or OFF (and why it could not start, for example a port already taken).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The address to type in the phone's browser: this PC's IP on the network and the port.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The <b>code</b>: the first time, a phone asks for these 4 digits. After that the phone is remembered and does not ask again.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">New code</span>: another code for new phones (the phones already paired stay paired).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>How many phones are connected now.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Port</span> (8080) and <span class="ui">Use this port</span>: change it only when another program uses 8080. The address changes with it.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Forget the phones</span>: every phone asks for the code again.</td></tr>
+</table>
+
+<p>The first time, Windows may ask whether LumiDMX may use the network: allow it for <b>Private networks</b>. If the phone
+cannot open the address, check that it is on the same Wi-Fi as the PC (not on mobile data) and that the Windows firewall
+lets LumiDMX through.</p>
+<h2>On the phone</h2>
+<p>Hold the phone <b>sideways (landscape)</b>: the page is wide, as on the PC. Open the address, type the code once. The page
+fills the whole height of the screen (no bar above or under it); all the buttons of the phone are in a column on the right.
+On a phone wider than the page the page stays in the middle; on a narrower one the rest of it is on the right: drag it
+with a finger on the background, or with Move ON.</p>
+<div class="pic"><img src="../img/live_webremote_phone.png" alt="The Live Panel on the phone"></div>
+<p class="cap">The Main Page of a project on a phone held sideways: the page on the whole height, the buttons on the right.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The page shown now. Press it: the list of the pages of the Live Panel opens beside it; press one to go to it. The phone shows its own page: changing it on the phone does not change the page on the PC.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>TAP</b>: as TAP in the Monitor (the phone's own timing between taps is used, so Wi-Fi delays do not change the BPM). Grey when Tap Tempo is off on the PC.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The tempo (BPM), the same number as in the Monitor and Sound2Light.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Reset Tap</b>: the same as Reset in Tap Tempo - the speeds and the sliders go back as they were before the TAP.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>Auto</b>: ON / OFF, as in the Monitor.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>&frac12;</b> and <b>&times;2</b>: half or double the tempo.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><b>Move</b>: OFF = the buttons react to your fingers. ON = the buttons do not react: drag to move the page, pinch with two fingers to zoom (pinching out goes down to the whole page), double tap = a bigger view or back to the whole height. Use it to look closer without pressing anything by mistake.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><b>Full screen</b>: the browser hides its address bar and the phone's bars (on phones that allow it). Press it again to come back.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td>The <b>keyboard</b>: the keyboard shortcuts of the Live Panel's buttons, as keys you can press on the phone (see <a href="#keyboard">The keyboard</a> below). Blue while it is open.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td><b>OK</b> while the phone is connected, <b>Not connected</b> when it lost the PC (it tries again by itself).</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td>A button: press it as with the mouse. A Flash button stays on while your finger is on it. Several fingers press several buttons at once.</td></tr>
+<tr><td class="n"><span class="n">12</span></td><td>A slider or a speed bar: put your finger on it and drag.</td></tr>
+</table>
+
+<ul>
+<li>Even with Move OFF, two fingers placed on the background (not on a button) zoom, and one finger on the background moves the
+page.</li>
+<li>The picture on the phone is drawn by the PC, so the phone shows exactly what the PC shows: the buttons that run, the
+sliders, the pictures, the colours.</li>
+<li>If the phone goes to sleep or loses the Wi-Fi while a finger holds a Flash button, the PC lets it go after 3 seconds.</li>
+<li>Several phones can be connected at the same time.</li>
+<li><b>One tab at a time.</b> Every open tab of the Web Remote keeps asking the PC for the picture; with several tabs the
+browser's connections to the PC are all taken and a button let go waits in the queue (a FLASH stays on for seconds). So
+when the Web Remote is opened in a new tab, the older tabs of the same browser stop at once - they let go of what they
+hold - and show <i>Web Remote is open in another tab</i>. <span class="ui">Use this tab</span> makes that one work again
+(and stops the other).<div class="pic"><img src="../img/live_webremote_tab.png" alt="Web Remote is open in another tab"></div></li>
+</ul>
+
+<h2 id="keyboard">The keyboard</h2>
+<p>The keyboard button (9 above) opens the keys that have a shortcut on a Live Panel button of the project - only those. A key
+does what the same key does on the PC's keyboard: it starts every button that has that shortcut, on every page. The column on
+the right stays free, so TAP, Reset Tap and Auto work with the keyboard open. The keys take the whole screen (no band on
+top); with the phone held upright they come two a row. Press the keyboard button again to close it.</p>
+<div class="pic"><img src="../img/live_webremote_keys.png" alt="The keyboard on the phone"></div>
+<p class="cap">The keyboard of a project, with Space held.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The keyboard button: blue while the keyboard is open.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Arrange</b>, in Main Page's place while the keyboard is open (the pages are of no use here): OFF = the keys work. ON = you put them in the order you want (see below).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>FLASH</b>: the key works only while your finger is on it, as a Flash button. The FLASH keys come first.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td>A key held: lighter, with a thick white frame.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The names of the buttons the key starts (three at most, then "+ more"). The Main Page's buttons are named first. The key has the colour of its first button.</td></tr>
+</table>
+<ul>
+<li>The phone is not the PC's keyboard: its keys work even while you type in a box on the PC or an editor window is open there.</li>
+<li>Change a shortcut on the PC (the button's properties): the phone's keyboard follows by itself.</li>
+<li>If the phone goes to sleep or loses the Wi-Fi while a finger holds a FLASH key, the PC lets it go after 3 seconds.</li>
+</ul>
+
+<h3>Arrange the keys</h3>
+<div class="pic"><img src="../img/live_webremote_arrange.png" alt="Arrange on the phone's keyboard"></div>
+<p class="cap">Arrange ON: Backspace hidden.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>Arrange: ON</b> (red). The keys do nothing now - nothing starts by mistake.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The keys have a dashed frame. Drag a key to its place: a dashed gap shows where it lands, the others make room.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>&#10005;</b> hides the key on the phone (it still works on the PC's keyboard).</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td>The hidden keys, at the end of the list, darker.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The green arrow brings the key back.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>Move: ON</b> - the list scrolls with the finger (to reach the hidden keys at the end); the keys do not move, the &#10005; and the arrows are not there, nothing is hidden by mistake. Move OFF to drag again. (With Arrange OFF, Move ON scrolls the keys too: they do not react.)</td></tr>
+</table>
+<p>Press <b>Arrange</b> again (OFF): the order and the hidden keys go to the PC and are kept with the project, in its
+Sound2Light data (S2L.dat) - the project shows as changed; <b>Save</b> it to keep them. Every phone gets the same order. A key
+of a new shortcut comes at the end; a shortcut taken away disappears.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/stageview.html" title="Previous">Stage View</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/outloop.html" title="Next">Out loop</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

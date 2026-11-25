@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>MIDI</title>
+<meta name="keywords" content="MIDI tab; MIDI; MIDI In; MIDI Out; MIDI port; loopMIDI; Refresh; MIDI-learned buttons; Scale MIDI-Data 1; Scale MIDI-Data 2; 127 to 255; Apc mini mk2 - Colors In-Out feedback; APC mini mk2; Akai; Virtual port; Lumidmx Remake; MIDI learn">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/hardware.html" title="Previous: DMX Hardware">&lt; Previous</a> <a href="../live/index.html" title="Next: Mixer &amp; Live">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <b>MIDI</b></div></div><!--/NAV-->
+<div class="page">
+<h1>MIDI</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The <span class="ui">MIDI</span> tab of Setup &amp; Patch connects a MIDI controller - pads, faders, a keyboard - so that
+its controls start the buttons of the Live panel and move its sliders. The ports and the options are settings of the
+program; which control does what is kept in the project, with each button.</p>
+
+<div class="pic"><img src="../img/patch_midi.png" alt="The MIDI tab"></div>
+<p class="cap">The MIDI tab with Andrei_edit.x1 open: no port picked, 78 buttons that have a MIDI control.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>In</b> and <b>Out</b> - the MIDI ports. <span class="ui">In</span>: where the
+  controls come from. <span class="ui">Out</span>: where the program answers - the lights of the pads, for a
+  controller that shows the state of the buttons. <span class="ui">Refresh</span> reads the list of ports again (after
+  a controller was plugged in).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>The state</b> - the ports picked, and how many buttons of the project have
+  a MIDI control (MIDI-learned). It turns green while the In port works.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Scale MIDI-Data 1 / 2 (127) to DMX (255)</b> (below).</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Apc mini mk2 - Colors In-Out feedback</b> (below).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>Its state</b> - whether its link is running.</td></tr>
+</table>
+
+<h2>Giving a button its MIDI control</h2>
+<p>Pick the <span class="ui">In</span> port first (or use the APC mini mk2 link, below). Then, in the <b>Live-Object
+Propertys</b> of the button, click into the field under <span class="ui">MIDI</span> and press - or move - the control
+on the controller: the field shows it and <span class="ui">MIDI</span> is ticked. See
+<a href="../remote/index.html">Remote, controllers and MIDI</a>.</p>
+
+<h2>Scale MIDI-Data</h2>
+<p>A MIDI message carries two numbers after its kind: <b>Data 1</b> (which note or control) and <b>Data 2</b> (how hard,
+or where the fader is). Both go from 0 to 127, while DMX goes from 0 to 255. The projects keep the MIDI of their
+buttons in the DMX range, so with these boxes ticked (as at first) the numbers received are scaled up to it (127
+becomes 255) before they are compared, and scaled back down for what is sent to the controller. Leave both ticked,
+unless a project's MIDI was learned with them off.</p>
+
+<h2>Apc mini mk2 - Colors In-Out feedback</h2>
+<p>For the AKAI APC mini mk2: the colours of its pads follow the state of the buttons (running, stopped, a group, a
+function), as set in its own editor. Ticked (as at first), the program starts a link for the controller and opens the
+<b>Apc Mini Mk2 - Colors / Grups / Function - Editor</b> window; at the start of the program the editor waits in the
+tray. In the editor, pick <i>Lumidmx Remake</i> in the <span class="ui">Virtual port</span> list to connect. The
+colours are kept in <code>Default Project.json</code>, next to the program.</p>
+<div class="important"><p><b>Important:</b> the link and the In / Out ports above cannot work together. Ticking the box
+clears the ports; picking a port while the link runs turns the box off, with a message.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/hardware.html" title="Previous">DMX Hardware</a> &nbsp;|&nbsp; Up: <a href="../patch/index.html">Setup &amp; Patch</a> &nbsp;|&nbsp; <a href="../live/index.html" title="Next">Mixer &amp; Live</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

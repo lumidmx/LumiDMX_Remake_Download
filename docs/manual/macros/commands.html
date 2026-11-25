@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Commands</title>
+<meta name="keywords" content="commands; list of commands; command list; help (Command Line); Command reference; Setall; ResetAll; U(Universe); SetDMX; Pushleft; Pushright; setChMode; setChModeAll; setChMixMode; setOffset; fixtureSwapXY; fixtureInvertPan; fixtureInvertTilt; setVolume; random; blackout; freeze; incdmx; decdmx; runObject; stopObject; stopAllObjects; setSeqSpeed; seqBlackout; setLivePageIndex; setSlider; setSizePan; setSizeTilt; setSizePT; showMixer; hideMixer; showFixtures; hideFixtures; showDMXBoard; hideDMXBoard; showCmd; hideCmd; showfrm; frmtimer; frmdmxvis; frmstageview; showAudioMixer; hideAudioMixer; lockLivePanel; unlockLivePanel; Macro; wait; loop; endloop; var; inc; dec; variables; help; Execprog; Clear; DMXshow; OpenFixtureLibPath; OpenConfig; runS2L; stopS2L">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../macros/index.html" title="Previous: Macros and the Command Line">&lt; Previous</a> <a href="../fe/index.html" title="Next: LumiDMX Fixture Editor">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../macros/index.html">Macros and the Command Line</a> &gt; <b>Commands</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Commands</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The list of the commands that <code>help</code> shows on the Command Line: all the commands of LumiDMX
+Remake, in the same groups. The commands work the same in a button's On Start / On Stop, in a slider's
+commands, in a macro and on the Command Line. Where the commands are written:
+<a href="index.html">Macros and the Command Line</a>.</p>
+
+<h2>Names in the commands</h2>
+<p>In every command a name - of an object, a sequence, a slider, a macro or a variable - is found whatever its capital
+letters and extra blanks: <code>Blue Wash</code>, <code>blue&nbsp;&nbsp;&nbsp;wash</code> and <code>BLUE WASH</code>
+are the same name. A blank between two words counts: <code>BlueWash</code> is another name.</p>
+
+<h2>Mixer commands</h2>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><code>Setall</code></td><td>Sets every channel of the current universe to 100%.</td></tr>
+<tr><td><code>ResetAll</code></td><td>Sets every channel to 0% - never touches OUT / MAN / IN or stops a running button,
+  only values.</td></tr>
+<tr><td><code>U(Universe)</code></td><td>Sets the mixer's current universe (1-16): the one the channel commands work
+  on.</td></tr>
+<tr><td><code>SetDMX(Channel, Value)</code></td><td>Sets one DMX channel to a value (0-255).</td></tr>
+<tr><td><code>(1-5+8) = Value</code></td><td>Sets several channels at once - here the channels 1 to 5 and 8.</td></tr>
+<tr><td><code>Pushleft</code></td><td>Shifts every value left by one channel.</td></tr>
+<tr><td><code>Pushright</code></td><td>Shifts every value right by one channel.</td></tr>
+<tr><td><code>setChMode(Channel, Mode)</code></td><td>Sets a channel's mode: <code>man</code>, <code>in</code>,
+  <code>out</code>.</td></tr>
+<tr><td><code>setChModeAll(Mode)</code></td><td>Sets every channel's mode: <code>man</code>, <code>in</code>,
+  <code>out</code>.</td></tr>
+<tr><td><code>setChMixMode(Channel, Mode)</code></td><td>Sets a channel's mix mode, as the Mixer's settings do:
+  <code>ltp</code>, <code>htp</code> (the highest value wins), <code>mixed</code> (the average of the values).</td></tr>
+<tr><td><code>setOffset(Univ, Ch, Slider)</code></td><td>Adds the slider's value to a channel's output.</td></tr>
+<tr><td><code>fixtureSwapXY(Univ, StartAdr)</code></td><td>Swaps a fixture's X / Y (Pan / Tilt).</td></tr>
+<tr><td><code>fixtureInvertPan(Univ, Adr)</code></td><td>Inverts a fixture's Pan channel.</td></tr>
+<tr><td><code>fixtureInvertTilt(Univ, Adr)</code></td><td>Inverts a fixture's Tilt channel.</td></tr>
+<tr><td><code>setVolume(0..100)</code></td><td>Sets Windows' master volume: 100 = maximum, 50 = half. In a slider's
+  <i>On Change Command</i>, <code>setVolume(its own name)</code> moves the volume with the slider (the slider's range
+  0..100).</td></tr>
+<tr><td><code>random</code></td><td>Puts random values on the mixer.</td></tr>
+<tr><td><code>blackout</code></td><td>Turns Blackout on / off (the output only, as Freeze - the programmed and live
+  values underneath are not touched).</td></tr>
+<tr><td><code>freeze</code></td><td>Turns Freeze on / off.</td></tr>
+<tr><td><code>incdmx(Channel, Value)</code></td><td>Increments a DMX value.</td></tr>
+<tr><td><code>decdmx(Channel, Value)</code></td><td>Decrements a DMX value.</td></tr>
+</table>
+
+<h2>Live-Panel commands</h2>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><code>runObject(Name)</code></td><td>Starts an object by its name: a button / sequence, or a Show button by its
+  show's name.</td></tr>
+<tr><td><code>stopObject(Name)</code></td><td>Stops an object by its name.</td></tr>
+<tr><td><code>stopAllObjects</code></td><td>Stops every object on the panel.</td></tr>
+<tr><td><code>setSeqSpeed(Name, Value)</code></td><td>Sets a sequence's speed: 100 = its normal speed, less = slower,
+  more (up to 255) = faster.</td></tr>
+<tr><td><code>seqBlackout(Name)</code></td><td>Turns one sequence's own Blackout on / off.</td></tr>
+<tr><td><code>setLivePageIndex(Index)</code></td><td>Switches the page shown (0 = the first page).</td></tr>
+<tr><td><code>setSlider(Slider, Value)</code></td><td>Sets a slider to a value.</td></tr>
+</table>
+
+<h2>Pan / Tilt Size commands</h2>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><code>setSizePan(Value)</code></td><td>Makes the Pan movements of the fixtures ticked in <i>Pan / Tilt Size</i>
+  bigger or smaller round their own centre: -100 = held at the centre, -50 = half, 0 = as programmed, +100 = twice as
+  big.</td></tr>
+<tr><td><code>setSizeTilt(Value)</code></td><td>The same for the Tilt movements.</td></tr>
+<tr><td><code>setSizePT(Value)</code></td><td>Adds the same value to Pan and Tilt (the <b>P+T</b> row): they keep their
+  difference; <code>setSizePT(0)</code> gives them back their own values.</td></tr>
+</table>
+<p>The value can be a slider's name: its value (for example a slider from -100 to 100 with the On Change Command
+<code>setSizePan(its own name)</code>). The commands set the rows as the MIDI faders do; right click the box in the
+top bar for its settings.</p>
+
+<h2>Windows commands</h2>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><code>showMixer</code> / <code>hideMixer</code></td><td>Shows / hides the General Mixer.</td></tr>
+<tr><td><code>showFixtures</code> / <code>hideFixtures</code></td><td>Shows / hides Fixture Control.</td></tr>
+<tr><td><code>showDMXBoard</code> / <code>hideDMXBoard</code></td><td>Shows / hides the DMX Board.</td></tr>
+<tr><td><code>showCmd</code> / <code>hideCmd</code></td><td>Shows / hides the Command Line.</td></tr>
+<tr><td><code>showfrm(frmtimer)</code></td><td>Shows the Timer and ticks <i>Time code</i> in Monitor settings.</td></tr>
+<tr><td><code>showfrm(frmdmxvis)</code></td><td>Shows the DMX Visualizer and ticks <i>DMX Visualizer</i> in Monitor
+  settings.</td></tr>
+<tr><td><code>showfrm(frmstageview)</code></td><td>Shows Stage View and ticks <i>Stage View</i> in Monitor settings (see <a href="../live/stageview.html">Stage View</a>).</td></tr>
+<tr><td><code>showAudioMixer</code> / <code>hideAudioMixer</code></td><td>Opens / closes the Windows Volume
+  Mixer.</td></tr>
+<tr><td><code>lockLivePanel</code> / <code>unlockLivePanel</code></td><td>Locks the Live-panel, as its <i>Lock
+  Live-panel</i> button (only the pages and the panel, full screen) / unlocks it, as <kbd>Esc</kbd>.</td></tr>
+<tr><td><code>Macro</code></td><td>Opens the Macro Editor.</td></tr>
+</table>
+
+<h2>Macros commands</h2>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><i>a macro's name</i></td><td>Runs that macro.</td></tr>
+<tr><td><code>wait(ms)</code></td><td>Waits that many milliseconds before the macro's next line.</td></tr>
+<tr><td><code>loop(4)</code> ... <code>endloop</code></td><td>Runs the lines between them 4 times (loops inside loops
+  too; <code>loop(0)</code> skips them).</td></tr>
+<tr><td><code>var(MyVar, Value)</code></td><td>Keeps a whole number under a name.</td></tr>
+<tr><td><code>inc(MyVar)</code> / <code>inc(MyVar, 2)</code></td><td>Adds 1 (or 2) to it.</td></tr>
+<tr><td><code>dec(MyVar)</code> / <code>dec(MyVar, 2)</code></td><td>Takes 1 (or 2) from it.</td></tr>
+</table>
+<p><code>wait</code>, <code>loop</code> and <code>endloop</code> work only inside a macro. A variable's name can stand
+for a number in any command: <code>setDMX(MyVar, 255)</code>, <code>wait(MyVar)</code>, <code>loop(MyVar)</code>,
+<code>setSlider(Dim, MyVar)</code>. Variables work alike in macros, buttons, sliders and on the Command Line, and are
+kept until a project is opened.</p>
+
+<h2>Misc commands</h2>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><code>help</code></td><td>Shows this list on the Command Line.</td></tr>
+<tr><td><code>Execprog(Filename)</code></td><td>Opens an external program.</td></tr>
+<tr><td><code>Clear</code></td><td>Clears the Command Line's log.</td></tr>
+<tr><td><code>DMXshow</code></td><td>Opens a live view of the raw DMX output for every universe.</td></tr>
+<tr><td><code>OpenFixtureLibPath</code></td><td>Opens a file browser at the chosen .lfi2 fixture library
+  folder.</td></tr>
+<tr><td><code>OpenConfig</code></td><td>Opens a file browser at the current project's own extracted folder.</td></tr>
+<tr><td><code>runS2L</code> / <code>stopS2L</code></td><td>Starts / stops Sound2Light's audio capture
+  (<span class="ui">Rec</span>).</td></tr>
+</table>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../macros/index.html" title="Previous">Macros and the Command Line</a> &nbsp;|&nbsp; Up: <a href="../macros/index.html">Macros and the Command Line</a> &nbsp;|&nbsp; <a href="../fe/index.html" title="Next">LumiDMX Fixture Editor</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

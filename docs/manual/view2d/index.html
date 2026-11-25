@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>2D View</title>
+<meta name="keywords" content="2D View; 2D-Console; console (2D); Dock Console; Undock Console; Show all groups; Auto Adjust; Back (2D View); Width (2D View); Height (2D View); Zoom (2D View); 1:1; Select (2D View); Move (2D View); Background Image; Stretch Image; Clear Background; lasso; band selection">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../s2l/saved.html" title="Previous: What is saved">&lt; Previous</a> <a href="../view3d/index.html" title="Next: 3D Previsualisation">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <b>2D View</b></div></div><!--/NAV-->
+<div class="page">
+<h1>2D View</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The 2D View is a plan of the rig as you draw it: every fixture is a small box you can put where it hangs. Click the boxes
+to select fixtures - it is the same selection as in <a href="../live/fixctl.html">Fixture Control</a>, which is shown under
+it - and set them. Open it with the <span class="ui">2D View</span> tab of the top bar. It works as the 2D-Console of LumiDMX X1.</p>
+
+<div class="pic"><img src="../img/view2d.png" alt="The 2D View"></div>
+<p class="cap">Andrei_edit after Show all groups and Auto Adjust; five fixtures selected (orange). The last one clicked, a Blinder, opened its group in Fixture Control.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Dock Console</span> - the console back in the tab.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Undock Console</span> - the console in a window of its own (on a second screen, for example).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Show all groups</span> - every fixture of the patch; not pressed, only the group open in Fixture Control.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Auto Adjust</span> - puts the fixtures in order, side by side.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Back</span> - right after Auto Adjust: the fixtures go back where they were. Grey when there is nothing to go back to.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Width</span> / <span class="ui">Height</span> - the size of the console (the white area), in pixels.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Zoom</span> - from 0 to 200 % (<span class="ui">-</span> and <span class="ui">+</span> step by step).</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">1:1</span> - the zoom back to 100 %.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">Mouse</span>: <span class="ui">Select</span> - to work with the lights; <span class="ui">Move</span> - to arrange the console (see below).</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td><span class="ui">Background Image</span>: <span class="ui">Add</span> a picture under the fixtures (the plan of the stage, a photo of the truss), <span class="ui">Stretch Image</span> to the size of the console, <span class="ui">Clear Background</span>.</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td>The fixtures: each a box with "U:" (its universe) and "C:" (its start address), and the picture of what Fixture Control set last. Selected: orange.</td></tr>
+<tr><td class="n"><span class="n">12</span></td><td>Fixture Control, for the fixtures selected.</td></tr>
+</table>
+
+
+<h2>Select - working with the lights</h2>
+<table class="keys wide">
+<tr><td><b>click</b></td><td>Selects a fixture, or takes it out of the selection. Fixture Control opens the tab of its group.</td></tr>
+<tr><td><b>drag on the empty console</b></td><td>A band: selects what it touches; what it leaves is unselected again.</td></tr>
+</table>
+
+<p>Then set the fixtures in Fixture Control: they move, change colour and so on, and the boxes show the picture of what was set.</p>
+
+<h2>Move - arranging the console</h2>
+<table class="keys wide">
+<tr><td><b>click</b></td><td>Marks a fixture to be moved (a blue dotted frame), or unmarks it.</td></tr>
+<tr><td><b>drag on the empty console</b></td><td>A lasso: turns over the marks of all it touches (a second lasso over marked ones unmarks them).</td></tr>
+<tr><td><b>drag a marked fixture</b></td><td>All the marked fixtures move together.</td></tr>
+<tr><td><b>drag another fixture</b></td><td>Only that one moves.</td></tr>
+</table>
+
+<p>Move never changes the selection of the lights. Put the boxes as the fixtures hang, so that you find each one at a glance
+during the show.</p>
+<p>The places of the fixtures, the size, the zoom and the background are kept in the project when you save it; the picture
+is copied into the project.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../s2l/saved.html" title="Previous">What is saved</a> &nbsp;|&nbsp; Up: <a href="../welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="../view3d/index.html" title="Next">3D Previsualisation</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

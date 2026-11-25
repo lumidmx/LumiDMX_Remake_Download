@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Effect Generator</title>
+<meta name="keywords" content="Effect Generator; Pan Fine (generated steps); Tilt Fine (generated steps); micro pan / tilt; MAtricks; Blocks; Groups (MAtricks); Wings; Interleave; Cue steps (Effect Generator); Loop (Effect Generator); Combined (all tabs Enabled); Zoom (Effect Generator); Effect (icon); Eff; Oscillator; Sinus; Cosinus; Rect; Saw; Center; Offset; Amp; Amplitude; Phase; Span; Repeat; Resolution; Interval; one loop; Mirror (Effect Generator); Enabled (Effect Generator); Play (Effect Generator); live changes; Moving effect; Chaser; Color Effect; Generate; Dual Generator; Combine">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/correction.html" title="Previous: Correction Pan / Tilt and Focus">&lt; Previous</a> <a href="../live/pixchase.html" title="Next: Pixel Chase">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Effect Generator</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Effect Generator</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>The Effect Generator makes a moving, chasing or oscillating effect for the fixtures ticked in Fixture Control, plays
+it live and writes it into the Library as a light sequence. Open Fixture Control with the
+<span class="ui">Fixtures</span> button, tick the fixtures (a click on a fixture ticks or unticks it), then press
+the <span class="ui">Effect</span> icon at the bottom left (under the fixture list of Fixture Control). With no fixture ticked it opens on Pixel Chase.</p>
+
+<p>The tabs: <span class="ui">Moving</span> (Pan / Tilt figures, only for fixtures with Pan and Tilt),
+<span class="ui">Chaser</span>, <span class="ui">Color Effect</span> (only for fixtures with Red, Green and Blue),
+<span class="ui">Oscillator</span>, <span class="ui">Pixel Chase</span> and <span class="ui">Color Chase</span>.
+<span class="ui">Generate</span> (the first icon) writes the effect of the tab, or of all the enabled tabs together
+when <span class="ui">Combine</span> is on, into the Library under the name you give.</p>
+<p id="nofine">The fine Pan / Tilt channels (Pan Fine, Tilt Fine, uPan ...) are always 0 in the generated steps - here, in the
+Color Chase, in the Pixel Chase and in Fixture Control's Generate chase. While Pan / Tilt fade from one step to the next, the program makes the fine value
+itself, so the move is smooth; a fine value kept in the steps made it jump where Pan / Tilt stay the same.</p>
+
+<h2>The Oscillator</h2>
+<p>The Oscillator sends a wave to the ticked channels: Sinus, Cosinus, Rect or Saw, as in LumiDMX. The graph shows the
+wave as it goes out to the first fixture, from the first step on the left to the last on the right, and it changes as
+you turn the knobs.</p>
+
+<div class="pic"><img src="../img/live_effgen_osc.png" alt="The Oscillator tab of the Effect Generator"></div>
+<p class="cap">The six Beam 5R of Andrei_edit ticked, the Dimmer channel chosen, Phase 100.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Enabled</span> - not ticked, the tab is grey, sends
+  nothing and is left out of Generate; what is set on it stays.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Mirror</span> - the fixtures in pairs from the
+  outside in: the last fixture plays exactly what the first one plays, at the same moment; the one before the last
+  what the second plays, and so on. Both halves move together.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The channels of the ticked fixtures. Tick the ones the wave goes
+  to; every ticked channel of a fixture gets the same value.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Type</span> - Sinus, Cosinus, Rect or Saw (see
+  below).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The graph: black, the grey line at the Center level, the wave in
+  green, with a point at every step.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>The knobs: Center, Offset, Amp, Phase, Span and Repeat (see below).
+  Drag a knob, turn the mouse wheel over it, or write the value in the field above it and press Enter; the small
+  button under it puts it back to 0 (Repeat: 1).</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Resolution</span> - the steps of one period of the
+  wave; <span class="ui">Interval (ms)</span> - how long each step lasts.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">Play</span> / <span class="ui">Stop</span> - plays
+  the effect on the fixtures (Live panel, DMX output, 3D) until you stop it.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">MAtricks</span> - Blocks, Groups, Wings,
+  Interleave and Reset: how the fixtures are spread over the effect (see below). The same values on Moving, Chaser,
+  Color Effect and Oscillator.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td>The steps: <b>Cue steps</b> and <b>Loop</b> - how many steps this
+  tab makes and how long one loop lasts; <b>Combined (all tabs Enabled)</b> - how many steps Generate writes when all
+  the Enabled tabs go together (Combine). They change as soon as you change anything.</td></tr>
+</table>
+
+<h2>The types</h2>
+<div class="pic"><img src="../img/live_effgen_types.png" alt="Sinus, Rect and Saw with Repeat 1 and 6"></div>
+<p class="cap">Resolution 10, all the other knobs at 0.</p>
+<ul>
+<li><b>Sinus</b> and <b>Cosinus</b> - a smooth wave; Cosinus starts at the top instead of the middle.</li>
+<li><b>Rect</b> - a square wave: up for the first half of each period, down for the second. The slopes in the graph
+  are the fade from one step to the next.</li>
+<li><b>Saw</b> - a triangle: up for the first half of each period, down for the second.</li>
+</ul>
+
+<h2>The knobs</h2>
+<table class="wide">
+<tr><th>Knob</th><th>Range</th><th>What it does</th></tr>
+<tr><td><span class="ui">Center</span></td><td>-128 .. 127</td><td>The middle level of the wave (the grey line):
+  0 = half (128), lower to the left, higher to the right.</td></tr>
+<tr><td><span class="ui">Offset</span></td><td>-128 .. 127</td><td>Lifts or lowers the whole wave, by up to the full
+  range at the ends. What goes over 255 or under 0 is cut there.</td></tr>
+<tr><td><span class="ui">Amp</span></td><td>-128 .. 127</td><td>The height of the wave: 0 = from 0 to 255 around the
+  middle, all the way left = a flat line at the Center level.</td></tr>
+<tr><td><span class="ui">Phase</span></td><td>-100 .. 100</td><td>Spreads the fixtures over the wave. Fixture number
+  <i>i</i> of <i>N</i> starts <i>i / N &times; Phase</i> of the graph later: at 0 all the fixtures do the same, at 100
+  they are spread over the whole graph, so the wave runs from one fixture to the next; below 0 it runs the other
+  way.</td></tr>
+<tr><td><span class="ui">Span</span></td><td>-128 .. 127</td><td>Moves the wave along the graph, by up to half the
+  graph at the ends; turning it right moves the wave to the right.</td></tr>
+<tr><td><span class="ui">Repeat</span></td><td>1 .. 10</td><td>How many periods of the wave there are in the
+  graph.</td></tr>
+</table>
+<div class="pic"><img src="../img/live_effgen_offspan.png" alt="Offset and Span on a Sinus"></div>
+
+<h2>MAtricks</h2>
+<p>The effect stays the same; MAtricks only changes which fixtures do the same thing and in what order - as in grandMA3.
+0 or 1 = off. With Phase at 0 every fixture does the same anyway, so on Moving, Color Effect and Oscillator MAtricks
+shows only with a Phase; on Chaser it changes the steps themselves.</p>
+<table class="wide">
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td><b>Blocks</b> N</td><td>N fixtures side by side do the same: Blocks 2 = 1-2, 3-4, 5-6 in pairs.</td></tr>
+<tr><td><b>Groups</b> N</td><td>The places go round N by N: Groups 2 = odd against even.</td></tr>
+<tr><td><b>Wings</b> N</td><td>The fixtures in N parts, every second part backwards (a mirror between the parts).</td></tr>
+<tr><td><b>Interleave</b> N</td><td>Only every N-th fixture takes part (1, 3, 5 ... with 2); the others are left as they are.</td></tr>
+<tr><td><span class="ui">Reset</span></td><td>All four back to 0.</td></tr>
+</table>
+<p>The six Beam 5R, Phase at the full graph:</p>
+<table class="wide">
+<tr><th>MAtricks</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>On the stage</th></tr>
+<tr><td>off</td><td>0&deg;</td><td>60&deg;</td><td>120&deg;</td><td>180&deg;</td><td>240&deg;</td><td>300&deg;</td><td>a wave from left to right</td></tr>
+<tr><td>Groups 2</td><td>0&deg;</td><td>180&deg;</td><td>0&deg;</td><td>180&deg;</td><td>0&deg;</td><td>180&deg;</td><td>odd against even</td></tr>
+<tr><td>Blocks 2</td><td>0&deg;</td><td>0&deg;</td><td>120&deg;</td><td>120&deg;</td><td>240&deg;</td><td>240&deg;</td><td>three pairs</td></tr>
+<tr><td>Wings 2</td><td>0&deg;</td><td>120&deg;</td><td>240&deg;</td><td>240&deg;</td><td>120&deg;</td><td>0&deg;</td><td>from the middle out, mirrored</td></tr>
+<tr><td>Wings 3</td><td>0&deg;</td><td>180&deg;</td><td>180&deg;</td><td>0&deg;</td><td>0&deg;</td><td>180&deg;</td><td>1, 4, 5 against 2, 3, 6 (a "W")</td></tr>
+<tr><td>Interleave 2</td><td>0&deg;</td><td>-</td><td>120&deg;</td><td>-</td><td>240&deg;</td><td>-</td><td>only 1, 3, 5 move</td></tr>
+</table>
+<p>When the fixtures do not divide evenly the first parts get one more: 8 fixtures with Wings 3 = 3, 3 and 2.
+On the Chaser the fixtures of one place light together: Wings 3 on 6 fixtures = 2 steps, first 1, 4, 5, then 2, 3, 6.
+The values are saved with <span class="ui">Save Effect...</span>; Generate writes ordinary steps, which play everywhere.
+<span class="ui">Mirror</span> works as before (on Moving it also turns the Pan of the second half round the centre,
+which Wings does not do).</p>
+
+<h2>The steps</h2>
+<p>The effect has <i>Resolution &times; Repeat</i> steps - one loop of the graph - and goes on from the first step
+after the last. Each step lasts <span class="ui">Interval</span> milliseconds. Generate writes exactly these steps -
+the numbers under <span class="ui">Play</span> show them before you generate.</p>
+<p><b>Zoom</b> (1x - 4x) makes the Moving grid bigger. It can be changed from any tab: the window takes the size it
+needs at once.</p>
+
+<h2>Changes while it plays</h2>
+<p>While a tab plays (Moving, Chaser, Color Effect or Oscillator), every change on that tab - a knob, the type,
+Resolution, Interval, the times, the points, the colours, Mirror, Reverse, Phase - reaches the fixtures within about
+a tenth of a second, without Stop and Play, as in LumiDMX. The effect goes on from the step it is at, with the new
+values.</p>
+<p>When the change puts the effect on other channels (a channel ticked or unticked, a channel that now gets a value
+where it got only 0 before, or the other way), it starts again from its first step.</p>
+
+<h2>The other tabs</h2>
+<ul>
+<li><b>Moving</b> - Pan / Tilt figures drawn as points (Add Polygon, or a saved shape); Phase spreads the fixtures
+  along the figure.</li>
+<li><b>Chaser</b> - a running light on the ticked channels: Left to Right, Right to Left, Middle Out, Outside In,
+  Each 2th; with a fade, Invert or back and forth.</li>
+<li><b>Color Effect</b> - a colour gradient: the colours set on the bar (right-click: start and end colour, a click on
+  the bar: one more colour) over the time you give.</li>
+<li><b><a href="pixchase.html">Pixel Chase</a></b> and <b><a href="colchase.html">Color Chase</a></b> - a grid of the fixtures to paint steps on, and colour chases; they play
+  their changes live in their own way.</li>
+</ul>
+<p>The other icons: <span class="ui">Order</span> changes the order in which the fixtures run the effect;
+<span class="ui">Dual Generator</span> opens a second generator for some of the fixtures; <span class="ui">Use</span>
+shows which generator each fixture is in.</p>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/correction.html" title="Previous">Correction Pan / Tilt and Focus</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/pixchase.html" title="Next">Pixel Chase</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

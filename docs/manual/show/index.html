@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Show Editor</title>
+<meta name="keywords" content="Show Editor; show; timeline; line (show); object (show); New Show; Open Show; Add Line; Add Object; Paste at Position; Play (show); Stop (show); L marker; R marker; Left Marker; Right Marker; Set Marker; Repeat (show); Object Color; Lock all Lines; Unlock all Lines; Fix Lines; Mix LTP; HTP (show); A/V Sync ms; Shows (with music); Effects (single); Mute (line); Single (line); Locked (line); Move Line up; Rename Line; Object Propertys (show); Copy Cuesteps; Beats; Beat Layer; Arrange on Beats; Auto-Duplicate Cues; Optimize Lines; Get MTC Timecode; MTC; Autoscroll; zoom (timeline)">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/design.html" title="Previous: Design Live-Panel">&lt; Previous</a> <a href="../s2l/index.html" title="Next: Sound2Light">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <b>Show Editor</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Show Editor</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>A show places light sequences - and music - on a timeline, line under line, so that a whole part of an event plays by
+itself, always the same and in time with the music. The <span class="ui">Show Editor</span> tab of the top bar opens it. The editor works
+as in LumiDMX X1: the same ribbon, the same timeline and the same right-click menu.</p>
+
+<div class="pic"><img src="../img/show_editor.png" alt="The Show Editor"></div>
+<p class="cap">Andrei_edit, "Disco show": Blues 2Circle on Line 0, three sequences on Line 1 (open, with their steps).</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>Show</b> - <span class="ui">New Show</span> (asks a name), <span class="ui">Open Show</span> (the <a href="../live/library.html">Library</a>, to drag a show from; the arrow next to it: the shows of the project, one click opens one).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Edit</b> - <span class="ui">Add Line</span> (a new line at the bottom), <span class="ui">Add Object</span> (the Library: drag a light sequence or an audio object onto a line).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Edit</b> - <span class="ui">Copy</span>, <span class="ui">Paste</span> (at the play head, on the line selected), <span class="ui">Delete</span> the object selected.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Control</b> - back to the L marker, <span class="ui">Play</span> / <span class="ui">Pause</span>, forward to the R marker, <span class="ui">Stop</span> (the play head stays where the show was).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>Position</b> - the time of the play head (hours:minutes:seconds:milliseconds) and, in orange, the length of the show.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Repeat</span> - the show plays again and again between the L and R markers.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><b>Visual</b> - <span class="ui">Object Color</span> (the colour of the object selected), <span class="ui">Unlock all Lines</span> / <span class="ui">Lock all Lines</span>, <span class="ui">Fix Lines</span> (the lines above the one selected stay in view while you scroll).</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><b>Sync</b> - <span class="ui">Mix</span>: how the sequences of the show mix on a channel - LTP (the latest wins) or HTP (the highest wins); <span class="ui">A/V Sync ms</span>: moves the light against the music, in milliseconds, when the sound comes late or early.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">Shows (with music)</span> / <span class="ui">Effects (single)</span> - what the list under them shows: the shows, or the single light sequences.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td>The list. Double-click a show: it opens and starts to play.</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td>The zoom of the timeline. Ctrl + mouse wheel zooms too, Shift + wheel scrolls the time.</td></tr>
+<tr><td class="n"><span class="n">12</span></td><td>The ruler, with the L flag (where the loop starts), the play head and the R flag (where it ends). Drag a flag or the play head; click the ruler to put the play head there.</td></tr>
+<tr><td class="n"><span class="n">13</span></td><td>The head of a line: its name; the arrow opens it, to show the steps and the buttons <span class="ui">Mute</span> (the line is silent), <span class="ui">Single</span> (only this line plays, the others are muted) and <span class="ui">Locked</span> (nothing on it can be moved).</td></tr>
+<tr><td class="n"><span class="n">14</span></td><td>The objects: one light sequence each, as long as its steps last. An open line shows every step, with its fade.</td></tr>
+<tr><td class="n"><span class="n">15</span></td><td>The state: Stopped, or the show that plays (and its music file).</td></tr>
+</table>
+
+
+<h2>Working on the timeline</h2>
+<table class="keys wide">
+<tr><td><b>click</b></td><td>Selects the line and the object under the mouse.</td></tr>
+<tr><td><b>drag an object</b></td><td>On a closed line: to another time or another line (it does not go where it would overlap another). On an open line: along its line.</td></tr>
+<tr><td><b>drag the right edge</b></td><td>Makes the object longer or shorter; every step is stretched in proportion.</td></tr>
+<tr><td><b>drag a step's end</b></td><td>On an open line: changes the fade or the wait of that step.</td></tr>
+<tr><td><b>double-click</b></td><td><a href="../live/cuesteps.html">Edit Cue Steps</a> of the object.</td></tr>
+<tr><td><b>mouse wheel</b></td><td>Moves to the next or the previous line.</td></tr>
+<tr><td><b>Delete</b></td><td>Deletes the object selected.</td></tr>
+<tr><td><b>drag from the Library</b></td><td>A light sequence or an audio object onto a line, at the time where you let it go.</td></tr>
+</table>
+
+
+<h2>The right-click menu</h2>
+<div class="pic"><img src="../img/show_menu.png" alt="The right-click menu of the timeline, with Beats open"></div>
+<table class="wide">
+<tr><th>Item</th><th>What it does</th></tr>
+<tr><td><span class="ui">Add Line</span>, <span class="ui">Add Object...</span></td><td>As on the ribbon.</td></tr>
+<tr><td><span class="ui">Copy</span>, <span class="ui">Paste at Position</span>, <span class="ui">Delete</span></td><td>The object selected; Paste puts it at the play head.</td></tr>
+<tr><td><span class="ui">Move Line up</span> / <span class="ui">Move Line down</span>, <span class="ui">Rename Line...</span></td><td>The line selected.</td></tr>
+<tr><td><span class="ui">Object Color...</span>, <span class="ui">Object Propertys...</span></td><td>The colour and the settings of the object selected.</td></tr>
+<tr><td><span class="ui">Copy Cuesteps</span></td><td>The steps of the object once more after themselves: the object becomes twice as long.</td></tr>
+<tr><td><span class="ui">Beats</span> &gt; <span class="ui">Beats...</span></td><td>The beats of an audio object (the Beat Layer window): found in the music or set by hand.</td></tr>
+<tr><td><span class="ui">Arrange on Beats (Fade)</span> / <span class="ui">(Wait)</span></td><td>The steps of the light object are put on the beats of the music, between the L and R markers: each step lasts from one beat to the next, as its fade or as its wait.</td></tr>
+<tr><td><span class="ui">Auto-Duplicate Cues between L&gt;R</span></td><td>Ticked: when there are more beats than steps, the steps are repeated until every beat has one.</td></tr>
+<tr><td><span class="ui">Optimize Lines</span></td><td>Every object moves up into the first line where it fits; empty lines go.</td></tr>
+<tr><td><span class="ui">Get MTC Timecode</span></td><td>The show follows the MIDI time code of another device instead of its own clock (the music is not played then).</td></tr>
+<tr><td><span class="ui">Autoscroll</span></td><td>Ticked: the timeline follows the play head.</td></tr>
+<tr><td><span class="ui">Set Marker</span> &gt; <span class="ui">Left Marker</span> / <span class="ui">Right Marker</span></td><td>Puts L or R at the time where you right-clicked.</td></tr>
+</table>
+
+
+<h2>Example: a show on a song</h2>
+<ol>
+<li><span class="ui">New Show</span>, type its name.</li>
+<li>In the Library, <span class="ui">New Audio Object...</span> brings the song in; drag it onto Line 0.</li>
+<li><span class="ui">Add Line</span>, drag light sequences onto the new lines, where the song needs them.</li>
+<li>Right-click the music, <span class="ui">Beats</span> &gt; <span class="ui">Beats...</span>: let the beats be found. Put L and R round a part, select a light object and <span class="ui">Arrange on Beats (Wait)</span>.</li>
+<li>Play, correct, <span class="ui">Repeat</span> to go over a part again. Save the project.</li>
+</ol>
+<p>A show can also be put on a button of the Live panel (drag it from the Library), and started from the
+<a href="../remote/index.html">Remote player</a>.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/design.html" title="Previous">Design Live-Panel</a> &nbsp;|&nbsp; Up: <a href="../welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="../s2l/index.html" title="Next">Sound2Light</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

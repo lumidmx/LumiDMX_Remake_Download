@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The DMX Board</title>
+<meta name="keywords" content="DMX Board; DMX-Channelboard; channel board; cells; Multiselect; Singleselect; Select all; Invert; Clear; Select Range; In each universe; Set >255; Reset; Final Output; Mark fixtures; Show actual preset">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/colchase.html" title="Previous: Color Chase">&lt; Previous</a> <a href="../live/monitor.html" title="Next: The Monitor">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>The DMX Board</b></div></div><!--/NAV-->
+<div class="page">
+<h1>The DMX Board</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p><span class="ui">DMX Board</span> on the function bar opens the <span class="ui">DMX-Channelboard</span>: the 512
+channels of one universe as cells, to see them all at once and to set many channels together. Make the window wider or
+narrower: the cells follow (16 a row when it opens, then as many as fit). The universe chosen is kept for the next
+time the board opens, while the program runs.</p>
+
+<div class="pic"><img src="../img/live_dmxboard.png" alt="The DMX-Channelboard window"></div>
+<p class="cap">The board with universe 1 of Andrei_edit. A cell shows the channel and its value with a bar, or the
+preset the channel is on (<i>Shutter Open</i>, <i>Position</i> ...).</p>
+
+<h2>What the cells show</h2>
+<ul>
+<li><span class="ui">Universe</span> - the universe shown.</li>
+<li><span class="ui">Final Output</span> - ticked, the cells show what the program sends out; not ticked, the values
+  of the channels.</li>
+<li><span class="ui">Mark fixtures</span> (under <span class="ui">Visual</span>) - the cells of the channels that
+  belong to a fixture are green, the others grey; <span class="ui">Show actual preset</span> - a channel with presets
+  shows the preset it is on instead of its value.</li>
+<li>Under the mouse, the bar at the bottom of the window shows the fixture, the name of the channel and its state
+  (<i>Mode: OUT</i>, <i>MAN</i> or <i>IN</i>).</li>
+</ul>
+
+<h2>Selecting channels</h2>
+<ul>
+<li><span class="ui">Multiselect</span>: a click selects or unselects a cell; drag over cells to do the same to all of
+  them. <span class="ui">Singleselect</span>: a click selects only that cell.</li>
+<li><span class="ui">Select all</span>, <span class="ui">Invert</span>, <span class="ui">Clear</span>.</li>
+<li><span class="ui">Select Range</span>: type a range such as <code>200-350</code> (or one channel),
+  <span class="ui">Add</span> puts it in the list under it; <span class="ui">Apply</span> selects the channels of the
+  list and of the box (a channel already selected is unselected).</li>
+<li><span class="ui">In each universe</span> - what you select is selected in every universe.</li>
+</ul>
+
+<h2>Setting them</h2>
+<p>Under <span class="ui">Control</span>: <span class="ui">Set &gt;255</span> sets the selected channels to 255,
+<span class="ui">Reset</span> to 0, and the fader to its value. The board sets the values only: it does not put the
+channels on MAN, so a running button that uses them sets them again. To hold channels by hand, use MAN in the
+<a href="mixer.html">General Mixer</a>.</p>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/colchase.html" title="Previous">Color Chase</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/monitor.html" title="Next">The Monitor</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

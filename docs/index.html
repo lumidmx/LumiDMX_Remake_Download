@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LumiDMX Remake – DMX lighting control</title>
+<meta name="description" content="LumiDMX Remake: DMX lighting control for clubs, DJs and events. Live panel, Sound2Light, 3D previsualisation, Fixture Editor. Opens LumiDMX X1 projects.">
+<style>
+:root{--bg:#16181d;--bg2:#1e2127;--card:#22252b;--line:#2f333b;--text:#e8eaed;--mute:#a3a9b3;--teal:#1ab4a3;--teal2:#14907f;--fb:#1877f2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+a{color:#7fd8ce}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* language: show only the chosen one */
+html[lang=en] .ro, html[lang=ro] .en{display:none}
+
+/* top bar */
+header{position:sticky;top:0;z-index:10;background:rgba(22,24,29,.94);backdrop-filter:blur(6px);border-bottom:3px solid var(--teal)}
+header .wrap{display:flex;align-items:center;gap:22px;height:58px}
+.logo{font-weight:700;font-size:19px;color:#fff;text-decoration:none;white-space:nowrap}
+.logo b{color:var(--teal)}
+nav{display:flex;gap:18px;flex:1}
+nav a{color:var(--mute);text-decoration:none;font-size:15px}
+nav a:hover{color:#fff}
+.lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--mute);padding:6px 11px;font:600 13px inherit;cursor:pointer}
+.lang button.on{background:var(--teal);color:#0d1a18}
+
+/* hero */
+.hero{padding:56px 0 40px;text-align:center;background:radial-gradient(ellipse at 50% -10%,#1ab4a333 0,transparent 60%)}
+.hero h1{font-size:44px;line-height:1.15;margin:0 0 14px}
+.hero h1 span{color:var(--teal)}
+.hero p.lead{font-size:19px;color:var(--mute);max-width:760px;margin:0 auto 28px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;flex-direction:column;align-items:center;padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:600;font-size:17px;min-width:230px}
+.btn small{font-weight:400;font-size:13px;opacity:.85}
+.btn.full{background:var(--teal);color:#0d1a18}
+.btn.full:hover{background:#22cbb8}
+.btn.player{background:#fff;color:#16181d}
+.btn.player:hover{background:#dfe3e8}
+.btn.ghost{border:1px solid var(--line);color:var(--text)}
+.note{color:var(--mute);font-size:14px;margin-top:14px}
+.shot{margin:38px auto 0;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 60px #000a}
+
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--line)}
+section h2{font-size:31px;margin:0 0 8px;text-align:center}
+section p.sub{color:var(--mute);text-align:center;max-width:720px;margin:0 auto 38px}
+
+/* feature rows: picture + text */
+.row{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:center;margin:0 0 54px}
+.row:nth-child(even) .pic{order:2}
+.row .pic{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.row h3{font-size:23px;margin:0 0 10px}
+.row h3 .tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:4px;margin-left:8px;vertical-align:middle}
+.tag.f{background:var(--teal);color:#0d1a18}
+.tag.p{background:#fff;color:#16181d}
+.row ul{padding-left:20px;margin:10px 0 0;color:var(--mute)}
+.row li{margin:4px 0}
+
+/* small cards */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px}
+.card h4{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--mute);font-size:14.5px}
+
+/* full vs player */
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:8px;overflow:hidden}
+th,td{padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+th{background:#2a2e35}
+td.y{color:#5fe0a0;font-weight:600}
+td.n{color:#ff8a80;font-weight:600}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.steps .card{position:relative;padding-top:46px}
+.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:18px;width:24px;height:24px;border-radius:50%;background:var(--teal);color:#0d1a18;font-weight:700;text-align:center;line-height:24px;font-size:14px}
+.fb{display:inline-flex;align-items:center;gap:10px;background:var(--fb);color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:17px}
+.fb svg{width:22px;height:22px;fill:#fff}
+.center{text-align:center}
+
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media (max-width:860px){
+  nav{display:none}
+  .hero h1{font-size:32px}
+  .row{grid-template-columns:1fr}
+  .row:nth-child(even) .pic{order:0}
+  .grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+}
+@media (max-width:520px){.grid{grid-template-columns:1fr}.btn{min-width:0;width:100%}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="logo" href="#top">LumiDMX <b>Remake</b></a>
+  <nav>
+    <a href="#features"><span class="en">Features</span><span class="ro">Funcții</span></a>
+    <a href="#versions"><span class="en">Full or Player</span><span class="ro">Full sau Player</span></a>
+    <a href="#download"><span class="en">Download</span><span class="ro">Descărcare</span></a>
+    <a href="manual/welcome.html"><span class="en">Manual</span><span class="ro">Manual</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="ro">Contact</span></a>
+  </nav>
+  <div class="lang"><button id="b-en" class="on" onclick="setLang('en')">EN</button><button id="b-ro" onclick="setLang('ro')">RO</button></div>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <h1><span class="en">DMX lighting control,<br><span>live and to the music</span></span><span class="ro">Control de lumini DMX,<br><span>live și pe muzică</span></span></h1>
+  <p class="lead">
+    <span class="en">LumiDMX Remake plays your moving heads, beams, washes, LED bars, strobes and smoke machines – by hand, from a controller, from a phone or tablet, or on the beat of the music. It opens LumiDMX X1 projects as they are.</span>
+    <span class="ro">LumiDMX Remake comandă moving head-uri, beam-uri, wash-uri, bare LED, stroboscoape și mașini de fum – de mână, de pe controller, de pe telefon sau tabletă, sau pe ritmul muzicii. Deschide proiectele LumiDMX X1 așa cum sunt.</span>
+  </p>
+  <div class="btns">
+    <a class="btn full" href="#download"><span class="en">Download Full</span><span class="ro">Descarcă Full</span><small class="en">build and play projects</small><small class="ro">creezi și cânți proiecte</small></a>
+    <a class="btn player" href="#download"><span class="en">Download Player</span><span class="ro">Descarcă Player</span><small class="en">play finished projects</small><small class="ro">cânți proiecte gata făcute</small></a>
+  </div>
+  <p class="note"><span class="en">Windows 10 / 11 · version 12.4.2 · activation key needed</span><span class="ro">Windows 10 / 11 · versiunea 12.4.2 · necesită cheie de activare</span></p>
+  <div class="shot"><img src="img/hero_main.jpg" alt="LumiDMX Remake – the Live panel" width="1366" height="707"></div>
+</div></div>
+
+<section id="features"><div class="wrap">
+  <h2><span class="en">What it does</span><span class="ro">Ce face</span></h2>
+  <p class="sub"><span class="en">Everything you need to light a club night, a DJ set or an event – from one window.</span><span class="ro">Tot ce trebuie pentru luminile dintr-un club, un set de DJ sau un eveniment – dintr-o singură fereastră.</span></p>
+
+  <div class="row">
+    <div class="pic"><img src="img/feat_s2l.jpg" alt="Sound2Light" loading="lazy"></div>
+    <div>
+      <h3>Sound2Light<span class="tag f">Full</span><span class="tag p">Player</span></h3>
+      <p class="en">The music drives the lights. The program listens to the sound, finds the beat and the BPM, and steps your chases and colour games in time.</p>
+      <p class="ro">Muzica conduce luminile. Programul ascultă sunetul, găsește bătaia și BPM-ul și avansează chase-urile și jocurile de culori în ritm.</p>
+      <ul class="en"><li>bands on the sound spectrum, each with its own list of buttons</li><li>Beat and direction triggers, quiet detection</li><li>BPM manual, Tap or automatic</li></ul>
+      <ul class="ro"><li>benzi pe spectrul sunetului, fiecare cu lista ei de butoane</li><li>declanșare pe bătaie și pe direcție, detectarea liniștii</li><li>BPM manual, Tap sau automat</li></ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="pic"><img src="img/feat_3d.jpg" alt="3D previsualisation" loading="lazy"></div>
+    <div>
+      <h3><span class="en">3D previsualisation</span><span class="ro">Previzualizare 3D</span></h3>
+      <p class="en">See the show before you get to the venue. 3D LumiDmx Remake draws your rig with the light the program sends: beams, colours, gobos and movements, live.</p>
+      <p class="ro">Vezi show-ul înainte să ajungi la locație. 3D LumiDmx Remake desenează instalația ta cu lumina pe care o trimite programul: fascicule, culori, gobo-uri și mișcări, live.</p>
+      <ul class="en"><li>stage, trusses and 3D objects</li><li>Live Mode and Design Mode</li><li>Art-Net input from any console</li></ul>
+      <ul class="ro"><li>scenă, schele și obiecte 3D</li><li>Live Mode și Design Mode</li><li>intrare Art-Net de la orice consolă</li></ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="pic" style="max-width:440px;justify-self:center"><img src="img/feat_remote.jpg" alt="Web Remote" loading="lazy"></div>
+    <div>
+      <h3><span class="en">Phone and tablet</span><span class="ro">Telefon și tabletă</span><span class="tag f">Full</span><span class="tag p">Player</span></h3>
+      <p class="en">Web Remote puts the Live panel on your phone or tablet over Wi-Fi – no app to install, just the browser.</p>
+      <p class="ro">Web Remote pune panoul Live pe telefon sau tabletă prin Wi-Fi – fără aplicație de instalat, doar browserul.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="pic"><img src="img/feat_apc.jpg" alt="Akai APC mini" loading="lazy"></div>
+    <div>
+      <h3><span class="en">Controllers and MIDI</span><span class="ro">Controllere și MIDI</span><span class="tag f">Full</span><span class="tag p">Player</span></h3>
+      <p class="en">Play the buttons by hand on an Akai APC mini mk2 with coloured feedback, or on any MIDI controller and keyboard.</p>
+      <p class="ro">Apeși butoanele de mână pe un Akai APC mini mk2, cu leduri colorate, sau pe orice controller MIDI și de la tastatură.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="pic"><img src="img/feat_fe.jpg" alt="Fixture Editor" loading="lazy"></div>
+    <div>
+      <h3>Fixture Editor<span class="tag f">Full</span></h3>
+      <p class="en">Make or correct a fixture profile in minutes – from the DMX table of the manual, or imported from QLC+, Open Fixture Library and GDTF.</p>
+      <p class="ro">Faci sau corectezi profilul unei fixturi în câteva minute – din tabelul DMX din manual, sau importat din QLC+, Open Fixture Library și GDTF.</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h4><span class="en">Live panel</span><span class="ro">Panoul Live</span></h4><p class="en">Buttons for chases, colours, gobos and moves, sliders, flash buttons.</p><p class="ro">Butoane pentru chase-uri, culori, gobo-uri și mișcări, slidere, butoane flash.</p></div>
+    <div class="card"><h4>Effect Generator</h4><p class="en">Waves (sine, square, saw) across your fixtures on any channel – moves, dimmer, colour.</p><p class="ro">Valuri (sinus, dreptunghi, dinte de fierăstrău) peste aparate, pe orice canal – mișcare, dimmer, culoare.</p></div>
+    <div class="card"><h4>Pixel &amp; Color Chase</h4><p class="en">Effects across LED bars and rows of fixtures.</p><p class="ro">Efecte pe bare LED și pe rânduri de aparate.</p></div>
+    <div class="card"><h4>Show Editor</h4><p class="en">Shows on a timeline with music, played start to end.</p><p class="ro">Show-uri pe linie de timp, cu muzică, redate de la cap la coadă.</p></div>
+    <div class="card"><h4>Stage View &amp; 2D</h4><p class="en">See which fixture is lit and with what colour.</p><p class="ro">Vezi ce aparat e aprins și cu ce culoare.</p></div>
+    <div class="card"><h4>Mirror / Offset</h4><p class="en">Mirrored pan and tilt for pairs of moving heads.</p><p class="ro">Pan și tilt în oglindă pentru perechi de moving head-uri.</p></div>
+    <div class="card"><h4>Art-Net &amp; USB DMX</h4><p class="en">Art-Net nodes, Open DMX (FTDI) and Soundlight USB interfaces.</p><p class="ro">Noduri Art-Net, interfețe USB Open DMX (FTDI) și Soundlight.</p></div>
+    <div class="card"><h4><span class="en">X1 projects</span><span class="ro">Proiecte X1</span></h4><p class="en">Opens LumiDMX X1 projects with all their buttons and shows.</p><p class="ro">Deschide proiectele LumiDMX X1 cu toate butoanele și show-urile.</p></div>
+  </div>
+</div></section>
+
+<section id="versions"><div class="wrap">
+  <h2><span class="en">Full or Player?</span><span class="ro">Full sau Player?</span></h2>
+  <p class="sub"><span class="en">Both look the same and play the same projects. The Player cannot change them – nothing can be broken by mistake.</span><span class="ro">Arată la fel și cântă aceleași proiecte. Player-ul nu le poate modifica – nimic nu se strică din greșeală.</span></p>
+  <table>
+    <tr><th></th><th>Full</th><th>Player</th></tr>
+    <tr><td><span class="en">Play projects live, Sound2Light, Web Remote, MIDI</span><span class="ro">Cântă proiecte live, Sound2Light, Web Remote, MIDI</span></td><td class="y">✓ <span class="en">yes</span><span class="ro">da</span></td><td class="y">✓ <span class="en">yes</span><span class="ro">da</span></td></tr>
+    <tr><td><span class="en">Add fixtures, design the Live panel, Effect Generator</span><span class="ro">Adaugă fixturi, desenează panoul Live, Effect Generator</span></td><td class="y">✓ <span class="en">yes</span><span class="ro">da</span></td><td class="n">✗ <span class="en">no</span><span class="ro">nu</span></td></tr>
+    <tr><td><span class="en">Fixture Editor and 3D included</span><span class="ro">Fixture Editor și 3D incluse</span></td><td class="y">✓ <span class="en">yes</span><span class="ro">da</span></td><td class="n">✗ <span class="en">no</span><span class="ro">nu</span></td></tr>
+    <tr><td><span class="en">Opens .x1 projects / saves .xR</span><span class="ro">Deschide proiecte .x1 / salvează .xR</span></td><td class="y">✓ / ✓</td><td class="y">✓ <span class="en">/ no</span><span class="ro">/ nu</span></td></tr>
+    <tr><td><span class="en">Made for</span><span class="ro">Potrivit pentru</span></td><td><span class="en">building and updating shows</span><span class="ro">cine face și întreține show-uri</span></td><td><span class="en">clubs, DJs, events</span><span class="ro">cluburi, DJ, evenimente</span></td></tr>
+  </table>
+</div></section>
+
+<section id="download"><div class="wrap">
+  <h2><span class="en">Download and activate</span><span class="ro">Descarcă și activează</span></h2>
+  <p class="sub"><span class="en">Each program is activated for the computer it runs on.</span><span class="ro">Fiecare program se activează pentru calculatorul pe care rulează.</span></p>
+  <div class="btns" style="margin-bottom:34px">
+    <a class="btn full" href="https://github.com/lumidmx/LumiDMX_Remake_Download/raw/main/LumiDMX_Remake_Full.zip"><span class="en">Download Full</span><span class="ro">Descarcă Full</span><small>LumiDMX_Remake_Full.zip · 12.6 MB</small></a>
+    <a class="btn player" href="https://github.com/lumidmx/LumiDMX_Remake_Download/raw/main/LumiDMX_Remake_Player.zip"><span class="en">Download Player</span><span class="ro">Descarcă Player</span><small>LumiDMX_Remake_Player.zip · 8.7 MB</small></a>
+  </div>
+  <div class="steps">
+    <div class="card"><h4><span class="en">Unzip and start</span><span class="ro">Dezarhivează și pornește</span></h4><p class="en">Unzip the archive into a folder and start the .exe. The activation window shows this computer's code.</p><p class="ro">Dezarhivează arhiva într-un folder și pornește .exe-ul. Fereastra de activare arată codul acestui calculator.</p></div>
+    <div class="card"><h4><span class="en">Send the code</span><span class="ro">Trimite codul</span></h4><p class="en">Press Copy and send the code to us on Facebook.</p><p class="ro">Apasă Copy și trimite-ne codul pe Facebook.</p></div>
+    <div class="card"><h4><span class="en">Paste the key</span><span class="ro">Pune cheia</span></h4><p class="en">Paste the key you receive and press Activate. From then on the program opens at once.</p><p class="ro">Lipește cheia primită și apasă Activate. De atunci programul pornește direct.</p></div>
+  </div>
+</div></section>
+
+<section id="manual"><div class="wrap center">
+  <h2><span class="en">The manual</span><span class="ro">Manualul</span></h2>
+  <p class="sub"><span class="en">69 pages with real screenshots: every window, every button, step by step. The same manual is in the program (the ? button).</span><span class="ro">69 de pagini cu capturi reale: fiecare fereastră, fiecare buton, pas cu pas. Același manual e și în program (butonul ?). Manualul e în engleză.</span></p>
+  <a class="btn ghost" href="manual/welcome.html"><span class="en">Open the manual</span><span class="ro">Deschide manualul</span></a>
+</div></section>
+
+<section id="contact"><div class="wrap center">
+  <h2>Contact</h2>
+  <p class="sub"><span class="en">Activation keys, questions and projects – write to us on Facebook.</span><span class="ro">Chei de activare, întrebări și proiecte – scrie-ne pe Facebook.</span></p>
+  <span class="fb"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>Facebook · Filip Gabriel</span>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 LumiDMX Remake</span>
+  <span><span class="en">Windows 10 / 11 · DMX via Art-Net and USB</span><span class="ro">Windows 10 / 11 · DMX prin Art-Net și USB</span></span>
+</div></footer>
+
+<script>
+function setLang(l){
+  document.documentElement.lang=l;
+  document.getElementById('b-en').className=l=='en'?'on':'';
+  document.getElementById('b-ro').className=l=='ro'?'on':'';
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+(function(){var l=null;try{l=localStorage.getItem('lang')}catch(e){}
+ if(!l) l=(navigator.language||'').toLowerCase().indexOf('ro')==0?'ro':'en';
+ setLang(l);})();
+</script>
+</body>
+</html>

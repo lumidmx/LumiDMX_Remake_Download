@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>+Add Fixture</title>
+<meta name="keywords" content="+Add Fixture; Patch Address Editor; address grid; universe; Universe tabs; select a group; Ctrl+click; move a fixture; drag a fixture; Move; Clone; Show usage; Delete only; Delete whole group; Undo; Ctrl+Z; HOW TO USE THIS PROGRAM; log of the patch; Can't drop here">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/option.html" title="Previous: The Option tab">&lt; Previous</a> <a href="../patch/newfixture.html" title="Next: Adding new fixtures">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <b>+Add Fixture</b></div></div><!--/NAV-->
+<div class="page">
+<h1>+Add Fixture</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>The <span class="ui">+Add Fixture</span> tab of Setup &amp; Patch is the <b>Patch Address Editor</b>: the 512
+addresses of a universe on a grid, with the fixtures of the project on it. Here fixtures are added, moved, cloned and
+deleted - and what the buttons of the project hold for them goes with them.</p>
+
+<div class="pic"><img src="../img/patch_addfixture.png" alt="The Patch Address Editor"></div>
+<p class="cap">The Patch Address Editor with Andrei_edit.x1: universe 1, three groups.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>Undo</b> - takes back the last change (below).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Import from another X1</b> - a group of fixtures from another project, with
+  its buttons. See <a href="import.html">Import from another X1</a>.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>New Fixture</b> - adds fixtures from a profile. See
+  <a href="newfixture.html">Adding new fixtures</a>.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>New Fixture with "show-ready" function in Live-Panel</b> - the same, then
+  the new fixtures are written into the buttons the project already has. See <a href="newfixture.html">Adding new
+  fixtures</a>.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>Mirror / Offset</b> - the movements of one group mirrored onto another, or
+  inside the same group, and the pan and tilt moved. See <a href="mirror.html">Mirror / Offset</a>.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>Between projects</b> - movements, dimmers and dimmer games taken from
+  another project. See <a href="between.html">Between projects</a>.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><b>Library tools</b> - the Fixture Filter and the LumiDMX Fixture Editor. See
+  <a href="library.html">Library tools</a>.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><b>The project</b> - its file, how many groups, fixtures and chases it has.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><b>The universes</b> - one tab for each of the 16; the triangles at the two ends
+  show the ones that do not fit (grey when there are no more that way).</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td><b>The grid</b> - the 512 addresses of the universe, 32 in a row. Each fixture is
+  a bar from its first to its last address, with its name and its first address; each group has its colour. The free
+  addresses show their numbers.</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td><b>HOW TO USE THIS PROGRAM</b> - a short help, under the grid (scroll down).</td></tr>
+<tr><td class="n"><span class="n">12</span></td><td><b>The hint</b> - the help in one line.</td></tr>
+<tr><td class="n"><span class="n">13</span></td><td><b>The log</b> - every change, with its time: fixtures added, moved, cloned,
+  deleted, imported, and what Undo took back.</td></tr>
+</table>
+
+<h2>Selecting</h2>
+<p>A click on a fixture selects its whole group. <kbd>Ctrl</kbd>+click adds a single fixture to the selection or takes
+it out - a selection of your own, for example to split one group over two universes.</p>
+
+<h2>Moving</h2>
+<ul>
+<li>Drag a selected fixture: the selection moves with the mouse and is placed where the button is let go - at once,
+  there is nothing to confirm. If the place is taken, <i>Can't drop here</i> says why and the fixtures stay where they
+  were.</li>
+<li>To another universe: drag up onto its tab - the grid shows that universe - then down to the place, and let go.
+  Dragging onto a triangle at the end of the tabs shows the other tabs.</li>
+<li>To an exact address: the right click, <span class="ui">Move</span> (below).</li>
+</ul>
+
+<h2>The right click on a fixture</h2>
+<div class="pic"><img src="../img/patch_grid_menu.png" alt="The right-click menu of a fixture in the grid"></div>
+<p class="cap">The right click on the first fixture of the group Beam 5R Girbo 16_Ch.</p>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><span class="ui">Show usage</span></td><td>Lists the chases and the Live panel buttons that use this fixture (where
+  its values are not all 0), with their steps - or says that it is not used and is safe to delete or move. Worth a look
+  before deleting or moving.</td></tr>
+<tr><td><span class="ui">Move '<i>group</i>'</span></td><td>Asks for the <b>New universe</b> and the <b>New start address</b>
+  of the whole group, and moves it there at once, as a drag.</td></tr>
+<tr><td><span class="ui">Move current selection</span></td><td>The same for the fixtures selected with <kbd>Ctrl</kbd>+click
+  (when there are several).</td></tr>
+<tr><td><span class="ui">Clone '<i>fixture</i>'</span></td><td>Adds a copy of the fixture - the same profile - at the universe and
+  start address you give. Every chase and button gets for the copy the same values it has for the fixture it was copied
+  from, and the sliders that control the fixture control the copy too. With several fixtures selected,
+  <span class="ui">Clone current selection</span> copies them together and keeps their spacing.</td></tr>
+<tr><td><span class="ui">Delete only '<i>fixture</i>'</span><br><span class="ui">Delete whole group</span></td><td>Asks first.
+  Then every chase (Live panel button) is searched: the values of these fixtures are cleared in each step, and a step
+  left with no other fixture in it is removed completely. The fixtures leave the patch.</td></tr>
+</table>
+<p>The moves, clones and deletes carry the buttons with them: a moved fixture keeps everything the buttons hold for it at
+its new address.</p>
+
+<h2>Undo and Save</h2>
+<ul>
+<li><span class="ui">Undo</span> (or <kbd>Ctrl</kbd>+<kbd>Z</kbd> while this tab is shown) takes back the changes of the
+  Patch Address Editor - fixtures added, moved, cloned, deleted or imported, and the work of its tools - one at a time,
+  the last first, back to when the project was opened.</li>
+<li>A change counts at once: the program sends to the new addresses, and the patch list, the General Mixer and the DMX
+  Board show it.</li>
+<li>It is written to the project file only with <span class="ui">Save</span> (see
+  <a href="../start/projects.html">Opening and saving a project</a>). Until then the file stays as it was.</li>
+</ul>
+
+<div class="tip"><p><b>Tip:</b> the addresses in the patch must be the ones set on the fixtures themselves. After moving a
+fixture here, set the same start address on the fixture (its display or its DIP switches).</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/option.html" title="Previous">The Option tab</a> &nbsp;|&nbsp; Up: <a href="../patch/index.html">Setup &amp; Patch</a> &nbsp;|&nbsp; <a href="../patch/newfixture.html" title="Next">Adding new fixtures</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Channels and presets</title>
+<meta name="keywords" content="channel; DMX channel; channel type; preset; function preset; DMX from; DMX to; DMX Default; Default Function; Is Default Function; Fade; Fill undefined Areas; Undef; Copy Channel; Move Up; Move Down; preset function; Custom; Gobo...; Shutter Open; Strobe">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../fe/window.html" title="Previous: The editor window">&lt; Previous</a> <a href="../fe/info.html" title="Next: Fixture information and pictures">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../fe/index.html">LumiDMX Fixture Editor</a> &gt; <b>Channels and presets</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Channels and presets</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>A profile is a list of <b>channels</b>, in the order the fixture uses them: the first one is at the fixture's
+DMX address, the second one at the address + 1, and so on. A channel can have <b>presets</b>: DMX ranges with a
+name and a picture (white, yellow, gobo 3, strobe ...).</p>
+
+<h2>The list</h2>
+<div class="pic"><img src="../img/fe_list.png" alt="The list of channels and presets"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>A channel</b> - its number (<b>#6</b> = the 6th channel), its name, the
+  picture of its type. <span class="ui">[-]</span> in front: its presets are shown under it.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>A preset</b> of that channel (here selected) - its picture and its name.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Channel</span> - the names.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Type</span> - the type of the channel (the table below).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">DMX From</span> - where the range of the preset starts.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">DMX To</span> - where it ends.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">DMX Default</span> - the value sent when this preset is chosen.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">Default Function</span> - <b>YES</b> for the preset of the channel that is
+  its default.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">Fade</span> - <b>YES</b>: the channel moves smoothly from one value to the
+  next; <b>NO</b>: it jumps (see Fade below).</td></tr>
+</table>
+
+<h2>The page of a channel</h2>
+<p>A click on a channel shows its page in <span class="ui">Selection</span>.</p>
+<div class="pic"><img src="../img/fe_channel.png" alt="A channel selected and its page"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The channel selected in the list.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">DMX Channel Name</span> - its name: the one the Remake shows in the
+  mixer.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Type</span> - what the channel does. The type decides the picture of the
+  channel, whether it may have presets and how the Remake and the 3D use it.</td></tr>
+</table>
+
+<h3>The channel types</h3>
+<table>
+<tr><th>Type</th><th>Presets</th><th>Fade</th></tr>
+<tr><td>Pan, Tilt, Pan Fine, Tilt Fine</td><td>no presets</td><td>YES</td></tr>
+<tr><td>Dimmer</td><td>may have</td><td>YES</td></tr>
+<tr><td>Cyan, Magenta, Yellow, Red, Green, Blue</td><td>no presets</td><td>YES</td></tr>
+<tr><td>Shutter, Color, Color Rotation, Gobo, Gobo Rotation, Iris, Zoom, Frost, Focus, None</td><td>may have</td>
+  <td>YES without presets, NO with presets</td></tr>
+</table>
+<p><b>None</b> is for the channels that are none of the others (speed, special functions, programs). A fixture has at
+most one Pan, one Tilt, one Pan Fine and one Tilt Fine, and Pan goes with Tilt; <a href="test.html">Test</a> checks it.</p>
+
+<h3>Fade</h3>
+<p>The editor sets <b>Fade</b> by itself, from the type and the presets, as the table shows: a pan or a dimmer must
+move smoothly, but a colour wheel or a gobo wheel with presets must jump straight to the next slot, or it would show
+every colour or gobo between.</p>
+
+<h2>The page of a preset</h2>
+<p>A click on a preset shows its page.</p>
+<div class="pic"><img src="../img/fe_preset.png" alt="The page of a preset"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">DMX from</span> - where the range starts (0-255).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">DMX to</span> - where it ends.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Default</span> - the value sent for this preset; it stays between
+  From and To.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>Function</b> - <span class="ui">Custom</span> (a name and a picture of your
+  own), <span class="ui">Gobo...</span> (choose a picture file: it becomes the picture, its name the name, and the
+  file the gobo of the preset), or one of the standard functions below, which gives the preset its name and its
+  picture.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Name of function</span> - the name of the preset.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Is Default Function</span> - this preset is the default of the
+  channel. Only one preset of a channel can be; without a tick, the first preset is.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Load Image...</span> / <span class="ui">Clear</span> - the picture of
+  the preset (32 x 32). See <a href="info.html">Fixture information and pictures</a>.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">Fill with Color</span> - the picture made of one colour, for the
+  slots of a colour wheel.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">High Res. Gobo</span> - the picture file of the gobo, for the 3D.</td></tr>
+</table>
+
+<h3>The standard functions</h3>
+<p>Gobo Shake, Dimmer, Lamp off, Lamp on, Indexing, Left Loop, Stop loop, Right loop, Shutter Closed, Shutter Open,
+Strobe, Strobe off, Speed, Zoom. Each one has its own picture, which the Remake shows in the General Mixer when the
+channel is on that preset.</p>
+
+<h2>Working with channels and presets</h2>
+<table class="wide">
+<tr><th>To</th><th>Do</th></tr>
+<tr><td>add a channel</td><td><span class="ui">Edit &gt; New DMX Channel</span> (<kbd>Ctrl</kbd>+<kbd>D</kbd>): a new channel at the
+  end, selected.</td></tr>
+<tr><td>add a preset</td><td>select the channel (or one of its presets), <span class="ui">Edit &gt; New Function Preset</span>
+  (<kbd>Ctrl</kbd>+<kbd>P</kbd>).</td></tr>
+<tr><td>copy a channel</td><td><span class="ui">Edit &gt; Copy Channel</span> (<kbd>Ctrl</kbd>+<kbd>C</kbd>): the copy, with its
+  presets and their pictures and gobos, goes at the end, selected.</td></tr>
+<tr><td>delete</td><td>select the channel or the preset, <span class="ui">Edit &gt; Delete</span>
+  (<kbd>Ctrl</kbd>+<kbd>Del</kbd>).</td></tr>
+<tr><td>change the order</td><td><span class="ui">Move Up</span> / <span class="ui">Move Down</span>: the channel moves one place and stays
+  selected, so you can press again.</td></tr>
+<tr><td>cover the whole range 0-255</td><td>select the channel, <span class="ui">Edit &gt; Fill undefined Areas</span>
+  (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>F</kbd>): the editor says how many ranges no preset covers and, after Yes,
+  adds an <b>Undef</b> preset for each of them.</td></tr>
+</table>
+<div class="tip"><p><b>Tip:</b> the order of the channels must be exactly the one of the fixture's manual, without gaps: a
+channel the fixture has but you do not need still gets its place (type <b>None</b>), otherwise every channel after it
+is one address off.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../fe/window.html" title="Previous">The editor window</a> &nbsp;|&nbsp; Up: <a href="../fe/index.html">LumiDMX Fixture Editor</a> &nbsp;|&nbsp; <a href="../fe/info.html" title="Next">Fixture information and pictures</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

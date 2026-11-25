@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Squares and bands</title>
+<meta name="keywords" content="square; band; bands; Add band; frequency; Hz; level; move square; resize square; Beat Trigger; Beat threshold; Dir. Trigger; Step Direction band; List (band)">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../s2l/lists.html" title="Previous: BPM lists">&lt; Previous</a> <a href="../s2l/test.html" title="Next: Testing">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../s2l/index.html">Sound2Light</a> &gt; <b>Squares and bands</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Squares and bands</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>A square on the graph says: <i>when the sound of these frequencies is this loud, step the list</i>. Its left and
+right edges are the frequencies (the numbers under the bars, in Hz), its bottom and top are the loudness. A bar
+touches the square when it reaches into it.</p>
+<ul>
+<li>Low on the graph = touched often (quiet sounds are enough); high = only by loud sounds.</li>
+<li>On the left (45 - 181 Hz) = the bass and the kick drum; in the middle (289 Hz - 2 kHz) = the voice and most
+  instruments; on the right = the hi-hat and the cymbals.</li>
+<li>Small = touched rarely; wide and tall = touched often.</li>
+</ul>
+
+<h2>Moving and sizing</h2>
+<ul>
+<li>Drag the body of a square to move it; drag its bottom-right corner to make it bigger or smaller.</li>
+<li>A left click never steps a list - it only moves and sizes. The right click tries the square (see
+  <a href="test.html">Testing</a>).</li>
+<li><span class="ui">+ Add band</span> adds a new square, <i>Band 1</i>, <i>Band 2</i> ...; choose its list in the <span class="ui">List:</span> box of its
+  band. A square without a list does nothing (the status line says so when it is touched).</li>
+<li>The name of a band can be written over; ✖ deletes the band and its square (the list stays).</li>
+<li>Several squares can step the same list - for example one on the bass and one on the hi-hat.</li>
+</ul>
+
+<h2>Beat Trigger and Dir. Trigger</h2>
+<div class="pic"><img src="../img/s2l_special.png" alt="Beat Trigger and Dir. Trigger on"></div>
+<p class="cap">Both ticked: the Step Direction square on the left, the Beat square at the top right, their bands.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Dir. Trigger</span> and <span class="ui">Beat Trigger</span> ticked.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The Dir. Trigger square (green frame), with <b>&gt;</b> or <b>&lt;</b>: each time it is touched, the direction of Step Direction turns round - the same as the Step Direction of the main bar and of the remote.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The Beat square (red frame, ♪): it does not depend on where it is; it lights on every kick of the music.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td>Their bands: <i>Beat</i> - choose in <span class="ui">List:</span> the list it steps, one kick = one step; <i>Step Direction</i>.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>With the Beat Trigger on, <span class="ui">Auto</span> BPM follows the kicks it finds.</td></tr>
+</table>
+
+<p><span class="ui">Beat threshold</span>: lower = more sensitive (more kicks found), higher = only clear kicks. 3.0 ignores most bass
+guitar notes.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../s2l/lists.html" title="Previous">BPM lists</a> &nbsp;|&nbsp; Up: <a href="../s2l/index.html">Sound2Light</a> &nbsp;|&nbsp; <a href="../s2l/test.html" title="Next">Testing</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

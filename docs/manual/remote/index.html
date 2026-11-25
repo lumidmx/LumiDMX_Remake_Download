@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Remote, controllers and MIDI</title>
+<meta name="keywords" content="Remote; remote player; Back; Play; Pause; Forward; Step on Remote; STEP; armed; Remote shortcut keys; remote keys; remote MIDI; MIDI learn; APC mini; Akai; controller; keyboard shortcuts; Step Direction; instant reverse; Power (Step Direction); Pan / Tilt Size; P+T; MIDI fader; APC mini mk2; Akai; Colors In-Out feedback; pad colours; Virtual port; Groups (APC); Momentary; Static; Pulse; Blink; .noisette; Chataigne">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../view3d/howto.html" title="Previous: Plot-View and How to use">&lt; Previous</a> <a href="../macros/index.html" title="Next: Macros and the Command Line">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <b>Remote, controllers and MIDI</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Remote, controllers and MIDI</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The lights can be played by hand: the remote player steps the chases, keys of the keyboard and MIDI controllers
+start buttons and move sliders. This page explains the remote player; the keys and the MIDI of a button are in
+<a href="../live/props.html">Object Propertys</a>, those of a slider in <a href="../live/sliders.html">Sliders</a>,
+the MIDI ports in <a href="../patch/midi.html">MIDI</a>.</p>
+
+<h2>The remote player</h2>
+<div class="pic"><img src="../img/remote_player.png" alt="Remote, Back, Play and Forward on the toolbar"></div>
+<p class="cap"><span class="ui">Remote</span> pressed: <span class="ui">Back</span>, <span class="ui">Play</span> and
+<span class="ui">Forward</span> next to it. Play is green and pressed: the group plays.</p>
+<p><span class="ui">Remote</span> on the toolbar shows or hides <span class="ui">Back</span>,
+<span class="ui">Play</span> and <span class="ui">Forward</span>; the program remembers it for the next start. They drive
+together, as one group, the buttons set to <b>Step on Remote</b> (the Trigger of <a href="../live/props.html">Object
+Propertys</a>; such a button shows STEP).</p>
+<ul>
+<li><b>Joining the group</b> - pressing a Step on Remote button puts it in the group and plays the group: it starts,
+  and the buttons pressed before go on playing (or start again). Pressing the same button again while it runs stops it
+  and takes it out of the group.</li>
+<li><span class="ui">Play</span> - every button of the group plays its steps on its own times (fade, wait), as a
+  normal button. Pressed again it pauses them, in the middle of a fade too. Play is green and pressed while the group
+  plays.</li>
+<li><span class="ui">Back</span>, <span class="ui">Forward</span> - every button of the group goes one step back or
+  forward and stays there. <span class="ui">Forward</span> also starts a button of the group that is not running.</li>
+<li>The dots of a STEP button go one way while it plays forward, the other way after Back, and stand still while it
+  waits.</li>
+</ul>
+
+<h2>Remote shortcut keys</h2>
+<div class="pic"><img src="../img/remote_keys.png" alt="The Remote shortcut keys window"></div>
+<p class="cap">The keys and the MIDI of the remote player, none set yet. At the top: how many Step on Remote buttons
+are in the group now.</p>
+<p>Open it from <span class="ui">Options</span> &gt; <span class="ui">Remote shortcut keys</span>, or with a right
+click on <span class="ui">Back</span>, <span class="ui">Play</span> or <span class="ui">Forward</span>.</p>
+<ul>
+<li><span class="ui">Set...</span> - then press the key (<i>Press a key... (Esc cancels)</i>).</li>
+<li><span class="ui">MIDI</span> - click on the value under it (<i>none</i>), it reads <i>Learn...</i>: press or move
+  the control of the MIDI controller. The box turns it on and off.</li>
+</ul>
+<p>The keys and the MIDI of the remote player are settings of the program: they work in every project.</p>
+
+<h2>The phone</h2>
+<p>The Live Panel can be used from a phone on the same Wi-Fi, in its browser: see <a href="../live/webremote.html">Web Remote (the phone)</a>.</p>
+
+<h2>Step Direction and Pan / Tilt Size</h2>
+<p>Two controls of the top bar change the movements while they play - by hand, or from faders of a MIDI controller.</p>
+<div class="pic"><img src="../img/remote_bar.png" alt="Step Direction and Pan / Tilt Size on the top bar"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">OFF</span> / <span class="ui">ON</span> - turns Step Direction on. Off, the movements play at their own speed.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Step Direction</span> - drag left or right: the speed and the direction of the <b>Step on Remote</b> movements of the fixtures chosen. Right in the middle (0) they stand still; to the left they run backward. Right-click: its settings.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The value now, in % of the normal speed (100 = as programmed, -100 = as fast, backward).</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Pan / Tilt Size</span> - three rows: <span class="ui">P</span> (Pan), <span class="ui">T</span> (Tilt), <span class="ui">P+T</span> (both). Each from -100 to +100: 0 = the movement as programmed, -100 = held at its centre, +100 = twice as big. Press on a row and drag; click the value at its end: back to 0. Right-click: its settings.</td></tr>
+</table>
+
+<p>P, T and P+T always start at 0 when the program starts or a project is opened (a project saved with them at -100 would otherwise hold every move at its centre); the fixtures, Pan / Tilt and the MIDI faders are kept.</p>
+<p>P+T moves P and T by the same amount and they keep their difference. Pan / Tilt Size makes the movements bigger or smaller
+round their own centre; setOffset moves them - the two work together.</p>
+<div class="pic"><img src="../img/remote_stepdir.png" alt="Step Direction - choose fixtures"></div>
+<table class="wide">
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td><span class="ui">Power (range ±)</span></td><td>How far the control goes: 150 = from -150 to +150 (1.5 times the speed). 200 = twice the speed.</td></tr>
+<tr><td><span class="ui">Key Shortcut - instant reverse</span></td><td>A key that turns the direction over at once (+120 becomes -120). Click the field, then press the key. <span class="ui">MIDI</span> next to it: the same from a pad.</td></tr>
+<tr><td><b>MIDI</b></td><td>Tick it, click the field, then move a fader or knob of the controller: it sets the value (0 - 64 - 127 = minus - 0 - plus). A pad pressed instead reverses.</td></tr>
+<tr><td>the fixtures</td><td>Whose Pan / Tilt it affects: a Step on Remote chase is driven only if its steps touch the Pan / Tilt of a fixture ticked here.</td></tr>
+</table>
+<div class="pic"><img src="../img/remote_ptsize.png" alt="Pan / Tilt Size - choose fixtures"></div>
+<table class="wide">
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td><span class="ui">Apply the size to</span>: <span class="ui">Pan</span>, <span class="ui">Tilt</span></td><td>Which of the two it changes.</td></tr>
+<tr><td><b>MIDI Pan</b>, <b>MIDI Tilt</b>, <b>MIDI P+T</b></td><td>A fader for each row: tick MIDI, click the field, move the fader. The same fader on Pan and Tilt moves both.</td></tr>
+<tr><td>the fixtures</td><td>Whose movements are made bigger or smaller.</td></tr>
+</table>
+
+<p>The choices of both windows are kept in the S2L.dat of the project: every project has its own fixtures.
+Copies of both controls can be shown in <a href="../live/monitor.html">the Monitor</a>.</p>
+
+<h2>APC mini mk2 - colours on the pads</h2>
+<p>With an Akai APC mini mk2, the pads can show the state of the buttons in colours: a button that plays lights its pad,
+the others of its group go dark, and so on. Turn it on in <span class="ui">Setup &amp; Patch &gt; MIDI</span>:</p>
+<div class="pic"><img src="../img/remote_midi_apc.png" alt="Setup and Patch, MIDI, with the APC mini option"></div>
+
+<p>Tick <span class="ui">Apc mini mk2 - Colors In-Out feedback</span>. The editor opens; the line under the box says when the link
+works (Server running). This option only carries the state (In-Out MIDI) between the editor and LumiDMX Remake; it cannot
+be used together with loopMIDI In / Out.</p>
+<div class="pic"><img src="../img/remote_apc.png" alt="The APC mini mk2 editor"></div>
+<table class="wide">
+<tr><th>Part</th><th>What it does</th></tr>
+<tr><td><b>Project</b></td><td>The editable colour project (.json): <span class="ui">New project</span>, <span class="ui">Load...</span>, <span class="ui">Save project</span>; <span class="ui">Import from .noisette...</span> turns a Chataigne project into one, once.</td></tr>
+<tr><td>the controller</td><td>Its port, <span class="ui">Connect</span> (red: no MIDI port found - connect the controller), <span class="ui">Refresh ports</span>.</td></tr>
+<tr><td><span class="ui">Virtual port</span></td><td>Where every press of the controller goes: <span class="ui">Lumidmx_Remake</span>. <span class="ui">Virtual port 2</span> (optional, e.g. Resolume) gets the same MIDI at the same time.</td></tr>
+<tr><td><span class="ui">Displayed brightness</span></td><td>Only how the colours look in the window; it does not change what goes to the controller.</td></tr>
+<tr><td><b>Main grid (8x8) + Side / Bottom</b></td><td>The pads, in the colours they have. Click = select one, Ctrl+click = add / remove, double-click = edit that pad.</td></tr>
+<tr><td><b>Groups</b></td><td>Pads that turn each other off. <span class="ui">Create group from selection</span> (2 or more), click a colour = select the whole group, <span class="ui">+ selection</span>, <span class="ui">Delete group</span>.</td></tr>
+<tr><td><b>Help</b>, <b>Log</b></td><td>The short help of the editor; the MIDI events, when Log active is ticked.</td></tr>
+</table>
+<div class="pic"><img src="../img/remote_apc_button.png" alt="The editor of one pad"></div>
+
+<p>The editor of a pad: the <b>ON color</b> and the <b>OFF color (base)</b> - a colour and how it shows: Static (10 % to 100 %),
+Pulse or Blink (at 1/16 to 1/2) - chosen from the list, from the Palette or from <b>All states</b>; <b>Momentary</b> (lit only
+while held, no group); the pads it turns off when it turns on. The live preview shows it; with the controller connected the
+colours are seen on it at once. <span class="ui">Save</span> keeps it, <span class="ui">Delete rule</span> takes it away.</p>
+<p>The X of the editor hides it in the tray; it keeps working.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../view3d/howto.html" title="Previous">Plot-View and How to use</a> &nbsp;|&nbsp; Up: <a href="../welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="../macros/index.html" title="Next">Macros and the Command Line</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Design Mode</title>
+<meta name="keywords" content="Design Mode (3D); Add Fixtures (3D); Update Patch; Add 3D-Object; Stage (3D); Stage Editor; Scene Infos; Focus Selected; Add Folder; DMX Transformation Node; Delete Item; New Root-Folder; Dublicate; Change DMX Address; select (3D); Visual page; Position; Rotation; Scale; Propertys page; Wattage; Color Filter; Tools page; Array; Circle Array; Line Array; Matrix Array; Reset Objects">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../view3d/live.html" title="Previous: Live Mode and DMX Input">&lt; Previous</a> <a href="../view3d/visuals.html" title="Next: Visuals and Configuration">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../view3d/index.html">3D Previsualisation</a> &gt; <b>Design Mode</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Design Mode</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>Design Mode is where the scene is built: the stage, the objects (truss, walls, screens) and the fixtures, each in its place
+and with its DMX address. Nothing is written to the project until you save it (<span class="ui">File &gt; Save</span>).</p>
+<div class="tip"><p>The button <span class="ui">How to Add fixtures</span> on the <a href="howto.html">How to use</a> tab opens a short help
+with all of this, inside the 3D.</p></div>
+
+<h2>The ribbon</h2>
+<div class="pic"><img src="../img/view3d_design.png" alt="The Design Mode tab"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Add Fixtures</span> - choose a fixture profile (.lfi2), fill in Universe, Start address, Quantity (pieces) and Spacing (channels), then press <span class="ui">Create fixture(s)</span>. They go into the folder selected in the list (with nothing selected, into a new "New Folder"); with a Group name they get a folder of that name. They all appear at the same place - spread them out with Position or the Tools page.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Update Patch</span> - brings in the fixtures patched in LumiDMX Remake (the project open there now) that are not in the 3D yet. A fixture whose universe and address are already used in the 3D is left out. They go into the folder selected in the list.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Add 3D-Object</span> - a model from lib\models (truss, stage parts ...), at the centre of the selection, in the folder selected.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Stage</span> - the size of the stage, its six sides (colour or texture) and its light.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Scene Infos</span> - how many objects, lights, points and polygons the scene has (a big scene is slower).</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>The small corner button of <span class="ui">Stage</span>: the Stage Editor (the same as the Stage button).</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Focus Selected</span> - while it is pressed, the camera keeps the selection in the middle of the view.</td></tr>
+</table>
+
+
+<h2>The list and its menu</h2>
+<div class="pic"><img src="../img/view3d_tree.png" alt="The list of the scene, its buttons and its right-click menu"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Add Folder</span> - a new folder inside the folder selected (at the top when nothing is selected).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Add 3D-Object</span> - the same as the ribbon button.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Add DMX Transformation Node</span> - a folder whose content can be moved and turned by DMX (a moving truss, say). Set it up on the Propertys page, DMX Transformation.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Delete Item</span> (red X) - deletes the item clicked last, with everything inside it. It asks first.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The right-click menu: <span class="ui">New Root-Folder</span> (a folder at the top), <span class="ui">Dublicate</span> (Ctrl+V - a copy with everything inside, at the same place), <span class="ui">Change DMX Address...</span> (a new universe and address for the selected fixtures; with several it can count the addresses on) and <span class="ui">Delete</span> (Del).</td></tr>
+</table>
+
+
+<h2>Selecting</h2>
+<table class="keys wide">
+<tr><td><b>click</b></td><td>On an item in the list: only that one is selected. A folder selects everything inside it.</td></tr>
+<tr><td><b>Ctrl+click</b></td><td>Adds an item to the selection, or takes it out.</td></tr>
+<tr><td><b>Shift+click</b></td><td>Everything from the item clicked before down to this one (only what is shown: the items of a closed folder are not taken).</td></tr>
+<tr><td><b>right-click</b></td><td>In the 3D view: selects the object under the mouse.</td></tr>
+<tr><td><b>Shift/Ctrl+right-click</b></td><td>In the 3D view: adds the object under the mouse to the selection.</td></tr>
+<tr><td><b>drag</b></td><td>Drag items from the list onto a folder to move them into it. Their place on the stage does not change.</td></tr>
+</table>
+<p>A selected fixture has an orange frame in the 3D view, and its address (1:161 = universe 1, address 161) is written next to it.</p>
+
+<h2>The three pages: Visual, Propertys, Tools</h2>
+<div class="pic"><img src="../img/view3d_pages.png" alt="The Visual, Propertys and Tools pages"></div>
+<p class="cap">From left to right: Visual (place, rotation, scale), Propertys (the light and the look) and Tools (arrays).</p>
+
+<h3>Visual - Position, Rotation, Scale</h3>
+<ul>
+<li>One object selected: the boxes show its own values, and what you type becomes its value.</li>
+<li>Several selected, or a folder: <span class="ui">Position</span> shows 0 - what you type moves them all together.
+<span class="ui">Rotation</span> shows 0 - what you type turns the whole group round its centre. <span class="ui">Scale</span> shows 1 - what you type is given to each one.</li>
+<li>Hold <b>Ctrl</b> while you change the Rotation and every selected object turns on its own spot instead. While Ctrl is held, the three Rotation boxes have an orange frame.</li>
+<li>A box that has the focus also changes with the mouse wheel, one step at a time.</li>
+</ul>
+<h3>Propertys</h3>
+<p>A row you change goes to every selected item: the <b>Light</b> rows to every fixture, the <b>Visual</b> rows to every object.
+The page shows the values of the last one selected.</p>
+<table class="wide">
+<tr><th>Row</th><th>What it does</th></tr>
+<tr><td>Enabled</td><td>The fixture gives light.</td></tr>
+<tr><td>Color Filter</td><td>A colour glass in front of the lamp (White = none).</td></tr>
+<tr><td>Beam Angle, Universe, DMX</td><td>Only shown. The angle comes from the profile; change the address with Change DMX Address...</td></tr>
+<tr><td>Wattage</td><td>How strong the light is: 100 = as the profile gives it, 200 = twice as strong.</td></tr>
+<tr><td>Moving Speed</td><td>How fast pan and tilt follow the DMX.</td></tr>
+<tr><td>Incandescent Light Effect</td><td>A halogen lamp: it lights up and goes out slowly.</td></tr>
+<tr><td>Shadow</td><td>The fixture casts shadows.</td></tr>
+<tr><td>Projector</td><td>A projector source for the fixture; No Projector = none.</td></tr>
+<tr><td>Invert Pan, Invert Tilt, Swap XY</td><td>For a fixture hung the other way round.</td></tr>
+<tr><td>IsPointLight</td><td>Light all round (a bulb) instead of a beam.</td></tr>
+<tr><td>Visible, Meshfile, Cast Shadow</td><td>The object is drawn, its 3D model file, it casts shadows.</td></tr>
+<tr><td>Material (Edit Material...)</td><td>Colour, texture and shine of the object.</td></tr>
+<tr><td>Two Sided, Depthtest, Alphablending, Glow, No Light, Billboard</td><td>How the object is drawn: both faces, transparency, glow, not lit, always facing the camera.</td></tr>
+</table>
+
+<h3>Tools - Arrays</h3>
+<p>Select the objects, choose the <span class="ui">Direction</span> (X, Y, Z), the kind - <span class="ui">Circle Array</span>,
+<span class="ui">Line Array</span> or <span class="ui">Matrix Array</span> - and the value: the radius of the circle or the distance between them.
+They are laid out at once, at every change. <span class="ui">Rotate</span> turns each one to its angle on the circle; Matrix Array asks
+how many columns. <span class="ui">Reset Objects</span> puts them back where they stood when you selected them.</p>
+
+<h2>Example: the rig of the patch in a few clicks</h2>
+<ol>
+<li>Patch the fixtures in LumiDMX Remake (see <a href="../patch/index.html">Setup &amp; Patch</a>) and keep the project open.</li>
+<li>In the 3D, <span class="ui">File &gt; Fixture Library (ScanLib)...</span>: choose the folder with the profiles, if it is not set already.</li>
+<li>Design Mode, select a folder (or make one with <span class="ui">Add Folder</span>) and press <span class="ui">Update Patch</span>.</li>
+<li>Select the new fixtures, put them on the truss with Position, then spread them with a <span class="ui">Line Array</span>.</li>
+<li><span class="ui">File &gt; Save</span>. Play a chase in LumiDMX Remake and watch it in Live Mode.</li>
+</ol>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../view3d/live.html" title="Previous">Live Mode and DMX Input</a> &nbsp;|&nbsp; Up: <a href="../view3d/index.html">3D Previsualisation</a> &nbsp;|&nbsp; <a href="../view3d/visuals.html" title="Next">Visuals and Configuration</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

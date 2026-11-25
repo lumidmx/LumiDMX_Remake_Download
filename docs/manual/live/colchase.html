@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Color Chase</title>
+<meta name="keywords" content="Color Chase; colour chase; RGBW; rainbow; Rainbow Effects; Mirror (rainbow); Ping Out-In; Symmetric Wave; GENERATE RAINBOW EFFECTS; Color Config; RECALCULATE COLORS; INDEX; CHASE COLOR; CHASE DIMMER; peak; Direction (Color Chase); In-Out; Out-In; Ping-Pong; Even/Odd; Invert (Color Chase); Offset (Color Chase); Live Preview; Master Loop; ADD (Master Loop); Open JSON; Save JSON; MOVE ALL CHASES TO LIBRARY; Active groups">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/pixchase.html" title="Previous: Pixel Chase">&lt; Previous</a> <a href="../live/dmxboard.html" title="Next: The DMX Board">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Color Chase</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Color Chase</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>Color Chase is a tab of the <a href="effgen.html">Effect Generator</a> for colour and dimmer chases on the groups of the
+Patch: three ready rainbow effects, and a Chase Editor where you place colours and light on a matrix and they run across
+the fixtures - mirrored on each group, every active group in step with the largest one. The preview plays on the output
+too. What you make goes into the <a href="library.html">Library</a> as light sequences.</p>
+
+<div class="pic"><img src="../img/live_colchase.png" alt="Color Chase"></div>
+<p class="cap">Andrei_edit: the colours of Beam 5R Girbo 16_Ch, the Mirror rainbow playing in Live Preview.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Active groups</span> - the groups that take part (✓ All / ✕ All). Every one gets the same colours: its own value of that colour, else the nearest it has.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Channels</span> - the table of the Dimmer, Color and Shutter channels of each group, found in its profile; choose them there if one is missing.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The channels used now: DIMMER, COLOR (the colour wheel and its channel), SHUTTER (with its open value).</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td>The profile whose colours are listed (the reference group).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">RECALCULATE COLORS</span> - the colour bar of the Chase Editor (11) made again from the colours ticked in the list.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">✔ INDEX</span> / <span class="ui">✘ INDEX</span> - ticks or unticks every "Indexing" line of the list at once.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td>The colour list of the wheel, with the DMX value of each: tick the colours a rainbow effect uses.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">Rainbow Effects</span> - <span class="ui">Mirror</span>, <span class="ui">Ping Out-In</span>, <span class="ui">Symmetric Wave</span>: three ready colour runs, each with its name. The dot: the list shows its colours and the preview plays it; the tick: it is generated.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">GENERATE RAINBOW EFFECTS</span> - writes every ticked effect into the Library, under its name.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td><span class="ui">CHASE COLOR</span> - the colour chase: its name, <span class="ui">Direction</span> (In→Out, Out→In, Ping-Pong), <span class="ui">Phase</span> (<span class="ui">Even/Odd</span>: even places first; <span class="ui">Invert</span>), <span class="ui">Offset</span>. The tick turns it on (ACTIVE).</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td>The matrix of the colour chase and, under it, the colour bar: the colours you place (see below).</td></tr>
+<tr><td class="n"><span class="n">12</span></td><td><span class="ui">Fade</span> / <span class="ui">Wait</span> - the fade and the hold of every step.</td></tr>
+<tr><td class="n"><span class="n">13</span></td><td><span class="ui">CHASE DIMMER</span> - the same for the light: where the fixtures are on and how bright.</td></tr>
+<tr><td class="n"><span class="n">14</span></td><td><span class="ui">Live Preview</span> - what plays: the name (RAINBOW / CHASE), <span class="ui">PAUSE</span> / <span class="ui">PLAY</span>, and for every fixture its colour, its dimmer and the two mixed.</td></tr>
+<tr><td class="n"><span class="n">15</span></td><td>The progress: step 3 of 13 and the time of the whole run.</td></tr>
+<tr><td class="n"><span class="n">16</span></td><td><span class="ui">Master Loop</span> - <span class="ui">+ ADD</span> puts the chases switched on into the list, <span class="ui">- DEL</span> takes the selected one out, <span class="ui">Open JSON</span> / <span class="ui">Save JSON</span> keep the list in a file. Double-click a line: its settings come back into the editor.</td></tr>
+<tr><td class="n"><span class="n">17</span></td><td><span class="ui">MOVE ALL CHASES TO LIBRARY</span> - every chase of the Master Loop into the Library ("color+dimmer" when it has both).</td></tr>
+</table>
+
+
+<h2>The matrix - placing colours and light</h2>
+<p>The columns are the fixtures of half a group (the other half does the same, mirrored). A <b>peak</b> is a colour -
+or, in the dimmer chase, a light - placed on a column. Its height is how far it spreads to the fixtures next to it: click
+higher for a taller, wider peak. In the dimmer chase the light of a wide peak fades towards its edges. At every step all the
+peaks move one fixture on, in the Direction chosen; the run has as many steps as half the largest group has fixtures
+(Ping-Pong: there and back).</p>
+<table class="keys wide">
+<tr><td><b>click</b></td><td>Adds a peak on that column, as tall as the place you click (the colour selected on the bar).</td></tr>
+<tr><td><b>drag</b></td><td>Moves a peak to another column, or up and down to make it taller or shorter.</td></tr>
+<tr><td><b>double-click</b></td><td>Colour chase: the peak blinks - choose its colour again on the bar. Dimmer chase: its value.</td></tr>
+<tr><td><b>right-click</b></td><td>Removes the peak.</td></tr>
+<tr><td><b>the colour bar</b></td><td>Click a colour to use it for the next peaks. The numbers under it count how many peaks have that colour.</td></tr>
+</table>
+
+<p>With no peaks, the colour chase gives every fixture the first colour of the bar, and the dimmer chase full light.</p>
+
+<h2>Example: a colour wave with the light following it</h2>
+<ol>
+<li>Tick the groups. In the colour list tick the colours you want, press <span class="ui">RECALCULATE COLORS</span>.</li>
+<li>Tick <span class="ui">CHASE COLOR</span>, click two or three peaks of different colours on the matrix, Direction In→Out.</li>
+<li>Tick <span class="ui">CHASE DIMMER</span>, place one wide peak; Ping-Pong.</li>
+<li>Set Fade and Wait, watch Live Preview and the fixtures; change anything - it is seen at once.</li>
+<li><span class="ui">+ ADD</span> into the Master Loop, then <span class="ui">MOVE ALL CHASES TO LIBRARY</span>. Drag the light sequence from the Library onto the Live panel.</li>
+</ol>
+<p>As on the other tabs, <span class="ui">Save Effect...</span> / <span class="ui">Load Effect...</span> keep the whole page, and <span class="ui">Enabled</span> off greys it and
+sends nothing.</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/pixchase.html" title="Previous">Pixel Chase</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/dmxboard.html" title="Next">The DMX Board</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

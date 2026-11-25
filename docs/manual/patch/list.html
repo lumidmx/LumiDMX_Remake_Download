@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The patch list</title>
+<meta name="keywords" content="patch list; Invert Pan; Invert Tilt; X&lt;&gt;Y; swap pan and tilt; Fade; fade of a channel; Group Fade by channel name; Mixed; rename a fixture; Total fixtures; columns of the patch list; group of fixtures">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/index.html" title="Previous: Setup &amp; Patch">&lt; Previous</a> <a href="../patch/option.html" title="Next: The Option tab">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <b>The patch list</b></div></div><!--/NAV-->
+<div class="page">
+<h1>The patch list</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The right side of <span class="ui">Setup &amp; Patch</span> lists the patch of the open project: its groups, the
+fixtures of each group and the channels of each fixture. A group is a set of fixtures added together; it carries the
+name given to it then (often the name of the profile).</p>
+
+<div class="pic"><img src="../img/patch_list.png" alt="The patch list with a group open"></div>
+<p class="cap">The group <i>Beam 5R Girbo 16_Ch</i> of Andrei_edit.x1 open: six fixtures of 16 channels.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>The columns</b> - <span class="ui">Name</span>,
+  <span class="ui">Universe</span>, <span class="ui">DMX Address</span> (the first and the last channel of the fixture),
+  then <span class="ui">Invert Pan</span>, <span class="ui">Invert Tilt</span>, <span class="ui">X&lt;&gt;Y</span> and
+  <span class="ui">Fade</span> (below).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>A group</b> - its triangle opens it; in brackets, how many fixtures it has.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Group Fade by channel name</b> - under it, one row for each channel name of the
+  group, with the Fade of that channel in all the fixtures of the group.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>A fixture</b> - its triangle opens its channels, each with its address and its
+  Fade.</td></tr>
+</table>
+<p>Under the last group, <i>Total:</i> gives the number of fixtures of the project. A double click on the name of a
+fixture renames it (<kbd>Enter</kbd> or a click elsewhere keeps the new name, <kbd>Esc</kbd> leaves the old one).</p>
+
+<h2>All the columns on a 1366 x 768 screen</h2>
+<p>The list is narrower than its columns, so on a 1366 x 768 screen the last ones are past the right edge. Drag the line
+between the headings <span class="ui">Name</span> and <span class="ui">Universe</span> to the left: the names get
+shorter and every column comes into view. The right click (below) changes the same settings without the columns.</p>
+<div class="pic"><img src="../img/patch_list_cols.png" alt="The patch list with every column in view"></div>
+<p class="cap">The same list with the Name column narrowed: a fixture open, the Fade of each of its channels.</p>
+
+<h2>Invert Pan, Invert Tilt, X&lt;&gt;Y</h2>
+<p>These three settings change what a fixture receives, not what the buttons hold: they are applied to the DMX on its
+way out, so every button, slider and effect follows them.</p>
+<table class="wide">
+<tr><th>Setting</th><th>When it is True</th><th>For</th></tr>
+<tr><td><span class="ui">Invert Pan</span></td><td>the pan of the fixture is sent turned round: a value v goes out as
+  255 - v (the fine pan too).</td><td>a fixture hung the other way round; one that must move as the mirror image of
+  its neighbour.</td></tr>
+<tr><td><span class="ui">Invert Tilt</span></td><td>the same for the tilt (and the fine tilt).</td><td>a fixture on the
+  floor in a rig hung from the truss, or the reverse.</td></tr>
+<tr><td><span class="ui">X&lt;&gt;Y</span></td><td>pan and tilt change places (and their fine channels).</td><td>a
+  fixture mounted on its side.</td></tr>
+</table>
+<p>They are changed with the right click (below): on a fixture, for that fixture; on a group, for all its fixtures.
+A group whose fixtures differ shows <i>Mixed</i>.</p>
+<div class="important"><p><b>Important:</b> the program must know which channel of the fixture is the pan and which the
+tilt; it reads them from the fixture's profile (<code>.lfi2</code>). When the profile is not found, or has no channel
+of that kind, a message says that the setting does nothing yet and names the fixtures. Then choose the folder of the
+profiles (<span class="ui">Fixtures folder (.lfi2)</span> in <a href="option.html">the Option tab</a>) or correct
+the profile in the <a href="../fe/index.html">Fixture Editor</a>.</p></div>
+
+<h2>Fade</h2>
+<p>When a chase goes from one step to the next, a channel with Fade <b>True</b> moves to its new value during the fade
+time of the step; with Fade <b>False</b> it jumps to it at the start of the step. Channels that pick something - the
+colour wheel, the gobo, the shutter, a macro - are usually set to False, so that they do not run through the colours
+or gobos between two steps. The first values come from the profile when the fixture is added.</p>
+<p>The column shows True, False, or <i>Mixed</i> for a fixture or a group whose channels differ. It is changed with
+the right click too: for one channel, one fixture (all its channels), a group, or one channel name in a whole group.</p>
+
+<h2>The right click</h2>
+<div class="pic"><img src="../img/patch_list_menu.png" alt="The right-click menu of a fixture"></div>
+<p class="cap">The right click on a fixture.</p>
+<div class="pic"><img src="../img/patch_list_fade.png" alt="The right-click menu of a group, with the Fade of each channel"></div>
+<p class="cap">The right click on a group: its three settings and <span class="ui">Fade</span>, with a line for each channel
+name. A tick: Fade on in every fixture of the group.</p>
+<p>The right click on a row - or on several rows selected with <kbd>Ctrl</kbd> or <kbd>Shift</kbd> - opens a menu with
+<span class="ui">Invert Pan</span>, <span class="ui">Invert Tilt</span>, <span class="ui">X&lt;&gt;Y</span> and
+<span class="ui">Fade</span>, ticked when they are on (<i>(mixed)</i> when they differ); a click on one turns it on or
+off. On a group they begin with <i>Group -</i>. For more than one fixture, <span class="ui">Fade</span> opens a list:
+<span class="ui">All channels</span>, then one line for each channel name - Dimmer, Pan, Gobo and so on - which changes
+that channel in all of them. On a single channel the menu has only <span class="ui">Fade</span>.</p>
+
+<div class="tip"><p><b>Tip:</b> the patch is changed here and in <a href="addfixture.html">+Add Fixture</a>; what changes
+counts at once and goes into the project file with <span class="ui">Save</span>.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/index.html" title="Previous">Setup &amp; Patch</a> &nbsp;|&nbsp; Up: <a href="../patch/index.html">Setup &amp; Patch</a> &nbsp;|&nbsp; <a href="../patch/option.html" title="Next">The Option tab</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Macros and the Command Line</title>
+<meta name="keywords" content="macro; macros; Macro Editor; Macros.dat; Command Line; On Start; On Stop; StartCom; StopCom; On Change Command; exclusion group; stopobject; runobject; Wait; loop; variables; New Macro; Rename Macro; Delete macro; Apply this macro's edits">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../remote/index.html" title="Previous: Remote, controllers and MIDI">&lt; Previous</a> <a href="../macros/commands.html" title="Next: Commands">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <b>Macros and the Command Line</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Macros and the Command Line</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>Commands do by text what the buttons and the faders do by hand: start and stop buttons, set channels, sliders and
+modes, open windows. A <b>macro</b> is a named list of commands, one per line. Every command works the same wherever
+it is written; all of them are in <a href="commands.html">Commands</a>.</p>
+
+<h2>Where commands are written</h2>
+<table class="wide">
+<tr><th>Where</th><th>When it runs</th></tr>
+<tr><td>A button's <span class="ui">On Start</span> / <span class="ui">On Stop</span> (<a href="../live/props.html">Object
+  Propertys</a>)</td><td>When the button starts / stops. One command, or the name of a macro.</td></tr>
+<tr><td>A slider's <span class="ui">On Change</span>, <span class="ui">On Mouse Down</span>,
+  <span class="ui">On Mouse Up Command</span> (<a href="../live/sliders.html">Sliders</a>)</td><td>When the slider
+  moves, is pressed, is let go. The slider's name in the command stands for its value.</td></tr>
+<tr><td>A macro (the Macro Editor)</td><td>When something runs it by its name: a button, a slider, another macro, the
+  Command Line. Its lines run one after another; <code>wait</code>, <code>loop</code> and <code>endloop</code> work only
+  here.</td></tr>
+<tr><td>The Command Line</td><td>At once, when you press <kbd>Enter</kbd> or <span class="ui">Run</span>.</td></tr>
+</table>
+<p>A macro's name written alone, without <code>runObject(...)</code> round it, runs that macro - many projects write
+their On Start this way. In Andrei_edit the button <span class="ui">Cerc fata</span> has <i>Cerc fata</i> as its On
+Start: its macro stops the other movements, so only one runs at a time.</p>
+
+<h2>The Macro Editor</h2>
+<div class="pic"><img src="../img/macro_editor.png" alt="The Macro Editor"></div>
+<p class="cap">The macros of Andrei_edit; the macro <span class="ui">Cerc fata</span> is open: one
+<code>stopobject</code> for each other movement.</p>
+<p><span class="ui">Macros</span> on the function bar (or the command <code>Macro</code>) opens it. On the left the
+macros of the project, each with the number of its commands, and <span class="ui">Search</span> to show only those
+whose name has the text typed. A warning sign in front of a name: no button or slider has that name, and no start, stop or
+slider command uses it. On the right the commands of the macro chosen, one per line.</p>
+<ul>
+<li><span class="ui">+ New</span> - a new macro; give it the name of the button or the command that will run it.</li>
+<li><span class="ui">Rename</span>, <span class="ui">Delete</span> - Delete removes only that macro; other macros that
+  name it are left as they are.</li>
+<li><span class="ui">Apply this macro's edits</span> - keeps the text written. Choosing another macro, or closing the
+  window, keeps it too. Empty lines are left out.</li>
+</ul>
+<p>The macros are written into the project's file at the next <span class="ui">Save</span> (or <span class="ui">Save
+as...</span>); until then the status line says <i>Macro changes kept (pending Save As).</i> While the Macro Editor is
+open, the keys of the buttons do nothing, so that typing does not start the light.</p>
+
+<h3>A macro with waits and a loop</h3>
+<pre><code>U(1)
+loop(4)
+  SetDMX(33, 255)
+  wait(250)
+  SetDMX(33, 0)
+  wait(250)
+endloop
+setchmode(33, out)</code></pre>
+<p>On universe 1, channel 33 goes to full and back to 0 four times - <code>SetDMX</code> holds it by hand (MAN) -,
+then <code>setchmode</code> gives it back to the buttons (OUT). A button stopped while its On Start macro still waits
+drops the rest of the macro, then runs its On Stop. A macro that runs on and on without a
+<code>wait</code> (a loop with no wait) is stopped by the program.</p>
+
+<h2>The Command Line</h2>
+<div class="pic"><img src="../img/command_line.png" alt="The Command Line window"></div>
+<p class="cap">The Command Line after <code>help</code>: the end of the list.</p>
+<p><span class="ui">Command Line</span> on the function bar (or <code>showCmd</code>) opens it. Type a command after
+<b>&gt;</b> and press <kbd>Enter</kbd> or <span class="ui">Run</span>. The window writes the commands run - yours, and
+those of the buttons and sliders - with the program's answers and errors; <span class="ui">Clear</span> (or the
+command <code>Clear</code>) empties it. <code>help</code> prints the list of the commands (the page <a href="commands.html">Commands</a>).</p>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../remote/index.html" title="Previous">Remote, controllers and MIDI</a> &nbsp;|&nbsp; Up: <a href="../welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="../macros/commands.html" title="Next">Commands</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

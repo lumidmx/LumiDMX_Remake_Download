@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The program folder and its files</title>
+<meta name="keywords" content="program folder; installing; dmx_simulator_settings.json; settings file; fixture_editor_settings.json; 3D LumiDmx Remake.json; Default Project.json; fixtures folder; .lfi2, where; backup; copy to another computer; x1patch.xml">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../start/programs.html" title="Previous: The programs">&lt; Previous</a> <a href="../start/activation.html" title="Next: Activation">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../start/index.html">Getting started</a> &gt; <b>The program folder and its files</b></div></div><!--/NAV-->
+<div class="page">
+<h1>The program folder and its files</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>LumiDMX Remake needs no setup program: the programs run from the folder they are in. Keep them together in
+one folder, for example <code>D:\LumiDMX Remake</code>. Each program writes its settings next to itself.</p>
+
+<h2>What is in the folder</h2>
+<table class="wide">
+<tr><th>File</th><th>What it is</th></tr>
+<tr><td><code>LumiDMX_Remake_Full v12.exe</code></td><td>LumiDMX Remake Full (the version is part of the
+  name).</td></tr>
+<tr><td><code>LumiDMX_Remake_Player.exe</code></td><td>LumiDMX Remake Player.</td></tr>
+<tr><td><code>LumiDMX_Remake_Help.chm</code></td><td>This manual. The <span class="ui">Help</span> button of the quick
+  bar opens it from here.</td></tr>
+<tr><td><code>LumiDMX_Fixture_Editor.exe</code></td><td>The Fixture Editor. It must be in the folder of the Full: it uses
+  the Full's activation, and the Full opens it from <span class="ui">Setup &amp; Patch</span>.</td></tr>
+<tr><td><code>dmx_simulator_settings.json</code></td><td>The settings of the Full and of the Player, and their activation
+  keys: the last projects, the DMX interfaces, the MIDI ports, the place of the 3D program, how the window
+  looks. Written by the programs; you do not need to open it.</td></tr>
+<tr><td><code>Default Project.json</code></td><td>The colours of the APC mini mk2 controller (its window <i>Colors In-Out
+  feedback</i>): what colour each pad shows. See <a href="../remote/index.html">Remote, controllers and MIDI</a>.</td></tr>
+<tr><td><code>fixture_editor_settings.json</code></td><td>The Fixture Editor's folders (the library, the last folder
+  opened) and its last files.</td></tr>
+</table>
+<p>The 3D program (<code>3D LumiDmx Remake.exe</code>) can be in this folder or anywhere else; it keeps its own
+settings and key in <code>3D LumiDmx Remake.json</code> next to it. The first time you press
+<span class="ui">Launch 3D</span>, the Remake asks where it is and then remembers it.</p>
+
+<h2>Projects and fixture profiles</h2>
+<p>Projects (<code>.x1</code>, <code>.xR</code>) can be anywhere. The fixture profiles (<code>.lfi2</code>) are
+<b>not</b> inside the project: the project only names them. When a project opens, the program looks for its
+profiles, in this order, until it has found all of them (each place with the folders inside it):</p>
+<ol>
+<li>in the folder chosen with <span class="ui">Options &gt; Fixtures folder (.lfi2)</span>, if you chose one;</li>
+<li>the profiles you chose in <span class="ui">+New Fixture</span> / <span class="ui">New Fixture with "show-ready"</span> since the program started, wherever they are;</li>
+<li>in the folder of the project;</li>
+<li>in the folder above it;</li>
+<li>in <code>ScanLib</code>, in the program's folder (where <code>LumiDMX_Remake_Full.exe</code> is - the library of
+the original LumiDMX, when the Remake is put in its folder, whatever that folder is called);</li>
+<li>in the whole program's folder.</li>
+</ol>
+<p>Only when a profile is still missing after all of them, the program says where it looked and asks for the
+folder. Nothing is copied.</p>
+<p>So the simplest way is to keep each project together with the profiles of its fixtures:</p>
+<pre><code>D:\Projects\Club\Club.xR
+D:\Projects\Club\Beam 5R 16_Ch.lfi2
+D:\Projects\Club\Blinder SMD Atomic 12_Ch.lfi2</code></pre>
+<p>When the profiles are kept somewhere else, choose their folder with <span class="ui">Options &gt; Fixtures
+folder (.lfi2)</span> (the <span class="ui">Options</span> button of the top bar).</p>
+
+<h2>What to keep a copy of</h2>
+<ul>
+<li>your projects (<code>.x1</code>, <code>.xR</code>) and the profiles of their fixtures (<code>.lfi2</code>);</li>
+<li><code>dmx_simulator_settings.json</code>: your settings, and your activation (see
+  <a href="activation.html">Activation</a>);</li>
+<li><code>Default Project.json</code> when you changed the colours of the controller's pads;</li>
+<li><code>3D LumiDmx Remake.json</code> (the 3D's settings and key).</li>
+</ul>
+
+<h2>Moving to another computer</h2>
+<p>Copy the whole folder. The settings come along, but the activation does not: a key is made for one
+computer, so the programs ask for a new one on the new computer.</p>
+
+<div class="note"><p><b>Note:</b> while the program runs, it writes the patch for the 3D program into
+<code>x1patch.xml</code> in the Windows temporary folder. You do not need to keep it.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../start/programs.html" title="Previous">The programs</a> &nbsp;|&nbsp; Up: <a href="../start/index.html">Getting started</a> &nbsp;|&nbsp; <a href="../start/activation.html" title="Next">Activation</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

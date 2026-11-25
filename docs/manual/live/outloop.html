@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Out loop</title>
+<meta name="keywords" content="Out loop; loop (Out loop); recording of the output; work during a show; Replace Freeze with Out loop; Freeze (Out loop); Recording (Out loop)">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/webremote.html" title="Previous: Web Remote (the phone)">&lt; Previous</a> <a href="../live/lock.html" title="Next: Lock Live-panel">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Out loop</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Out loop</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+<p>Work in the program during a show without the audience seeing it. Out loop records a few seconds of what the running
+buttons send, then the DMX interfaces (USB and Art-Net) play that recording again and again - the stage keeps its show -
+while the program is free: change buttons, use the Fixture Control and the generators, make sequences, as when no show
+runs. LumiDMX 3D, Stage View and the DMX Board show your work, not the loop.</p>
+<p>It takes the place of <span class="ui">Freeze</span> on the function bar when
+<span class="ui">Setup &amp; Patch</span> &gt; <span class="ui">Option</span> &gt; <b>Replace Freeze with Out loop</b> is
+ticked (off at first; see <a href="../patch/option.html">The Option tab</a>).</p>
+
+<div class="pic"><img src="../img/live_outloop_states.png" alt="Out loop: OFF, Recording, ON"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>Out loop: OFF</b> (light blue, as Freeze): the interfaces send the program's output, as always.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>Recording 27 s</b> (orange): pressed, it records one full turn of the longest running button - whole turns, 8 seconds at least, 30 at most - and counts down. The show goes on normally. Press it again to cancel: nothing changes.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Out loop: ON</b> (red): the interfaces play the recording in a loop. You can work.</td></tr>
+</table>
+
+<div class="pic"><img src="../img/live_outloop_on.png" alt="Out loop ON"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The red band on top of the window, while the loop plays: how long the loop is, and that the 3D and Stage View show your work.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>Press <b>Out loop: ON</b> to go back to live.</td></tr>
+</table>
+
+<h2>Going back to live</h2>
+<p>Pressing <b>Out loop: ON</b> does, in this order:</p>
+<ol>
+<li><code>stopAllObjects</code> - every button stops;</li>
+<li><code>ResetAll</code> - every channel at 0 %;</li>
+<li>every channel on <b>OUT</b> - what was set by hand (MAN, IN, the Fixture Control) goes away;</li>
+<li>the buttons that ran when you pressed Out loop start again, as <code>runObject</code> starts them: a <b>Step on Remote</b> button goes back into the Remote, on Play;</li>
+<li>a quarter of a second later the interfaces send the program's output again - at once, without a fade (a fade would
+pass through the shutter's and the wheels' other values: the lights would go dark or flash).</li>
+</ol>
+<p>So after Out loop only the buttons run, as they ran before it. The moving heads go straight to their new place; nothing
+goes dark. What you saved meanwhile stays: sequences made with Generate, steps, new buttons, imports.</p>
+
+<h2>While it plays</h2>
+<ul>
+<li>Everything works as usual, but it does not reach the stage: <b>Blackout</b>, the masters and Sound2Light change only
+the program. If you need the stage dark at once, press Out loop to go back to live first.</li>
+<li><b>Open</b> and <b>New</b> project wait: "Stop Out loop first" (the loop starts this project's buttons again).</li>
+<li><span class="ui">Setup &amp; Patch</span> &gt; <b>DMX Hardware</b> does not open: the interfaces play the recording.</li>
+<li>Sound2Light: Out loop does not start while Sound2Light works (<b>Rec ON</b>) - its lists would keep changing the
+buttons during the recording. Turn Rec OFF first. If Rec is turned on while the loop is recorded, the recording is
+cancelled. While the loop plays, Rec may be turned on: it changes only the program.</li>
+<li>The loop does not follow the music: after a while its beat drifts from the song's. Keep the work short.</li>
+<li>If LumiDMX Remake is closed, the loop stops too, as the show would.</li>
+</ul>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/webremote.html" title="Previous">Web Remote (the phone)</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/lock.html" title="Next">Lock Live-panel</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>BPM lists</title>
+<meta name="keywords" content="BPM list; Bpm list; Add to Bpm list; Move List; Dimmer Games; Color Games; Gobo Games; Stea Magica; Next Step; Pause (Sound2Light); Fade (Sound2Light); BPM List folder; Bpm Lists (Library); delete list">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../s2l/audio.html" title="Previous: The sound">&lt; Previous</a> <a href="../s2l/bands.html" title="Next: Squares and bands">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../s2l/index.html">Sound2Light</a> &gt; <b>BPM lists</b></div></div><!--/NAV-->
+<div class="page">
+<h1>BPM lists</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>A BPM list is a row of chases that the music steps through: a touch of its square = one step. When the chase that
+plays has reached its last step, the next touch starts the next chase of the list; after the last chase, the first
+one again.</p>
+
+<h2>Making a list</h2>
+<ol>
+<li>Open the <span class="ui">Library</span> and find the chases (light sequences or Live-Panel chases). Several at once: Ctrl +
+  click.</li>
+<li>Right-click them. The menu has <span class="ui">Add to Bpm list...</span> for a new list (or to type the name of one) and four quick lines,
+  <span class="ui">Add to Bpm - Move List</span>, <span class="ui">- Dimmer Games</span>, <span class="ui">- Color Games</span>,
+  <span class="ui">- Gobo Games</span>, that add them to these lists at once. For any other list, use
+  <span class="ui">Add to Bpm list...</span> and write its name: an existing list gets the chases added.</li>
+<li>With <span class="ui">Add to Bpm list...</span>: write the name of the list and press <span class="ui">Ok</span>.</li>
+</ol>
+<div class="pic"><img src="../img/s2l_lib_menu.png" alt="The right-click menu of the Library"></div>
+<p class="cap">The right-click menu of a chase in the Library.</p>
+<div class="pic"><img src="../img/s2l_addbpm.png" alt="Add to Bpm list"></div>
+<p class="cap">A new list, "Rainbow Games", with the chase Curcubeu.</p>
+<p>The program makes copies of the chases for the list (named <i>list - chase</i>, kept in the Library's
+<b>BPM List</b> folder, see <span class="ui">Bpm Lists</span> in the Library): your own chases and buttons are never changed. A new
+list also gets its own square on the graph, already linked to it, and its own colour.</p>
+<p>You can also drag chases from the Library onto the lists row at the bottom of the Sound2Light tab.</p>
+<p>With <span class="ui">Hide list name in Bpm list entries</span> ticked (Setup &amp; Patch, <a href="../patch/option.html">the
+Option tab</a>; on at first) the copies are shown without the list's name in front: <i>Slow Move</i> under
+<b>Move List</b>, not <i>Move List - Slow Move</i>. The columns are only as wide as their longest line.</p>
+<div class="pic"><img src="../img/s2l_hidelist.png" alt="The lists with and without Hide list name"></div>
+<p class="cap">The same lists: at the top with <span class="ui">Hide list name in Bpm list entries</span> ticked, at the bottom unticked.</p>
+<p>In the Library, ticked: the <b>BPM List</b> folder has a folder for every list, with the short names, and
+<b>(no list)</b> for the copies that are in no list now; unticked: one long list of "list - chase", as before.</p>
+<div class="pic"><img src="../img/lib_hidelist.png" alt="The Library's BPM List folder with and without Hide list name"></div>
+<p class="cap">The Library's BPM List folder: ticked on the left, unticked on the right.</p>
+<p>When the bands or the lists do not fit on the screen, a bar shows under the lists: it moves the bands row and the
+lists row sideways together.</p>
+
+<h2>The column of a list</h2>
+<div class="pic"><img src="../img/s2l_newlist.png" alt="The new list on the Sound2Light tab"></div>
+<p class="cap">"Rainbow Games" just made: its square, its band and its column.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The new square on the graph, in the colour of the list.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>Its band, linked to the list (List: Rainbow Games).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The column of the list, with its name in its colour.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Fade</span> - see below. A new list starts without Fade.</td></tr>
+</table>
+
+<ul>
+<li><span class="ui">Next Step</span> - lights up yellow while a square of the list is touched.</li>
+<li><span class="ui">Pause</span> - the list does not step while it is paused, whatever the music does; press again to go on.
+  While paused, the button blinks red / yellow - all the paused lists blink together, at the same moment.</li>
+<li><span class="ui">Fade</span> - not ticked: every step jumps at once, and when the bar leaves the square the channels of the chase
+  go dark. Ticked: every step fades with the chase's own fade time, and when the bar leaves the square the light
+  stays as it is (the chase pauses).</li>
+<li>The chases of the list, in their order. The one playing now is lit, with its step:
+  <i>Rainbow Games - Curcubeu (Step 3/145)</i>.</li>
+</ul>
+<p>To delete a whole list, right-click its name at the top of its column &gt; <span class="ui">Delete list ...</span> (it cannot be undone).</p>
+
+<div class="note"><p><b>Move List</b> is the one list that can go backwards: when Step Direction goes back (the bar
+of the main window, the remote, or the Dir. Trigger square), the list named exactly <i>Move List</i> steps
+backwards; the others always step forward.</p></div>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../s2l/audio.html" title="Previous">The sound</a> &nbsp;|&nbsp; Up: <a href="../s2l/index.html">Sound2Light</a> &nbsp;|&nbsp; <a href="../s2l/bands.html" title="Next">Squares and bands</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

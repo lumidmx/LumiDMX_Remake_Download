@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Stage View</title>
+<meta name="keywords" content="Stage View; fixture colours; live colours; segments (Stage View); LED bar segments; colour sections (Stage View); BackGround (Stage View); Ring (Stage View); Arrange (Stage View); Auto arrange; showfrm(frmstageview); frmstageview; program of a fixture (Stage View)">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/taptempo.html" title="Previous: Tap Tempo">&lt; Previous</a> <a href="../live/webremote.html" title="Next: Web Remote (the phone)">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Stage View</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Stage View</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+<p>A window, always in front, with every fixture of the project as on the stage and its colours <b>live</b>: what goes out
+on DMX now, from any button, Sound2Light, the Show or the Web Remote. At an event you see at once which light is which
+colour, and each segment of an LED bar or the ring of a wash too. Open it with <span class="ui">Options &gt; Monitor
+settings &gt; Stage View &gt; Enable</span> (see <a href="monitor.html">The Monitor</a>), or with the command
+<code>showfrm(frmstageview)</code> in the Command Line or a macro. Its X closes it and unticks Enable. Move it and size it
+as you like (on a second screen too): its place and size are remembered, and it opens again at the next start if it was
+open.</p>
+<div class="pic"><img src="../img/live_stageview.png" alt="Stage View"></div>
+<p class="cap">A copy of Andrei with two LED bars of 8 segments added: Curcubeu running on the beams, the bars set from the
+Command Line, the mouse on the first bar.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Names</span>: the names under the fixtures and the groups' names on the left; untick it to see only the colours. Remembered.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Arrange (drag the fixtures)</span>: only while it is ticked the fixtures can be dragged with the mouse (a yellow frame around each), so nothing moves by mistake at an event. Off every time the window opens.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Auto arrange</span> (with Arrange ticked): a row for every group, in the order of the patch, the fixtures left to right by their address - as the projects are built.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td>The group.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The square: the beam of the fixture - the colour of its colour wheel (the name written in its <code>.lfi2</code>: Red, Lavender, WhiteXeon ...), or its Red / Green / Blue / White / Amber mixed; a fixture with a dimmer only is white. As the real light: as bright as its dimmer (at 40 % it looks at 40 %); no colour (dark grey, <b>Off</b>) when its dimmer is 0 or its shutter closed; on strobe it flashes, faster or slower by the strobe channel (up to 12 flashes a second; the name stays under it).</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>The bar: the LED segments / colour sections of the fixture, one cell each, in their order - the same sections as in <a href="../patch/newfixture.html#wpchannels">the colour table of New Fixture with "show-ready"</a> (BackGround, Ring, Sg 1 ... Sg 8, a second set of the same colours ...). A section's own dimmer counts (Ring Dimmer), else the fixture's.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td>The mouse on a fixture: all of it - group, number, universe and address, the beam's colour and each section's.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td>Its number in the group and the colours' names: the beam / the sections (<b>mix</b> when the sections have different colours). A program of the fixture running (its Programs / Macro channel) is written under it in yellow ("Prog: Fade all colors"): those colours are made by the fixture itself and do not come on DMX.</td></tr>
+</table>
+<h2>Where the places are kept</h2>
+<p>The first time, the fixtures are arranged by themselves (as <span class="ui">Auto arrange</span>). The places you drag
+them to are the project's: they are saved with it, in its <code>S2L.dat</code> (the same file as Sound2Light's lists) -
+the original LumiDMX opens the project as before. A fixture added later goes at the bottom, in the middle: drag it where
+it is, or press <span class="ui">Auto arrange</span>.</p>
+<h2>Good to know</h2>
+<ul>
+<li>The colours come from the fixtures' <code>.lfi2</code> profiles: a fixture whose profile was not found shows only what
+the program knows of its channels.</li>
+<li>The names of the mixed colours are the nearest ones (Red, Orange, Yellow, Lime, Green, Cyan, Blue, Purple, Magenta,
+Pink, White, Warm White, Cold White).</li>
+<li>It only shows: nothing in it sends anything to the fixtures.</li>
+</ul>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/taptempo.html" title="Previous">Tap Tempo</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/webremote.html" title="Next">Web Remote (the phone)</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

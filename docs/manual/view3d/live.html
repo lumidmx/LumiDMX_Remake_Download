@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Live Mode and DMX Input</title>
+<meta name="keywords" content="Live Mode (3D); Rotation (3D); Camera Rotation; Screenshot (3D); View (3D); camera; mouse (3D); DMX Input; Software DMX-In; Art-Net DMX-In; Art-Net Configuration; Art-Net; universe (Art-Net); HTP">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../view3d/index.html" title="Previous: 3D Previsualisation">&lt; Previous</a> <a href="../view3d/design.html" title="Next: Design Mode">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../view3d/index.html">3D Previsualisation</a> &gt; <b>Live Mode and DMX Input</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Live Mode and DMX Input</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>Live Mode is for watching: the 3D view shows the light as it comes, and the ribbon has only what is needed while a show plays.</p>
+<div class="pic"><img src="../img/view3d_live.png" alt="The Live Mode tab"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Rotation</span> - the camera keeps turning round the stage by itself. Press it again to stop.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Screenshot</span> - saves what the 3D view shows now, as JPEG (the default) or bitmap. It asks where.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">View</span> - six small buttons that put the camera straight in front of the stage, behind it, left, right, above or below: Back, Right, Left, Front, Bottom, Top.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">DMX Input</span> - where the light comes from (see below).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The small corner button of <span class="ui">Camera</span>: the Camera Rotation window - the speed and the direction of the automatic rotation.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>The small corner button of <span class="ui">DMX</span>: the DMX-Input window - the 512 channels of a universe (1 to 16) with the values that come in now. Good for checking that the light arrives.</td></tr>
+</table>
+
+
+<h2>The camera with the mouse</h2>
+<table class="keys wide">
+<tr><td><b>left drag</b></td><td>Turns the camera round the stage.</td></tr>
+<tr><td><b>right drag</b></td><td>Moves the picture.</td></tr>
+<tr><td><b>wheel</b></td><td>Brings the camera nearer or further.</td></tr>
+</table>
+
+<h2>DMX Input - where the light comes from</h2>
+<div class="pic"><img src="../img/view3d_dmxin.png" alt="The DMX Input menu"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Art-Net DMX-In</span> - the light comes over the network, as Art-Net (UDP port 6454): from LumiDMX on another computer, a console or a media server such as Madrix.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Software DMX-In</span> - the light comes from LumiDMX Remake (or the original LumiDMX) on this computer. This is the usual choice, ticked at the start.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Art-Net Configuration...</span> - which Art-Net universes are read (see below).</td></tr>
+</table>
+
+<p>Both can be ticked together. Then, for every channel, the highest value of the two wins (HTP).</p>
+
+<h2>Art-Net Configuration</h2>
+<div class="pic"><img src="../img/view3d_artnet.png" alt="The Art-Net Configuration window"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The list of Art-Net sources: the IP of the device, the first and the last universe, I (input) or O (output).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>Adds the source written on the right to the list (green) or deletes the one selected (red X).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Set the Artnet Device IP</span> - the IP of the device that sends. 192.168.1.255 (the address that ends in 255) takes what is sent to the whole network.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Input</span> / <span class="ui">Output</span> - Input for the 3D: it receives.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Start Universe</span> / <span class="ui">Stop Universe</span> - the Art-Net universes that are read. The first one becomes universe 1 of the 3D, and so on, 16 at most.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Network</span> - the network card to listen on; <span class="ui">(any)</span> listens on all of them.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Ok</span> keeps the changes, <span class="ui">Abort</span> leaves everything as it was.</td></tr>
+</table>
+
+<div class="tip"><p>If the 3D shows nothing over Art-Net: check that the sender and this computer are in the same network
+(the first three numbers of the IP are the same), that the firewall lets the 3D receive, and that the universes match.</p></div>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../view3d/index.html" title="Previous">3D Previsualisation</a> &nbsp;|&nbsp; Up: <a href="../view3d/index.html">3D Previsualisation</a> &nbsp;|&nbsp; <a href="../view3d/design.html" title="Next">Design Mode</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

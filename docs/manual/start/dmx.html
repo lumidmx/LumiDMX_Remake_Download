@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>DMX in a few words</title>
+<meta name="keywords" content="DMX; universe; channel; DMX address; start address; fixture; profile; .lfi2; patch; preset; fine channel; 16 bit; terminator; interface; Art-Net; Open DMX; Soundlight; DMX-IN">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../start/index.html" title="Previous: Getting started">&lt; Previous</a> <a href="../start/programs.html" title="Next: The programs">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../start/index.html">Getting started</a> &gt; <b>DMX in a few words</b></div></div><!--/NAV-->
+<div class="page">
+<h1>DMX in a few words</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>DMX (DMX512) is the signal that tells lights what to do. LumiDMX Remake sends it through a DMX interface; the
+fixtures are connected one after the other on the same cable.</p>
+
+<div class="pic"><img src="../img/dmx_line.png" alt="A DMX line: the computer, the interface, three fixtures and the terminator; their channels in universe 1"></div>
+<p class="cap">One DMX line: three fixtures, each with its own address, and the channels they use.</p>
+
+<h2>Universe and channels</h2>
+<p>One DMX line carries <b>512 channels</b>; this set of 512 is called a <b>universe</b>. Each channel holds a
+value from <b>0 to 255</b>, sent again and again, many times a second. When a project needs more than 512
+channels, it uses more universes (universe 1, universe 2 ...), each on its own line or on the network.</p>
+
+<h2>The address of a fixture</h2>
+<p>A fixture listens to a few channels in a row, starting at its <b>DMX address</b> (the start address), which is
+set on the fixture itself (on its display or with its DIP switches). A beam with 16 channels at address 1 uses
+the channels 1 to 16; the next fixture goes at address 17. Two fixtures with the same address and the same
+channels do exactly the same thing; this is sometimes wanted (two identical beams that must move together).</p>
+
+<h2>What a channel does</h2>
+<p>Each channel of a fixture has one job: Pan, Tilt, Dimmer, Shutter (strobe), Colour wheel, Gobo wheel, Prism,
+Focus, Zoom, Frost, Red, Green, Blue ...</p>
+<ul>
+<li>Some channels go smoothly from 0 to 255: the Dimmer from dark to full, Pan from one side to the other.</li>
+<li>Others are cut into ranges, each with its own meaning: on a colour wheel, 0-4 white, 5-9 yellow, 10-14 pink
+  ... In this help such a range is called a <b>preset</b>.</li>
+<li><b>Fine</b> channels (Pan Fine, Tilt Fine) refine the channel before them, for slow and smooth movements
+  (16 bit).</li>
+</ul>
+<p>The manual of the fixture lists all this in its DMX table.</p>
+
+<h2>The profile of a fixture</h2>
+<p>LumiDMX Remake knows a fixture through its <b>profile</b>: a <code>.lfi2</code> file with the name of the
+fixture, its channels, their presets and their pictures. Every fixture of a project needs its profile. The
+<a href="../fe/index.html">LumiDMX Fixture Editor</a> makes and corrects profiles; it can also make one from the
+DMX table of the manual.</p>
+
+<h2>The patch</h2>
+<p>The <b>patch</b> is the list of the fixtures of a project: which profile, which universe, which address. It is
+made in <a href="../patch/index.html">Setup &amp; Patch</a> and saved in the project. The addresses in the patch
+must be the ones set on the fixtures.</p>
+
+<h2>Interfaces</h2>
+<p>The DMX leaves the computer through an interface, chosen and connected in <span class="ui">Setup &amp; Patch
+&gt; DMX Hardware</span>:</p>
+<ul>
+<li><b>Art-Net</b> - DMX over the network, to an Art-Net node or to fixtures that receive Art-Net;</li>
+<li><b>Open DMX</b> - USB interfaces of the Open DMX kind;</li>
+<li><b>Soundlight</b> - Soundlight USB interfaces.</li>
+</ul>
+<p>The program can also receive DMX (<b>DMX-IN</b>, from Art-Net or from a Soundlight interface), for example
+from a lighting desk. See <a href="../patch/hardware.html">DMX Hardware</a>.</p>
+
+<div class="tip"><p><b>Tip:</b> the last fixture of a DMX cable should have a <b>terminator</b> in its DMX
+output (a plug with a 120 ohm resistor). Without it, long lines can flicker.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../start/index.html" title="Previous">Getting started</a> &nbsp;|&nbsp; Up: <a href="../start/index.html">Getting started</a> &nbsp;|&nbsp; <a href="../start/programs.html" title="Next">The programs</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

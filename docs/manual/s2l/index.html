@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sound2Light</title>
+<meta name="keywords" content="Sound2Light; S2L; music; sound to light; beat; BPM lists; bands; squares; Rec ON; Rec OFF; audio input">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../show/index.html" title="Previous: Show Editor">&lt; Previous</a> <a href="../s2l/audio.html" title="Next: The sound">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <b>Sound2Light</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Sound2Light</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>With Sound2Light the music plays the lights. The program listens to the sound - a microphone or line input, or
+the music that plays on the computer itself - and shows it as 12 bars, from the deep bass on the left to the high
+sounds on the right. On top of the bars you put <b>squares</b> (bands). Each square is linked to a <b>BPM list</b>:
+a list of chases. Every time a bar reaches into a square, the list takes one step - the next step of its chase, and
+after the last step of a chase, the next chase of the list. So the lights change with the bass, with the voice, with
+the hi-hat, as you decide.</p>
+
+<p>Open it with the <span class="ui">Sound2Light</span> tab at the top of the main window.</p>
+
+<div class="pic"><img src="../img/s2l_overview.png" alt="The Sound2Light tab while music plays"></div>
+<p class="cap">A copy of Andrei_edit while music plays: four lists, their squares on the bars, the current step of each list
+lit in its colour.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><span class="ui">Input</span> - where the sound comes from, and <span class="ui">Start</span> / <span class="ui">Stop</span> / <span class="ui">Refresh</span>. See <a href="audio.html">The sound</a>.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">EQ</span> - 12 sliders that make some sounds stronger or weaker before anything else uses them.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Dir. Trigger</span> and <span class="ui">Beat Trigger</span> with the <span class="ui">Beat threshold</span>: two special squares. See <a href="bands.html">Squares and bands</a>.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Preset</span> - EQ settings saved under a name (<span class="ui">Save as...</span>, <span class="ui">Delete</span>, <span class="ui">Reset</span>).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Master Volume</span> (the computer's volume) and <span class="ui">Level</span> - how loud the sound is now.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Input Level</span> - the level of the chosen input (a microphone, a line input).</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">BPM</span> - the tempo: <span class="ui">Manual</span>, <span class="ui">Tap</span> or <span class="ui">Auto</span>. It is shown for you; the lists step on the squares, not on this number.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td>The graph: the 12 bars of the sound and the squares. A square that a bar reaches into is filled in.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td>The bands: one for each square - its name, the list it steps, ✖ to delete it; <span class="ui">+ Add band</span> adds a square.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td>The BPM lists: one column for each list, with <span class="ui">Next Step</span>, <span class="ui">Pause</span>, <span class="ui">Fade</span> and its chases. The chase playing now is lit, with its step: <i>(Step 3/30)</i>. With <span class="ui">Hide list name in Bpm list entries</span> ticked (on at first) only the chase's name is shown; see <a href="lists.html">BPM lists</a>.</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td><span class="ui">Rec ON</span> / <span class="ui">Rec OFF</span> - the same as Start / Stop: green while the program listens.</td></tr>
+<tr><td class="n"><span class="n">12</span></td><td>The status line: what the lists just did ("Move List": stepped "Move List - Slow Move" to cue 6). A long line moves sideways so all of it is read.</td></tr>
+<tr><td class="n"><span class="n">13</span></td><td><span class="ui">Auto level: ON / OFF</span> and <span class="ui">Quiet: Slow Move ON / OFF</span> with its arrow. See <a href="audio.html#autolevel">The sound</a>.</td></tr>
+</table>
+
+
+<h2>In this chapter</h2>
+<table class="wide">
+<tr><th>Page</th><th>What it explains</th></tr>
+<tr><td><a href="audio.html">The sound</a></td><td>Choosing the input, starting and stopping, the volumes, the EQ and its presets, the BPM.</td></tr>
+<tr><td><a href="lists.html">BPM lists</a></td><td>Making a list from chases of the Library, adding to it, the list's column, Pause and Fade, deleting.</td></tr>
+<tr><td><a href="bands.html">Squares and bands</a></td><td>Placing and sizing the squares, linking them to lists, Beat Trigger, Dir. Trigger.</td></tr>
+<tr><td><a href="test.html">Testing</a></td><td>Trying a list without music (right click) and with music; what to watch.</td></tr>
+<tr><td><a href="example.html">Example: a new list from start to end</a></td><td>A list made, placed and tested on Andrei_edit, step by step.</td></tr>
+<tr><td><a href="saved.html">What is saved</a></td><td>Where the lists, squares and EQ are kept; the Player; Step Direction and the remote.</td></tr>
+</table>
+
+<div class="tip"><p><b>The short way:</b> in the Library, right-click a chase &gt; <span class="ui">Add to Bpm list...</span>, give a
+name, press Ok. The list, its square on the graph and the link between them are made at once. Then press
+<span class="ui">Start</span> (or right-click the new square to try it without music).</p></div>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../show/index.html" title="Previous">Show Editor</a> &nbsp;|&nbsp; Up: <a href="../welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="../s2l/audio.html" title="Next">The sound</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

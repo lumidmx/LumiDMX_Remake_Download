@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>What's new</title>
+<meta name="keywords" content="what's new; versions; changes; v12; v12_1; v12_2; v12_3; new in this version">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="glossary.html" title="Previous: Glossary">&lt; Previous</a> <a href="credits.html" title="Next: Credits">Next &gt;</a></div><div class="crumbs"><a href="../index.html">LumiDMX Remake website</a> | <a href="contents.html">Contents</a> | <a href="welcome.html">LumiDMX Remake Help</a> &gt; <b>What's new</b></div></div><!--/NAV-->
+<div class="page">
+<h1>What's new</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+<p>The changes of each version of LumiDMX Remake, the newest first, with links to the pages that explain them.</p>
+<h2>After v12_4_1 (24 Nov 2026)</h2>
+<ul>
+<li>Fixtures (.lfi2): the channels are read as the file holds them - its own count, every channel in order, with its functions. Before, a profile whose channels have no functions lost its last channel (Flower 16_Ch was added with 15, Par Dup RGBA 10_Ch with 9, Wash Ring RGB 12_Ch with 11), and a channel without a name was left out. Checked on 1025 profiles: all read exactly as written. Fixtures already in a project keep the channels they have there.</li>
+<li>General Mixer and DMX Board draw again only what changed, as X1: a channel whose value changes redraws only its own cell in the DMX Board and only its own column in the General Mixer (before, all of them every 20 ms during a fade). With both open and a fading button running, the dots round the running buttons no longer stutter. The light output was not affected before either.</li>
+</ul>
+<h2>After v12_4 (24 Nov 2026)</h2>
+<ul>
+<li>Design Live-Panel: <b>Write in cue steps</b> (Properties, under the selection). Select buttons, tick it, and every channel you move in the General Mixer, Fixture Control or the DMX Board goes into all the steps of all of them - a second dimmer to full in many buttons without opening each one. A red band says how many buttons and steps; <b>Undo cue steps</b> puts them back. See <a href="live/design.html#wcs">Write in cue steps</a>.</li>
+<li>Design Live-Panel: with several objects selected, a frame goes round them with 8 handles; dragging one sizes them all together, as one block (sizes and spaces, they stay in line). See <a href="live/design.html#group">Several objects sized together</a>.</li>
+<li>Fixture Control: the icons under the fixture list are drawn anew, with their names (<b>Default</b>, <b>Reset</b>, <b>All</b>, the selection arrow, <b>Effect</b>), two rows high in the place that was empty under the list. See <a href="live/fixctl.html">Fixture Control</a>.</li>
+</ul>
+<h2>After v12_4 (23 Nov 2026)</h2>
+<ul>
+<li>Out loop: going back to live starts the buttons as <code>runObject</code> does, so a <b>Step on Remote</b> button goes back into the Remote on Play and runs on (it made one step and stopped). See <a href="live/outloop.html">Out loop</a>.</li>
+</ul>
+<h2>After v12_3_5 (23 Nov 2026)</h2>
+<ul>
+<li>Web Remote: <b>one tab at a time</b> - opened in a new tab, it stops the older tabs of the same browser (they let go of what they hold and show <i>Web Remote is open in another tab</i>, with <b>Use this tab</b>). Many open tabs took all the connections to the PC and a FLASH stayed on for seconds.</li>
+<li>Web Remote: the full screen button reads <b>Full screen</b>. The keyboard has no band on top any more (more keys on the screen): <b>Arrange</b> takes Main Page's place while the keyboard is open; <b>Move ON</b> scrolls the keys (also in Arrange, where nothing moves then); the phone held upright shows two keys a row. See <a href="live/webremote.html#keyboard">Web Remote</a>.</li>
+<li><b>Out loop</b> (Setup &amp; Patch &gt; Option &gt; <b>Replace Freeze with Out loop</b>, off at first): in Freeze's place on the function bar. Pressed, it records one full turn of the longest running button (8 - 30 s), then the DMX interfaces play it in a loop while you work in the program freely - LumiDMX 3D, Stage View and the DMX Board show your work. Pressed again: stopAllObjects, ResetAll, every channel OUT, the buttons of the start again, then the interfaces live at once. Not with Sound2Light Rec ON; Open / New project and DMX Hardware wait meanwhile. See <a href="live/outloop.html">Out loop</a>.</li>
+<li>Library: <b>Import</b> (new button after Merge). Light sequences and shows from another .x1 - a copy of the same project made on a second laptop or in LumiDMX X1 - come into the project open now: Patch OK / DIFFERS, Search, NEW / -&gt; name 2 / same for every item, a show brings its songs from the .x1. Import only adds: nothing starts, the DMX output is not touched. See <a href="live/library.html#import">The Library</a>.</li>
+<li>Web Remote (the phone): the <b>keyboard</b> button under full screen. Only the keys that have a shortcut on a Live Panel button, each with its buttons' names and the colour of its first button; FLASH keys work while held. <b>Arrange</b>: drag the keys to their places, hide the ones you do not need; the order is kept with the project (S2L.dat). See <a href="live/webremote.html#keyboard">Web Remote</a>.</li>
+</ul>
+<h2>After v12_3_4 (22 Nov 2026)</h2>
+<ul>
+<li><b>Stage View</b> (new window, Options &gt; Monitor settings &gt; Stage View &gt; Enable, or <code>showfrm(frmstageview)</code>): every fixture as on the stage with its colours live, as bright as its dimmer, dark with the shutter closed, flashing on strobe - the square its beam, the bar its LED segments / colour sections, the colours' names under them, all of it under the mouse. Arrange / Auto arrange; the places are saved with the project (S2L.dat). See <a href="live/stageview.html">Stage View</a>.</li>
+<li>Fixture profiles (.lfi2): when a project opens they are also looked for in <b>ScanLib</b> in the program's folder and in the program's folder (the original LumiDMX's library when the Remake is in its folder), after the folder you chose, the project's folder and the one above it. A profile chosen in +New Fixture is found from anywhere (Pan/Tilt is not reported missing). A chosen folder no longer stops the search next to the next projects. The messages say where the program looked. See <a href="start/folder.html">The program folder</a>.</li>
+<li>Monitor, Tap Tempo: <b>Auto: ON / OFF</b> moved up beside Sync, with "From Sound2Light" after it (only a text); what Sync follows is shown in green on the line under TAP. The BPM is closer to TAP and the window is narrower: 4 px after the last thing on the right and under the last line. See <a href="live/taptempo.html">Tap Tempo</a>.</li>
+</ul>
+<h2>After v12_3_4 (21 Nov 2026)</h2>
+<ul>
+<li>Web Remote (the phone): the page fills the whole height of the screen, without the bar above it; the page, <b>TAP</b>, the BPM, the new <b>Reset Tap</b>, Auto, &frac12;, &times;2, Move and full screen are in a column on the right. The pages are one button: press it for the list. See <a href="live/webremote.html">Web Remote</a>.</li>
+</ul>
+<h2>After v12_3_3 (21 Nov 2026)</h2>
+<ul>
+<li>Setup &amp; Patch, Option tab: <b>3D buttons</b> (on at first). The Live Panel's buttons (and Design Live-Panel's) look raised, the same while running, and the sliders get a sunken frame and a raised see-through handle; the face, the text, the sizes and the gaps stay as they are. See <a href="patch/option.html">The Option tab</a>.</li>
+<li>Sound2Light: <b>Quiet: Slow Move</b> (next to Auto level, OFF at first). ON: a part of the song without the kick drum for about 3 s (only the voice, a break, speech) holds Sound2Light and starts the Live Panel button Slow Move (or another chosen with the arrow); the kick back stops it and Sound2Light goes on. Rec OFF: nothing happens. See <a href="s2l/audio.html#quiet">The sound</a>.</li>
+<li>Setup &amp; Patch, <b>New Fixture with show-ready function</b>: Wash / Par colours now have a table of the colour channels - Dimmer, Red, Green, Blue, White (Amber) for <b>Principal</b> and for every other colour section of the fixture (BackGround, Section 2, Ring...). All the colour buttons light every section in the same colour; any channel can be chosen in the lists, (none) leaves a section off; a channel chosen twice is asked about. See <a href="patch/newfixture.html#wpchannels">Adding new fixtures</a>.</li>
+<li>Setup &amp; Patch, Option tab: <b>Hide list name in Bpm list entries</b> (on at first). The copies of the BPM lists are shown as <i>Slow Move</i>, not <i>Move List - Slow Move</i>: in the Sound2Light lists (the columns get narrower), in the Bpm Lists window (without the file path) and in the Library, where the BPM List folder has a folder for every list and <b>(no list)</b> for copies that are in no list now. Only the screen changes: the names in the project stay. Unticked: as before. See <a href="patch/option.html">The Option tab</a>.</li>
+<li>Sound2Light: when the bands or the lists do not fit on the screen, a bar under the lists moves both rows sideways together. See <a href="s2l/lists.html">BPM lists</a>.</li>
+</ul>
+<h2>After v12_3_3 (17 - 19 Nov 2026)</h2>
+<ul>
+<li>Sound2Light: <b>Auto level: ON / OFF</b> next to Input Level. OFF = a fixed scale: on a microphone, silence stays at the bottom instead of climbing to the noise, and the bars rise only with sound; the Input Level sets the height. ON = as before. See <a href="s2l/audio.html#autolevel">Audio input</a>.</li>
+</ul>
+<h2>After v12_3_2 (17 Nov 2026)</h2>
+<ul>
+<li>Settings of the program (dmx_simulator_settings.json) are written 2 seconds after a change, not only when the program closes: a crash, a computer switched off or the program closed from the Task Manager no longer loses them.</li>
+<li>Setup &amp; Patch: universes 1 to 16 only (what the program plays). A fixture could be put in universe 17 or above (Add fixture, Clone, Move, Import) and then never lit; now the boxes stop at 16 and such a place is refused with a message.</li>
+<li>Fixed: Setup &amp; Patch, <b>+ New Fixture</b> and <b>+ New Fixture with show-ready function</b> - a Universe chosen in the window went back to the one open in the editor when Quantity or Spacing was changed after it, so the fixtures landed in Universe 1. Now the window keeps the chosen universe, and choosing one puts in the first free start address there.</li>
+<li>Fixed: Monitor settings - <b>Step on Remote buttons follow the TAP</b>, <b>All running buttons follow the TAP</b> and <b>Moves</b> were lost when the project was opened again (only while it stayed open they held). Now they are kept with the project. See <a href="live/taptempo.html">Tap Tempo</a>.</li>
+<li>Generated moves without Pan Fine / Tilt Fine: the Effect Generator, the Color Chase, the Pixel Chase and Fixture Control's <b>Generate chase...</b> (Enable Effect) write the fine channels as 0 in every step; while Pan / Tilt fade the program makes the fine value itself (a fine value kept in the steps jumped where Pan / Tilt stay the same). See <a href="live/effgen.html#nofine">Effect Generator</a>.</li>
+<li>Fixed: Edit Cue Steps with several steps selected - the DMX Board's <b>Reset</b>, <b>Set &gt;255</b> and fader went into none of them (with one step it worked). Now they go into every selected step. See <a href="live/cuesteps.html">Edit Cue Steps</a>.</li>
+</ul>
+<h2>v12_3_1 and v12_3_2 (12 - 16 Nov 2026)</h2>
+<ul>
+<li>Tap Tempo / Sync: a choice for the moves (Pan / Tilt), Monitor settings, <b>Moves</b>: <b>Keep move speed</b> (as before: the move keeps about its own speed, its loop whole bars) or <b>One step a beat</b> (as the colours). See <a href="live/taptempo.html">Tap Tempo</a>.</li>
+<li>Monitor settings: ticking <b>Step on Remote buttons follow the TAP</b> or <b>All running buttons follow the TAP</b> while <b>Tap Tempo</b> is off ticks Tap Tempo too, so the TAP shows. See <a href="live/taptempo.html">Tap Tempo</a>.</li>
+<li>Fixed (tests): Object Propertys on the Live Panel let a button take the name of another button or of a macro (the designer refused only the exact same name); now both refuse it, capitals and extra blanks not counting. See <a href="live/props.html#rename">Object Propertys - A new name</a>.</li>
+<li>Fixed (tests): the name window of the Effect Generator's Generate (and of the Library's New Light Sequence / New Show) opened next to the mouse even when that put it half off the screen - with Generate at the bottom right its OK could not be reached. It stays on the screen now.</li>
+<li><b>A new name for a button</b> (Object Propertys and Design Live-Panel): when the old name is used by a slider, by macros or by the On Start / On Stop of buttons, a window asks - <b>Rename everywhere ticked</b> (Sliders / Buttons / Macros), <b>Only the button</b> or Cancel. See <a href="live/props.html#rename">Object Propertys - A new name</a>.</li>
+<li>Fixed (tests): a button started while a step was selected in Edit Cue Steps wrote its channels (a move's Pan / Tilt, and zeros) into that step; after Edit Times the steps looked unselected but what was moved still went into them. See <a href="live/cuesteps.html">Edit Cue Steps</a>.</li>
+<li><b>Sync</b> (Monitor, above TAP): the tempo and the beat from the DJ - Pioneer Pro DJ Link (CDJ / XDJ / DJM), MIDI Clock, Ableton Link (rekordbox, Serato, Traktor, VirtualDJ). The buttons that follow land on the DJ's beats. See <a href="live/taptempo.html#sync">Tap Tempo - Sync</a>.</li>
+<li>Tap Tempo: the Flash buttons are left out (they light only while held); "dimmer games" instead of "flashes".</li>
+<li><b>Web Remote</b>: the Live Panel on a phone (same Wi-Fi, in the browser, no internet): the page as on the PC, its buttons and sliders, TAP / Auto / &frac12; / &times;2; a 4-digit code the first time. Options &gt; Web Remote (phone), off until ticked. See <a href="live/webremote.html">Web Remote (the phone)</a>.</li>
+<li>Pan / Tilt Size: P, T and P+T always start at 0 (a project saved with them at -100 held every move at the centre).</li>
+<li><b>Fixture Editor, Import GDTF</b>: the gobo pictures of the file are taken - each gobo preset gets its picture and its High Res. Gobo file (saved in lib\images\gdtf), so the 3D shows the real gobos. See <a href="fe/import.html">Import from other formats</a>.</li>
+<li>Fixed: Edit Cue Steps - after + Add or Add Clean Step the new step looked selected, but what was moved was not written into it (it stayed empty) until it was clicked.</li>
+<li>Fixed: a button whose steps were all deleted when the project was opened, or a button made while the program runs, did not play the steps added later in Edit Cue Steps until the project was opened again.</li>
+<li>Fixture Control: the &#9660; button twice as wide, <b>Eff</b> instead of Eff Gen.</li>
+<li>Sound2Light: all the paused lists blink their Pause together. See <a href="s2l/lists.html">BPM lists</a>.</li>
+<li><b>Tap Tempo</b> in the Monitor: TAP (mouse, key or MIDI pad), Auto, &frac12; / &times;2 and Reset. The Step on Remote buttons or all the running buttons follow it, with their speed sliders: flashes and colours on every beat, moves over whole bars, nothing restarts. One tempo with the BPM of Sound2Light (Tap, Manual, Auto). See <a href="live/taptempo.html">Tap Tempo</a>.</li>
+<li><b>Effect Generator</b>: MAtricks (Blocks, Groups, Wings, Interleave) on Moving, Chaser, Color Effect and Oscillator; under Play the cue steps, the loop and the steps of all the Enabled tabs together; Zoom from any tab; bigger knobs on the Oscillator, Cue Steps and Play right under them; Mirror on the Oscillator plays both halves at the same moment. See <a href="live/effgen.html">Effect Generator</a>.</li>
+<li><b>Effect Generator, Oscillator</b>: Sin, Cos, Rect and Saw are calculated as in the original LumiDMX, and the graph shows them the same way, as you turn the knobs. Phase and Repeat work as in the original; one loop is one pass. Mirror stays. See <a href="live/effgen.html">Effect Generator</a>.</li>
+<li><b>Effect Generator</b>: every change - a knob, a value, a fixture - is seen at once on the output while the effect plays, without Stop / Play. The step that plays goes on from where it was.</li>
+<li><b>Color Chase</b>: the Master Loop window is lower, its title in line with Chase Dimmer, so Live Preview shows more fixtures.</li>
+<li><b>Fixture Control</b>: the new tab Correction Pan / Tilt and Focus - the correction of each fixture at the output, saved in S2L.dat. See <a href="live/correction.html">Correction Pan / Tilt and Focus</a>.</li>
+<li><b>The manual</b>: new pages Effect Generator, The Library, Fixture Control, Pixel Chase, Color Chase, The Monitor, Show Editor, Sound2Light, 2D View, 3D Previsualisation, Step Direction, Pan / Tilt Size and the APC mini mk2 (in Remote), Troubleshooting and this page; "Last update" on the first page and in the footer of every page.</li>
+</ul>
+<h2>v12_3 and v12_2 (11 Nov 2026)</h2>
+<ul>
+<li><b>Fixture Filter</b>: the window no longer disappears when a channel is chosen; <span class="ui">+ Add next color</span> is grey while AT DMX VALUE has a value.</li>
+<li><b>Fixture Filter</b>: the details in RESULTS - the colour channel opened up, the channels, the colours, the bar at the bottom. See <a href="patch/library.html">Library tools</a>.</li>
+</ul>
+<h2>v12_1 (10 - 11 Nov 2026)</h2>
+<ul>
+<li><b>Help</b>: the <span class="ui">?</span> button opens this manual.</li>
+<li><b>Fixture Filter</b>: AT DMX VALUE (fixtures that give a colour at a DMX value), the simple colour, the colour columns.</li>
+<li><b>Monitor settings</b> without "Enable"; the text of the empty window; no more "not responding" while X is held.</li>
+</ul>
+<h2>v12 (7 - 10 Nov 2026)</h2>
+<ul>
+<li><b>Effect Generator</b>: the new pages Pixel Chase and Color Chase (RGBW), with Mirror and Enabled.</li>
+<li><b>Library</b>: <span class="ui">Merge...</span> - chases of another project brought into this one.</li>
+<li><b>+Add Fixture</b>: Mirror / Offset (Beam Mirror, Double-Mirror, Pan-Tilt Offset), Between projects (Copy/Merge Moves and Dimmer, Copy Dimmers from Template), Library tools with Fixture Filter. See <a href="patch/addfixture.html">+Add Fixture</a>.</li>
+<li><b>LumiDMX Fixture Editor</b>: a separate program to make and change .lfi2 profiles, with exports (Report, HTML, PDF, pictures, JSON). See <a href="fe/index.html">LumiDMX Fixture Editor</a>.</li>
+<li><b>Layout</b> for 1366&times;768, the <span class="ui">2D View</span> button, the scroll bar at the bottom.</li>
+</ul>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="glossary.html" title="Previous">Glossary</a> &nbsp;|&nbsp; Up: <a href="welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="credits.html" title="Next">Credits</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

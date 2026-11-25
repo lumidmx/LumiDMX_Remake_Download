@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Library tools</title>
+<meta name="keywords" content="Library tools; Fixture Filter; DMX Channel Filter; .lfi2 library browser; find a fixture profile; Open folder with .lfi2 files; FREE TEXT SEARCH; Edit search criteria; keyword_config.json; CHANNEL COUNT; PAN CHANNEL; TILT CHANNEL; DIMMER CHANNEL; SHUTTER CHANNEL; FROST CHANNEL; ADD COLOR TO SEQUENCE; AT DMX VALUE; + Add at DMX value; colour at a DMX value; plain colour; mixed colours; DMX values of a colour; CASCADING FILTER STRUCTURE; RESULTS; results details; unfolded channel; all its values (DMX); values one under another; channel list; scroll the details; Shift + mouse wheel; Copy name; Copy file; Browse to location; Open in Fixture Editor; LumiDMX Fixture Editor">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/between.html" title="Previous: Between projects">&lt; Previous</a> <a href="../patch/hardware.html" title="Next: DMX Hardware">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <a href="../patch/addfixture.html">+Add Fixture</a> &gt; <b>Library tools</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Library tools</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p><span class="ui">Library tools</span> (in <a href="addfixture.html">+Add Fixture</a>) opens the two tools of the
+fixture profiles (<code>.lfi2</code>):</p>
+<div class="pic"><img src="../img/patch_libtools_menu.png" alt="The menu Library tools"></div>
+<ul>
+<li><span class="ui">Fixture Filter (.lfi2 library browser)</span> - finds profiles in a library by name, channels and
+  colours (below);</li>
+<li><span class="ui">LumiDMX Fixture Editor (.lfi2 editor)</span> - starts the Fixture Editor, the program that makes
+  and corrects profiles. See <a href="../fe/index.html">LumiDMX Fixture Editor</a>.</li>
+</ul>
+
+<h2>Fixture Filter</h2>
+<p>A fixture often has a profile already, under its own name or under the name of another brand that sells the same
+fixture. The Fixture Filter reads a whole folder of profiles and narrows them down, step by step, to the ones with the
+channels you look for.</p>
+<div class="pic"><img src="../img/patch_fixturefilter.png" alt="The Fixture Filter"></div>
+<p class="cap">A library of 1239 profiles: 16 channels, red on channel 1, the pan on channel 10 and the tilt on
+channel 12 leave 50; RESULTS shows channel 1 unfolded on each of them - every value, one under another.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>Open folder with .lfi2 files</b> - the library: the folder and the folders
+  inside it. On the right: how many profiles are shown, of how many.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><b>FREE TEXT SEARCH</b> - words of the fixture's name or of its channels; the
+  list follows each key. <span class="ui">X Clear search</span> empties it.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><b>Edit search criteria</b> - the words by which the pan, tilt, dimmer, shutter
+  and frost channels are recognised, misspellings included. They are kept in <code>keyword_config.json</code>, next to
+  the program.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><b>CHANNEL COUNT</b> - only the profiles with that many channels. A click
+  chooses, a second click takes it back.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><b>PAN / TILT / DIMMER / SHUTTER / FROST CHANNEL</b> - only the profiles that have
+  that channel at that place (for example the pan on channel 1). The numbers offered are the ones the profiles
+  left have.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><b>ADD COLOR TO SEQUENCE</b> - a channel and a colour (in English or in Romanian:
+  <i>red</i> or <i>rosu</i>), then <span class="ui">+ Add next color</span>: the profiles whose colour channel has that
+  colour. The next colour on the same channel must come right after it on the wheel - so the colour wheel can be
+  recognised by its order.<br>
+  <b>AT DMX VALUE</b> - a DMX value or a range of values (<i>7</i>, <i>6-9</i>), then
+  <span class="ui">+ Add at DMX value</span> (or <kbd>Enter</kbd>): the profiles whose channel gives the colour of the
+  row on every one of those values - one preset, or several next to each other. Only a preset whose only colour
+  is that one counts: <i>Red</i>, <i>Deep red</i>, <i>Red301</i> are red; <i>White+Red</i>, <i>Red+Green</i> are
+  not. The channel, the colour and the values go in at once: while a value is written in AT DMX VALUE,
+  <span class="ui">+ Add next color</span> is greyed and cannot be pressed - clear the value to add the colour
+  alone.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><b>CASCADING FILTER STRUCTURE</b> - the filters chosen, in order, each with how
+  many profiles remain after it; the X of a filter takes it out, <span class="ui">X Clear all</span> all of them.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><b>RESULTS</b> - the profiles left: the file, the number of channels and the
+  details (below), with the bar that moves the details across. A double click shows the profile as text, with what
+  matched marked.</td></tr>
+</table>
+
+<h3>The details</h3>
+<p>What the details of RESULTS show depends on the filters:</p>
+<ul>
+<li><b>With a colour filter</b> (<span class="ui">+ Add next color</span> or <span class="ui">+ Add at DMX
+  value</span>) - the channel of the last colour filter, unfolded on every row: each of its presets as
+  <i>(first-last)Name</i>, each value under the same value of the other rows, so the values of all the profiles left
+  can be compared at a glance. The heading names the channel: <i>Ch01 - all its values (DMX)</i>. The filters chosen
+  after it (PAN, TILT ...) leave it unfolded.</li>
+<li><b>Without a colour filter</b> - the channels of each profile, <i>Ch1-Pan&nbsp;&nbsp;Ch2-Tilt ...</i>, each
+  channel under the same channel of the other rows.</li>
+<li><b>With a FREE TEXT SEARCH</b> (and no colour filter) - where the words were found, marked between &raquo; and
+  &laquo;.</li>
+</ul>
+<p>The names of colours are written in their colour - in <i>White+Red</i>, <i>White</i> in white and <i>Red</i> in
+red; <i>Light Pink</i> all pink - and their text stays, so a colour is also known by its name. <i>None (Sub-div)</i>
+and <i>Indexing</i> are grey. <i>Shutter Open</i> and <i>Shutter Close</i> are written <i>Open</i> and <i>Close</i>. A
+channel without presets shows <i>(0-255)</i> and its name - the <i>Red</i> channel of an RGB fixture:
+<i>(0-255)Red</i>.</p>
+<div class="pic"><img src="../img/patch_ff_colors.png" alt="A channel unfolded"></div>
+<p class="cap">After <i>CH1 red</i>, red at 6-9 on CH1 leaves 2 profiles: Beam 240W, whose red preset is 5-12,
+and Beam 7R F71v2, red on 6-9. The profiles whose 6-9 is <i>White+Red</i> are not among them.</p>
+<div class="pic"><img src="../img/patch_ff_channels.png" alt="The channels of the profiles"></div>
+<p class="cap">Without a colour filter: the channels of each profile, one under another.</p>
+<p>The bar under the details is always there; it moves only the details - the file and <span class="ui">Ch</span>
+stay. Its arrows move them a little, a click beside its slider a page; <kbd>Shift</kbd> + the mouse wheel over the
+results does the same.</p>
+
+<h3>The right click on a result</h3>
+<div class="pic"><img src="../img/patch_ff_menu.png" alt="The right-click menu of a result"></div>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><span class="ui">Copy name</span></td><td>The name of the profile, to the clipboard.</td></tr>
+<tr><td><span class="ui">Copy file</span></td><td>The file itself, to the clipboard: <i>Paste</i> in a folder of Explorer puts a
+  copy there - in the folder of a project, for example.</td></tr>
+<tr><td><span class="ui">Browse to location (Explorer)</span></td><td>Opens its folder in Explorer, with the file selected.</td></tr>
+<tr><td><span class="ui">Open in Fixture Editor</span></td><td>Opens the profile in the LumiDMX Fixture Editor, with
+  <span class="ui">Save</span> grey until a <span class="ui">Save As</span>, so that the library's file is not changed by
+  mistake.</td></tr>
+</table>
+
+<div class="tip"><p><b>Tip:</b> the library is read once and kept while the program runs. Closing the window only hides
+it - the list, the filters and the search are there the next time - and when it comes back, only the files that
+changed, came or went are read again.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/between.html" title="Previous">Between projects</a> &nbsp;|&nbsp; Up: <a href="../patch/addfixture.html">+Add Fixture</a> &nbsp;|&nbsp; <a href="../patch/hardware.html" title="Next">DMX Hardware</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

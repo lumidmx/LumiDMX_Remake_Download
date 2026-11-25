@@ -1,0 +1,142 @@
+/* LumiDMX Remake Help - one style for every page.
+   The help viewer of Windows (hh.exe) shows the pages with Internet
+   Explorer 11 (the pages ask for it: X-UA-Compatible IE=edge), so plain CSS
+   only: no variables, no grid. */
+
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #1f2328;
+  background: #ffffff;
+}
+a { color: #0b5cad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* the bar on top: where the page is, Previous / Next (made by helpmake) */
+.nav {
+  background: #22252b;
+  color: #ffffff;
+  padding: 6px 16px;
+  font-size: 12px;
+  border-bottom: 3px solid #1ab4a3;
+  overflow: hidden;
+}
+.nav a { color: #a8d8ff; }
+.nav b { color: #ffffff; font-weight: 600; }
+.nav .pn { float: right; margin-left: 12px; }
+.nav .pn a, .nav .pn span.off {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 9px;
+  border: 1px solid #5a6170;
+  border-radius: 3px;
+  color: #ffffff;
+  background: #3a3f4b;
+}
+.nav .pn a:hover { background: #4a5060; text-decoration: none; }
+.nav .pn span.off { color: #7d8590; border-color: #3a3f4b; background: #2b2e38; }
+
+/* the page */
+.page { padding: 10px 24px 8px 24px; max-width: 1000px; }
+h1 {
+  font-size: 23px;
+  font-weight: 600;
+  margin: 10px 0 4px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #d0d7de;
+}
+h2 { font-size: 18px; font-weight: 600; margin: 24px 0 6px 0; }
+h3 { font-size: 15px; font-weight: 600; margin: 18px 0 4px 0; }
+p { margin: 6px 0 10px 0; }
+ul, ol { margin: 4px 0 10px 0; padding-left: 26px; }
+li { margin: 3px 0; }
+
+/* which programs have it: the text says it, not the colour */
+.for { margin: 4px 0 14px 0; font-size: 12px; color: #57606a; }
+.badge {
+  display: inline-block;
+  padding: 0 7px;
+  margin-right: 4px;
+  border: 1px solid #22252b;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 18px;
+}
+.badge.full { background: #22252b; color: #ffffff; }
+.badge.player { background: #ffffff; color: #22252b; }
+
+/* pictures: never wider than the page */
+.pic { margin: 12px 0 4px 0; }
+.pic img { max-width: 100%; height: auto; border: 0; }
+.cap { font-size: 12px; color: #57606a; margin: 2px 0 14px 0; }
+
+/* tables */
+table { border-collapse: collapse; margin: 6px 0 16px 0; }
+th, td { border: 1px solid #d0d7de; padding: 4px 9px; vertical-align: top; text-align: left; }
+th { background: #f0f2f4; font-weight: 600; }
+table.wide { width: 100%; }
+td.n { width: 30px; text-align: center; }
+
+/* the numbers of the pictures, drawn as in the pictures: black, a white ring */
+span.n {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  border: 2px solid #ffffff;
+  border-radius: 11px;
+  background: #141414;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 0 1px #000000;
+}
+
+/* boxes: the word in front says what they are */
+.note, .tip, .important, .draft {
+  margin: 12px 0;
+  padding: 8px 12px;
+  border-left: 4px solid #6e7781;
+  background: #f6f8fa;
+}
+.tip { border-left-color: #1ab4a3; }
+.important { border-left-color: #b08800; background: #fff8e1; }
+.draft { border: 1px dashed #8c959f; border-left: 4px solid #8c959f; background: #fafbfc; }
+.note p, .tip p, .important p, .draft p { margin: 4px 0; }
+
+kbd {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
+  padding: 0 4px;
+  border: 1px solid #b0b7be;
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: #f6f8fa;
+  white-space: nowrap;
+}
+code, .file {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  background: #f0f2f4;
+  padding: 0 3px;
+}
+.ui { font-weight: 600; }        /* a name written on the screen: a button, a menu */
+
+/* the chapter pages: what is in them */
+ul.toc li { margin: 5px 0; }
+
+/* the bar at the bottom (made by helpmake) */
+.foot {
+  margin-top: 28px;
+  padding: 10px 24px 14px 24px;
+  border-top: 1px solid #d0d7de;
+  font-size: 12px;
+  color: #57606a;
+}
+
+/* (14 nov 2026) the date the help was built, under the title of the first page */
+.lastupd { margin: -6px 0 10px 0; font-size: 13px; color: #57606a; }

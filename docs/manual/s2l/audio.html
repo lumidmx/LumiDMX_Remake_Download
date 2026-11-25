@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>The sound</title>
+<meta name="keywords" content="Quiet: Slow Move; quiet part; audio input; Auto level (Sound2Light); silence (Sound2Light); noise (microphone); Input (Sound2Light); loopback; what's playing; microphone; line input; Start (Sound2Light); Stop (Sound2Light); Refresh (Sound2Light); Master Volume; Input Level; Level; Raw; EQ; equalizer; EQ preset; BPM; Manual BPM; Tap; Auto BPM">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../s2l/index.html" title="Previous: Sound2Light">&lt; Previous</a> <a href="../s2l/lists.html" title="Next: BPM lists">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../s2l/index.html">Sound2Light</a> &gt; <b>The sound</b></div></div><!--/NAV-->
+<div class="page">
+<h1>The sound</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<h2>Choosing the input</h2>
+<p>The <span class="ui">Input</span> list has two kinds of sources:</p>
+<ul>
+<li><b>Inputs</b> - a microphone, a line input, a sound card input: the sound of the room or of a mixer.</li>
+<li><b>Loopback</b> (shown with the name of a speaker or headphone output) - the music that plays on this computer,
+  taken directly, without a microphone. The best choice when the music comes from the same computer.</li>
+</ul>
+<p><span class="ui">Refresh</span> reads the list again (after plugging in a sound card); the status line says how many inputs and
+loopback devices were found. Press <span class="ui">Start</span> to listen, <span class="ui">Stop</span> to stop. <span class="ui">Rec ON</span> in the bar at the top
+does the same from any tab: green = listening.</p>
+
+<h2>The levels</h2>
+<ul>
+<li><span class="ui">Master Volume</span> - the volume of the computer's output. With a loopback input, the bars follow this volume:
+  if they are too low or too high, change it here.</li>
+<li><span class="ui">Input Level</span> - the recording level of a microphone or line input (it does not act on a loopback: use Master
+  Volume).</li>
+<li><span class="ui">Level</span> - how loud the sound is now; <span class="ui">Raw</span> is the same as a number.</li><li id="autolevel"><span class="ui">Auto level: ON</span> / <span class="ui">Auto level: OFF</span> (the small button next to
+  Input Level) - <b>ON</b> (the default): every bar scales itself to what it heard in the last seconds, so the squares
+  catch the music the same way whether it is loud or quiet; in silence the bars slowly climb to the noise of the
+  microphone. <b>OFF</b>: a fixed scale - the bars show how loud the sound really is, silence stays at the bottom and
+  only sound makes them climb; set the height once with <span class="ui">Input Level</span> (or Master Volume). Kept
+  with the project.</li>
+<li><span class="ui">Quiet: Slow Move ON</span> / <span class="ui">OFF</span> (next to Auto level) - see
+  <a href="#quiet">below</a>.</li>
+</ul>
+<div class="tip"><p>Set the level so that in the loud parts of the music the bars reach about three quarters of the
+graph and do not stay at the top: the squares then catch the beats and not everything.</p></div>
+
+<h2 id="quiet">Quiet: Slow Move</h2>
+<p>For the parts of a song without the beat - only the voice, a break, someone speaking - the lights can calm down by
+themselves, as when you stop <span class="ui">Rec</span> and press <b>Slow Move</b> on the Live Panel.</p>
+<div class="pic"><img src="../img/s2l_quiet.png" alt="Quiet: Slow Move ON, a quiet part"></div>
+<ul>
+<li><span class="ui">Quiet: Slow Move OFF</span> (grey, the default) - nothing changes.</li>
+<li><span class="ui">Quiet: Slow Move ON</span> (blue) - when there is no kick drum for about 3 seconds, Sound2Light
+  holds (its lists stop, what they started stops) and the <b>Slow Move</b> button of the Live Panel starts, with its
+  own movement and colours. The graph shows <b>QUIET PART -&gt; Slow Move</b>. When the kick comes back (two beats),
+  Slow Move stops and Sound2Light goes on.</li>
+<li>The kick is found in the bass (35 - 80 Hz): a voice, a held bass note or a pad do not count as the beat. Silence
+  counts as a quiet part too.</li>
+<li>Slow Move running already (pressed by you) is left on when the beat comes back.</li>
+<li><span class="ui">Rec OFF</span>: nothing happens from here - what is on stays on.</li>
+<li>The arrow next to the button chooses another button of the Live Panel (by its first letter); the project's
+  <b>Slow Move</b> is found by its name (any capitals). Kept with the project.</li>
+</ul>
+
+<h2>The EQ</h2>
+<p>The 12 sliders, from 30 Hz to 22.05 kHz, make a range of sounds stronger (up) or weaker (down) before the bars,
+the squares and the BPM use it. For example: the kick drum too weak - raise 50 and 100; the voice touching the
+squares too often - lower 1k and 2k.</p>
+<p><span class="ui">Save as...</span> keeps the 12 sliders under a name, the <span class="ui">Preset</span> list brings them back, <span class="ui">Delete</span>
+removes the chosen preset, <span class="ui">Reset</span> puts all the sliders back to the middle.</p>
+
+<h2>The BPM</h2>
+<ul>
+<li><span class="ui">Manual</span> - you write the tempo (or use the arrows).</li>
+<li><span class="ui">Tap</span> - click it in time with the music; the mean of the last four clicks is the tempo (a pause of more than
+  2 seconds starts again).</li>
+<li><span class="ui">Auto</span> - found from the bass of the music; with <span class="ui">Beat Trigger</span> ticked it follows the kicks the Beat
+  Trigger finds <i>(from Beat Trigger)</i>.</li>
+</ul>
+<p>The BPM is shown for you. The lists do not step on this number: they step when a bar reaches into their square
+(or on every kick, with the Beat Trigger).</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../s2l/index.html" title="Previous">Sound2Light</a> &nbsp;|&nbsp; Up: <a href="../s2l/index.html">Sound2Light</a> &nbsp;|&nbsp; <a href="../s2l/lists.html" title="Next">BPM lists</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Between projects</title>
+<meta name="keywords" content="Between projects; Copy/Merge Moves and Dimmer; MAIN MENU; START: MOVES LIST; START: DIMMER LIST; SIMULTANEOUS (MOVES + DIMMER); MERGE CueSteps; moves list; dimmer list; Channel Mapping; SAME AS PREVIOUS; Fixture Mapping; FORCE MIRROR; Final Parameters - Pan/Tilt and Offset; CueSteps Difference Report; Copy Dimmers from Template; Dimm Games; Beam / Par / Wash Configurator; PROJECT IN WORK; LOAD TEMPLATE; ASSIGN GROUP; Source+Template; Include in generation; DIMMER CHANNEL; FIXED REFERENCE; PREVIEW ALL; GENERATE; dimmer games">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../patch/mirror.html" title="Previous: Mirror / Offset">&lt; Previous</a> <a href="../patch/library.html" title="Next: Library tools">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../patch/index.html">Setup &amp; Patch</a> &gt; <a href="../patch/addfixture.html">+Add Fixture</a> &gt; <b>Between projects</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Between projects</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p><span class="ui">Between projects</span> (in <a href="addfixture.html">+Add Fixture</a>) takes what the buttons of
+another project do and writes it into the buttons of the open project, for its own fixtures. The other project
+(<code>.x1</code> or <code>.xR</code>) is only read.</p>
+<div class="pic"><img src="../img/patch_between_menu.png" alt="The menu Between projects"></div>
+<ul>
+<li><span class="ui">Copy/Merge Moves and Dimmer</span> - movement and dimmer buttons, from a group of the other project
+  onto one or more groups of this one;</li>
+<li><span class="ui">Copy Dimmers from Template</span> - the dimmer games of a model project (the <i>template</i>), made
+  again for the number of fixtures of each group of this one.</li>
+</ul>
+<p>Each run is one entry of <span class="ui">Undo</span>; <span class="ui">Save</span> writes it into the project
+file. Closing a window before the end changes nothing.</p>
+
+<h2>Copy/Merge Moves and Dimmer</h2>
+<div class="pic"><img src="../img/patch_copymerge.png" alt="Copy/Merge Moves and Dimmer - MAIN MENU"></div>
+<p class="cap">The first window.</p>
+<table class="wide">
+<tr><th>Window</th><th>What you do</th></tr>
+<tr><td><b>MAIN MENU</b></td><td>What to copy: <span class="ui">START: MOVES LIST</span> (the movement buttons),
+  <span class="ui">START: DIMMER LIST</span> (the dimmer buttons) or <span class="ui">SIMULTANEOUS (MOVES +
+  DIMMER)</span>. <span class="ui">EDIT</span> changes the names in a list (kept until the program is closed).
+  <span class="ui">MERGE CueSteps</span> (below).</td></tr>
+<tr><td><b>The source</b></td><td>The other project's file.</td></tr>
+<tr><td><b>Select Source Group and Destination Groups</b></td><td>One group of the other project, and the groups of this
+  one that get its buttons.</td></tr>
+<tr><td><b>Channel Mapping -&gt; <i>group</i></b></td><td>For each destination group, which channel gets which channel of the
+  source; the usual ones are found from the profiles. <span class="ui">SAME AS PREVIOUS</span> repeats the mapping of
+  the group before.</td></tr>
+<tr><td><b>Fixture Mapping - Multi-Destination</b></td><td>Which source fixture drives which destination fixture, shown with
+  their universes and addresses; <span class="ui">FORCE MIRROR (all)</span> sets every group as a mirror image.</td></tr>
+<tr><td><b>Final Parameters - Pan/Tilt and Offset</b></td><td>For each group, its <i>All Front</i> pan and tilt and a
+  <b>Pan Offset</b> and <b>Tilt Offset</b> for the movement buttons. <span class="ui">CONFIRM AND CONTINUE</span>
+  writes the buttons.</td></tr>
+<tr><td><b>CueSteps Difference Report</b></td><td>When a button now has another number of steps: each such button, with
+  the steps it had and the steps it has now.</td></tr>
+</table>
+<p>A message then says how many buttons and steps were changed, and which buttons of the lists this project does not
+have.</p>
+<p><b>MERGE CueSteps</b> - ticked, the values are laid over the steps the buttons of this project already have, and what
+they hold for other fixtures stays. Unticked (as at first), each button gets the steps of the source anew - their
+names and times too - and what it held for other fixtures in those steps is cleared.</p>
+
+<h2>Copy Dimmers from Template</h2>
+<div class="pic"><img src="../img/patch_dimmgames.png" alt="Dimm Games - Beam / Par / Wash Configurator"></div>
+<p class="cap">Dimm Games with Andrei_edit.x1 as the project in work, before a template is loaded.</p>
+<p>The <b>dimmer games</b> are eight chases of each kind - <i>Light 4 ON-2 OFF</i>, <i>Light 3ON-3OFF</i>, <i>Light R-L
+Full</i> ... for the beams, the same with <i>Par</i> in front for the pars, <i>WG 1</i> to <i>WG 8</i> for the washes.
+This tool takes them from a template and makes them again for the groups of the open project, whatever their number of
+fixtures.</p>
+<table class="wide">
+<tr><th>Part</th><th>What it is</th></tr>
+<tr><td><span class="ui">PROJECT IN WORK</span></td><td>The open project (its button reads it again) and how many dimmer
+  game buttons of each kind it has.</td></tr>
+<tr><td><span class="ui">LOAD TEMPLATE</span></td><td>The model project. Its Beam group and that group's
+  <b>Dimmer</b> channel are found by their names; <span class="ui">CHANGE</span> picks others.</td></tr>
+<tr><td><span class="ui">BEAM</span>, <span class="ui">PAR</span>, <span class="ui">WASH</span></td><td>One tab for each kind:
+  <span class="ui">ASSIGN GROUP</span> - the group of this project; <span class="ui">DIMMER CHANNEL</span> - its dimmer;
+  <span class="ui">Include in generation</span>; <span class="ui">Source+Template</span> - the template's dimmer laid
+  over the button's own steps instead of steps made anew.</td></tr>
+<tr><td>The rows</td><td>For each of the eight: <b>FIXED REFERENCE</b> (its name), <b>SOURCE</b> (the button of this project
+  matched to it), <b>TEMPLATE</b> (the template's), the steps, the status and <b>MANUAL</b> (rename or replace the
+  button matched).</td></tr>
+<tr><td><span class="ui">PREVIEW ALL</span></td><td>The games played on the screen, as the fixtures of the group will show
+  them. <span class="ui">REVERSE</span> marks a game to run its steps the other way round; <span class="ui">SAVE
+  CHANGES (REVERSE)</span> keeps the marked ones so.</td></tr>
+<tr><td><span class="ui">GENERATE</span></td><td>Writes the dimmer games into the buttons of this project. The window stays
+  open; each GENERATE is one Undo.</td></tr>
+</table>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../patch/mirror.html" title="Previous">Mirror / Offset</a> &nbsp;|&nbsp; Up: <a href="../patch/addfixture.html">+Add Fixture</a> &nbsp;|&nbsp; <a href="../patch/library.html" title="Next">Library tools</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

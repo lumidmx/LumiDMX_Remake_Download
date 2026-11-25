@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Fixture Control</title>
+<meta name="keywords" content="Fixture Control; Fixtures (button); Moving tab; Pan/Tilt pad; Lock Pan; Lock Tilt; Middle Position; Fine adjust; Sensitivity; Light tab; Color tab; Gobo tab; Other tab; preset pictures; colour wheel; RGB Color; Select all; each 2th; Invert Selection; Move Up; Move Down; Deselect all; default values; Enable Effect; Follow spot; Relative (keep spacing); Fan; Circle through center; Follow spot calibration; Generate chase; Pan width; Tilt offset; 2D View (Fixture Control); Default (icon); Reset (icon); All (icon); Effect (icon); Mixer Panel">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/mixer.html" title="Previous: The General Mixer">&lt; Previous</a> <a href="../live/correction.html" title="Next: Correction Pan / Tilt and Focus">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Fixture Control</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Fixture Control</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>Fixture Control sets the fixtures by hand, by what their channels do: move a head with the mouse, pick a colour or a gobo
+by its picture, open the dimmer. It is the quickest way to set a position or a look while you build a chase, or to check
+a fixture. Press <span class="ui">Fixtures</span> in the function bar: it opens under the Live panel; the tabs <span class="ui">Mixer Panel</span> and
+<span class="ui">Fixture Control</span> at the bottom switch between it and the General Mixer.</p>
+<p>What you set here goes to the output only for the fixtures ticked, and only what you touch: a fixture keeps every other
+channel as the buttons left it.</p>
+
+<h2>The panel - the Moving tab</h2>
+<div class="pic"><img src="../img/live_fixctl_moving.png" alt="Fixture Control, Moving tab"></div>
+<p class="cap">Andrei_edit: the six Beam 5R Girbo, none ticked yet.</p>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>The fixtures of the type chosen (8), with their picture, universe and address. A click ticks or unticks one (the ticked ones are lit); Ctrl+click ticks only that one.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The tabs of what the type can do: <span class="ui">Moving</span>, <span class="ui">Light</span>, <span class="ui">Color</span>, <span class="ui">Gobo</span>, <span class="ui">Other</span> (only those the type has), and <span class="ui">Correction Pan / Tilt and Focus</span> (see <a href="correction.html">its page</a>).</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The Pan / Tilt pad: drag the red dot and the ticked heads follow. Under it: the values - X and Y (Pan and Tilt), yX and yY (their fine channels). While you drag, the mouse pointer is hidden; when you let go it stands on the dot.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Lock Pan</span> / <span class="ui">Lock Tilt</span> / <span class="ui">Unlock</span> - only up-down or only left-right. <span class="ui">Middle Position</span> - Pan and Tilt to the middle. <span class="ui">Fine adjust</span> - small, exact moves; <span class="ui">Sensitivity</span> (1 to 64) - how far the head goes for a move of the mouse.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Enable Effect</span> - several fixtures move together, in one of four ways (see below). <span class="ui">Follow spot calibration...</span> and <span class="ui">Generate chase...</span> belong to it.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Pan width</span> / <span class="ui">Tilt offset</span> - for Fan: how far apart the first and the last one are.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">2D View</span> - where each ticked fixture points now, in its colour, with a short trail. Double-click: the same, big, in its own window.</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td>The fixture types of the project. Each type remembers its own ticks.</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td>The icons <span class="ui">Default</span>, <span class="ui">Reset</span>, <span class="ui">All</span> and the arrow of the selection menu (see below). They stand under the list, two rows high; dragging the line between the list and the panel makes them wider or narrower with the list.</td></tr>
+<tr><td class="n"><span class="n">10</span></td><td><span class="ui">Effect</span> - the <a href="effgen.html">Effect Generator</a> for the fixtures ticked.</td></tr>
+<tr><td class="n"><span class="n">11</span></td><td><span class="ui">Mixer Panel</span> / <span class="ui">Fixture Control</span> - the General Mixer or this panel.</td></tr>
+</table>
+
+
+<h2>The icons under the list</h2>
+<p>Each icon has its name under it; the mouse over one shows what it does.</p>
+<table class="wide">
+<tr><th>Icon</th><th>What it does</th></tr>
+<tr><td><span class="ui">Default</span> (white ball)</td><td>The default values of the profile for the ticked fixtures (the presets marked "default"); a light channel without presets goes to full.</td></tr>
+<tr><td><span class="ui">Reset</span> (black ball)</td><td>Every channel of the ticked fixtures to 0.</td></tr>
+<tr><td><span class="ui">All</span> (blue square with a tick)</td><td>Ticks every fixture of the type open.</td></tr>
+<tr><td>The blue arrow</td><td>The selection menu (below).</td></tr>
+</table>
+<div class="pic"><img src="../img/live_fixctl_menu.png" alt="The selection menu"></div>
+<table class="wide">
+<tr><th>Item</th><th>What it does</th></tr>
+<tr><td><span class="ui">Select</span> &gt; <span class="ui">All</span> / <span class="ui">each 2th</span> / <span class="ui">each 3th</span> / <span class="ui">each 4th</span></td><td>All, or one of every 2, 3 or 4 (2, 4, 6 ... / 1, 4, 7 ... / 1, 5, 9 ...); the others are unticked.</td></tr>
+<tr><td><span class="ui">Deselect all</span></td><td>Unticks every fixture of the type.</td></tr>
+<tr><td><span class="ui">Invert Selection</span></td><td>Ticked become unticked and the other way round.</td></tr>
+<tr><td><span class="ui">Move Up</span> / <span class="ui">Move Down</span></td><td>Every tick one row up or down (the first goes to the last). Press it again and again for a chase by hand along the row.</td></tr>
+</table>
+
+<p>These touch only the type open; the other types keep their ticks.</p>
+
+<h2>Light, Color, Gobo, Other</h2>
+<div class="pic"><img src="../img/live_fixctl_light.png" alt="Fixture Control, Light tab"></div>
+
+<p>One column for each channel: its name at the top, the value, the fader (drag it or click its track), <span class="ui">S</span> and
+<span class="ui">M</span> as in the <a href="mixer.html">General Mixer</a>, and next to it the pictures of its presets, taken from the
+profile. Click a picture: the channel goes to that preset (the open gobo, the white, the strobe ...). A <span class="ui">?</span> is a
+preset that has no picture in the profile. The picture in front of each fixture in the list shows the last preset picked.</p>
+
+<h3>RGB fixtures</h3>
+<div class="pic"><img src="../img/live_fixctl_rgb.png" alt="Fixture Control, Color tab of an RGB fixture"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td>An ordinary channel of the tab (here White).</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td>The colour wheel, for the Red, Green and Blue channels together: click or drag in it.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td>The brightness of that colour: full at the top.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">RGB Color</span> - the exact values of Red, Green, Blue (0 to 255).</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td>The next channel, with its presets.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td>A preset with no picture in the profile.</td></tr>
+</table>
+
+
+<h2>Several heads together - Enable Effect</h2>
+<p>Tick the fixtures, tick <span class="ui">Enable Effect</span> and choose how they follow the pad. They are arranged at once, then follow it.
+Opening another type switches the effect off; the fixtures stay where they are.</p>
+<table class="wide">
+<tr><th>Mode</th><th>What the heads do</th></tr>
+<tr><td><span class="ui">Follow spot</span></td><td>They all light the same point of the floor, the one the pad points at. It needs the calibration (below).</td></tr>
+<tr><td><span class="ui">Relative (keep spacing)</span></td><td>The pad is the middle of the group; each keeps its distance from it, as it was when you started. The group stops at an edge.</td></tr>
+<tr><td><span class="ui">Fan</span></td><td>The pad is the middle; the first and the last are <span class="ui">Pan width</span> / <span class="ui">Tilt offset</span> apart (-100 to 100 %), the others evenly between them.</td></tr>
+<tr><td><span class="ui">Circle through center</span></td><td>They stand evenly on a circle round a point of the floor and turn, each beam passing through the centre. It needs the calibration.</td></tr>
+</table>
+
+<p><span class="ui">Follow spot calibration...</span> - two ways, the last one saved counts:</p>
+<ul>
+<li><b>Same fixtures on a truss</b> - identical heads on a straight, level truss, the same distance apart: the program reads your
+Focus and All Front positions from the output. Nothing to aim.</li>
+<li><b>5 marks on the floor</b> - any rig: aim the first fixture and each of the others at the 4 corners of the area and at its
+middle, and save.</li>
+</ul>
+<p>The calibration is kept in the S2L.dat of the project. <span class="ui">Generate chase...</span> makes the same movement as a light
+sequence in the <a href="library.html">Library</a>, to put on a button. Its steps have Pan / Tilt only - the fine channels
+(Pan Fine, Tilt Fine, uPan ...) are 0, as in every generated move: while the steps fade the program makes the fine
+value itself, so the movement is smooth (see <a href="effgen.html#nofine">Effect Generator</a>).</p>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/mixer.html" title="Previous">The General Mixer</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/correction.html" title="Next">Correction Pan / Tilt and Focus</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

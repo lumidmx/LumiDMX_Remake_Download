@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Buttons of the Live panel</title>
+<meta name="keywords" content="button; Live panel; start; stop; running; dots; step counter; STEP; FLASH; FADE; Flash button; keyboard shortcut; key; MIDI; right click; Speed Control; Group Index; same name">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/index.html" title="Previous: Mixer &amp; Live">&lt; Previous</a> <a href="../live/props.html" title="Next: Object Propertys">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Buttons of the Live panel</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Buttons of the Live panel</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>A button of the Live panel plays what it holds: a light sequence (its steps, one after another) or only its
+commands. Its settings are in <a href="props.html">Object Propertys</a>.</p>
+
+<div class="pic"><img src="../img/live_buttons.png" alt="Buttons of the Live panel, Cerc fata running"></div>
+<p class="cap"><span class="ui">Cerc fata</span> runs: darker, with a white frame, the yellow dots on its border, the
+mark STEP and its step, 2 of 18. The other buttons are stopped.</p>
+
+<h2>Starting and stopping</h2>
+<ul>
+<li>A click starts the button; another click stops it. The mouse over a button makes it lighter.</li>
+<li>While it runs, the button is darker and has a white frame; four yellow dots travel round its border, and at its
+  bottom the step it is on and the number of steps, such as <b>2/18</b>. With <span class="ui">Animation on buttons
+  ON</span> not ticked (<a href="../patch/option.html">the Option tab</a>) the dots stand still.</li>
+<li>A button without <span class="ui">Loop</span> stops by itself after its last step; with Loop it starts again from
+  the first.</li>
+<li>Buttons with the same <span class="ui">Group Index</span> (not 0) are a group: starting one stops the others of the
+  group that run. Many projects do the same with a macro: the macro of <span class="ui">Cerc fata</span> stops the
+  other movements (see <a href="../macros/index.html">Macros</a>).</li>
+<li>Two buttons with the same name on the panel play each on its own.</li>
+<li>A button with commands runs its <span class="ui">On Start</span> command when it starts and its
+  <span class="ui">On Stop</span> command when it stops.</li>
+</ul>
+
+<h2>The marks on a button</h2>
+<table class="wide">
+<tr><th>Mark</th><th>What it means</th></tr>
+<tr><td><b>STEP</b> (top right)</td><td>A <i>Step on Remote</i> button: the remote player steps it. Its dots go one way
+  while it plays forward, the other way after <span class="ui">Back</span>, and stand still while it waits. See
+  <a href="../remote/index.html">Remote, controllers and MIDI</a>.</td></tr>
+<tr><td><b>FLASH</b> (top right)</td><td>A Flash button: it runs only while it is held - the mouse button or its key -
+  and stops when let go. While it is held, Sound2Light does not react to the music (when
+  <span class="ui">Flash button take priority over Sound2Light</span> is ticked in the Option tab).</td></tr>
+<tr><td><b>FADE</b> (top left)</td><td>The button has <span class="ui">Fade Sequence</span> and the Option tab's
+  <span class="ui">Fade Sequence</span> is ticked: when it stops, its light goes down in the release time set
+  there.</td></tr>
+<tr><td>A track at the bottom</td><td><b>Speed Control</b> (below).</td></tr>
+</table>
+
+<h2>Keys and MIDI</h2>
+<p>A button can have a key of the keyboard and a pad or key of a MIDI controller (<a href="props.html">Object
+Propertys</a> &gt; <span class="ui">Remote</span>). The key works as a click: it starts the button, and pressed again
+stops it; a Flash button runs while the key is held. The keys do nothing while a window for writing is open (such as
+the Macro Editor) or while you type in a box.</p>
+<p>Some projects write their keys on a page of the panel, as a picture or a label: Andrei_edit shows <i>Keyboard
+shortcuts: R = Red, M = Magenta ...</i> at the bottom of its main page.</p>
+
+<h2>The right-click menu</h2>
+<div class="pic"><img src="../img/live_button_menu.png" alt="The right-click menu of a button"></div>
+<p class="cap">The menu of a right click on a button.</p>
+<ul>
+<li><span class="ui">Speed Control</span> - ticked, the button gets its speed track (below).</li>
+<li><span class="ui">Object Propertys...</span> - its settings: <a href="props.html">Object Propertys</a>.</li>
+<li><span class="ui">Edit Cue Steps...</span> - its steps: <a href="cuesteps.html">Edit Cue Steps</a>.</li>
+</ul>
+<p>A right click on a slider opens the slider's settings (<a href="sliders.html">Sliders</a>); on a Show button, its
+<span class="ui">Live-Object Propertys</span>.</p>
+
+<h2>Speed Control</h2>
+<div class="pic"><img src="../img/live_speed_control.png" alt="A button with Speed Control"></div>
+<p class="cap"><span class="ui">Slow Move</span> with Speed Control: the track along its bottom, the marker in the
+middle.</p>
+<p>Drag the marker of the track: in the middle the button plays at its own speed, to the left slower, to the right
+faster. A click elsewhere on the button still starts and stops it. The speed set here and the speed set by a speed
+slider or by the command <code>setSeqSpeed</code> are the same setting of the button: the last one set counts. Speed
+Control can be ticked in the right-click menu or in <a href="props.html">Object Propertys</a>; it is kept with the
+project when it is saved.</p>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/index.html" title="Previous">Mixer &amp; Live</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/props.html" title="Next">Object Propertys</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

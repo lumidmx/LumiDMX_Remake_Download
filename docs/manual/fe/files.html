@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Files and settings</title>
+<meta name="keywords" content="fixture_editor_settings.json; Fixture Editor, settings; Fixture Editor, command line; /fromfilter; .lfi2 file; .lfi file; recent fixtures">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../fe/export.html" title="Previous: Export">&lt; Previous</a> <a href="../trouble.html" title="Next: Troubleshooting">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../fe/index.html">LumiDMX Fixture Editor</a> &gt; <b>Files and settings</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Files and settings</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<h2>The profiles</h2>
+<table class="wide">
+<tr><th>File</th><th></th></tr>
+<tr><td><code>.lfi2</code></td><td>The profiles of LumiDMX Remake and LumiDMX X1. The editor opens and saves them. Everything is
+  inside the file: the data, the channels, the presets and all the pictures. Only the gobo files of
+  <span class="ui">High Res. Gobo</span> are named, not included.</td></tr>
+<tr><td><code>.lfi</code></td><td>The older profiles. The editor opens them and saves them as <code>.lfi2</code>.</td></tr>
+</table>
+
+<h2>The editor's settings</h2>
+<p>The editor keeps its own settings in <code>fixture_editor_settings.json</code>, next to
+<code>LumiDMX_Fixture_Editor.exe</code>. They are only conveniences: when the file is missing or cannot be written, the
+editor works the same and starts from the program folder.</p>
+<table class="wide">
+<tr><th>Setting</th><th>What it remembers</th></tr>
+<tr><td><code>library_dir</code></td><td>the library folder (<span class="ui">Library &gt; Library folder...</span>)</td></tr>
+<tr><td><code>open_dir</code></td><td>the folder of the last profile opened</td></tr>
+<tr><td><code>import_dir</code></td><td>the folder of the last file imported</td></tr>
+<tr><td><code>export_dir</code></td><td>the folder of the last export</td></tr>
+<tr><td><code>picture_dir</code>, <code>gobo_dir</code></td><td>the folders of the last picture and the last gobo chosen</td></tr>
+<tr><td><code>recent_files</code></td><td>the last 8 profiles opened or saved (<span class="ui">File &gt; Recent Fixtures</span>)</td></tr>
+</table>
+<p>The activation is not here: the editor reads the Full's <code>dmx_simulator_settings.json</code> in the same folder
+(see <a href="../start/activation.html">Activation</a>).</p>
+
+<h2>Starting the editor with a profile</h2>
+<table class="wide">
+<tr><th>Command</th><th>What it does</th></tr>
+<tr><td><code>LumiDMX_Fixture_Editor.exe "D:\Fixtures\MH-X25 12_Ch.lfi2"</code></td><td>opens the profile (the same as
+  dropping it on the editor, or opening a <code>.lfi2</code> with the editor from Explorer)</td></tr>
+<tr><td><code>LumiDMX_Fixture_Editor.exe /fromfilter "D:\Fixtures\MH-X25 12_Ch.lfi2"</code></td><td>opens it as Fixture Filter
+  does: <span class="ui">Save</span> grey until a <span class="ui">Save Fixture As...</span></td></tr>
+</table>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../fe/export.html" title="Previous">Export</a> &nbsp;|&nbsp; Up: <a href="../fe/index.html">LumiDMX Fixture Editor</a> &nbsp;|&nbsp; <a href="../trouble.html" title="Next">Troubleshooting</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

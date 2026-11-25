@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sliders</title>
+<meta name="keywords" content="slider; Live-Panel Slider; fader; Min Value; Max Value; Default Value; DMX Master; DMX Group; Feedback; On Change Command; On Mouse Down Command; On Mouse Up Command; speed slider; setSeqSpeed; setOffset; offset slider; slider MIDI; MIDI learn">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/props.html" title="Previous: Object Propertys">&lt; Previous</a> <a href="../live/cuesteps.html" title="Next: Edit Cue Steps">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Sliders</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Sliders</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>A slider of the Live panel sets DMX channels, the speed of a button, or runs commands with its value. Press it
+anywhere on its track, or drag it: the handle goes there. While it moves, its value is shown on the handle for two
+seconds and the mouse pointer is hidden (<span class="ui">Show value in slider when moving it</span>, in
+<a href="../patch/option.html">the Option tab</a>).</p>
+
+<h2>The settings of a slider</h2>
+<p>A right click on a slider opens <span class="ui">Live-Panel Slider</span>. <span class="ui">Ok</span> applies the
+changes to the open project, <span class="ui">Abort</span> leaves the slider as it was.</p>
+<div class="pic"><img src="../img/live_slider.png" alt="The Live-Panel Slider window"></div>
+<p class="cap">The settings of the slider <span class="ui">6. Haze</span>: a DMX Group slider on universe 1, address
+501, with Feedback and a MIDI fader.</p>
+<table class="wide">
+<tr><th>Part</th><th>What it holds</th></tr>
+<tr><td><span class="ui">Slider Propertys</span></td><td>The <span class="ui">Name</span> (commands use it), the range
+  (<span class="ui">Min Value</span>, <span class="ui">Max Value</span>), the <span class="ui">Default Value</span> - where
+  the slider stands when the project opens -, its <span class="ui">Color</span> and
+  <span class="ui">Horizontal</span> / <span class="ui">Vertical</span>.</td></tr>
+<tr><td><span class="ui">MIDI</span></td><td>A fader of a controller. Tick <span class="ui">MIDI</span> and move the
+  fader: it is learned at once (<i>Hold a MIDI control to learn it live</i>).</td></tr>
+<tr><td><span class="ui">DMX</span></td><td>The channels of the slider: <span class="ui">Universe</span> and
+  <span class="ui">DMX</span> (the address), added with <b>+</b> and taken away with <b>x</b>. Then
+  <span class="ui">DMX Master</span> or <span class="ui">DMX Group</span>, and <span class="ui">Feedback</span>
+  (below).</td></tr>
+<tr><td><span class="ui">Command</span></td><td><span class="ui">On Change Command</span> - run each time the slider
+  moves; <span class="ui">On Mouse Down Command</span> - when it is pressed; <span class="ui">On Mouse Up
+  Command</span> - when it is let go. A command or a macro's name; in it, the slider's name stands for its value, as
+  in <code>SetDMX(1, MySlider1)</code>.</td></tr>
+</table>
+
+<h2>What a slider does</h2>
+<ul>
+<li><b>DMX Group</b> - the slider sets its channels to its value, as if they were moved in the General Mixer.</li>
+<li><b>DMX Master</b> - the slider is a master of its channels: at <span class="ui">Max Value</span> they come out as
+  they are, at <span class="ui">Min Value</span> at 0, in between in proportion.</li>
+<li><b>Feedback</b> (with DMX Group) - the sliders with the same addresses move together, and the slider follows when its
+  channel is moved in the General Mixer. Such a slider with a Default Value other than 0 sets its channels to it when
+  the project opens.</li>
+<li><b>A speed slider</b> - its On Change Command is <code>setSeqSpeed(Button, Slider)</code>: it sets the speed of
+  that button, 100 being its own speed (the page <span class="ui">Speeds</span> of Andrei_edit is made of such
+  sliders).</li>
+<li><b>An offset slider</b> - its command adds its value to channels: <code>setOffset(1, 10, MySlider)</code> adds
+  it to channel 10 of universe 1. In Andrei_edit the slider <span class="ui">offsetPanBeam</span> runs the macro
+  <span class="ui">PanBeamoffset</span>, one <code>setoffset</code> line for the pan channel of each beam
+  (<span class="ui">offsetTiltBeam</span> the same for the tilt).</li>
+<li>Any other command works the same; see <a href="../macros/commands.html">Commands</a>.</li>
+</ul>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/props.html" title="Previous">Object Propertys</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/cuesteps.html" title="Next">Edit Cue Steps</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

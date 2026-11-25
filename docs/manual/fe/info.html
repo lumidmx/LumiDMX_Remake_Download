@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Fixture information and pictures</title>
+<meta name="keywords" content="Basic Informations; Manufacturer; fixture name; Author; Fixture Type; Moving Head; Scanner; Spot; Color Object; Beam Angle; Max Pan; Max Tilt; Custom Meshfile; Load Image; Fill with Color; picture of a preset; picture of the fixture; gobo picture; High Res. Gobo; lib\images">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../fe/channels.html" title="Previous: Channels and presets">&lt; Previous</a> <a href="../fe/test.html" title="Next: Test and Save">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../fe/index.html">LumiDMX Fixture Editor</a> &gt; <b>Fixture information and pictures</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Fixture information and pictures</h1>
+<p class="for">For: <span class="badge full">Full</span></p>
+
+<p>The page <span class="ui">Basic Informations</span> holds what belongs to the fixture as a whole.</p>
+
+<div class="pic"><img src="../img/fe_info.png" alt="The page Basic Informations"></div>
+<table class="keys wide">
+<tr><td class="n"><span class="n">1</span></td><td><b>Image</b> - the picture of the fixture (<span class="ui">Load Image...</span>,
+  <span class="ui">Clear</span>). The 3D shows it in its list of the fixtures.</td></tr>
+<tr><td class="n"><span class="n">2</span></td><td><span class="ui">Manufacturer</span> - who makes the fixture. Required: a profile without
+  it is not saved.</td></tr>
+<tr><td class="n"><span class="n">3</span></td><td><span class="ui">Name</span> - the name of the fixture. Required.
+  A habit that helps: the model, then the number of channels (<i>MH-X25 12_Ch</i>), because one fixture often has
+  several DMX modes.</td></tr>
+<tr><td class="n"><span class="n">4</span></td><td><span class="ui">Author</span> - who made the profile. It may stay empty.</td></tr>
+<tr><td class="n"><span class="n">5</span></td><td><span class="ui">Fixture Type</span> - <b>Moving Head</b>, <b>Scanner</b>,
+  <b>Spot</b> or <b>Color Object</b>. The 3D chooses its model from it.</td></tr>
+<tr><td class="n"><span class="n">6</span></td><td><span class="ui">Beam Angle (deg)</span> - how wide the beam opens; the 3D draws the
+  beam with it.</td></tr>
+<tr><td class="n"><span class="n">7</span></td><td><span class="ui">Max Pan (deg)</span> - how far the fixture turns from pan 0 to pan 255
+  (often 540).</td></tr>
+<tr><td class="n"><span class="n">8</span></td><td><span class="ui">Max Tilt (deg)</span> - the same for tilt (often 270).</td></tr>
+<tr><td class="n"><span class="n">9</span></td><td><span class="ui">Custom Meshfile</span> - a 3D model of its own for this fixture;
+  empty = the 3D's model for the fixture type.</td></tr>
+</table>
+<p>The values of the manual go in 6 to 8: with them the 3D moves the fixture exactly as the real one moves.</p>
+
+<h2>The pictures</h2>
+<table class="wide">
+<tr><th>Picture</th><th>How</th><th>Size</th></tr>
+<tr><td>of the fixture</td><td><span class="ui">Basic Informations &gt; Load Image...</span></td><td>50 x 50</td></tr>
+<tr><td>of a preset</td><td>its page: <span class="ui">Load Image...</span>, <span class="ui">Fill with Color</span>, a standard
+  function, or <span class="ui">Gobo...</span></td><td>32 x 32</td></tr>
+</table>
+<p><span class="ui">Load Image...</span> takes any picture file (BMP, PNG, JPG, GIF ...). The picture is made smaller to
+fit, its proportions kept, on a white background, and stored inside the profile: the profile does not need the
+file afterwards.</p>
+<p><span class="ui">Fill with Color</span> asks for a colour and makes the picture of that colour - the usual
+picture for the slots of a colour wheel.</p>
+
+<h2>Gobos</h2>
+<p>A preset of a gobo wheel can name the file of its gobo (<span class="ui">High Res. Gobo</span>): the 3D uses it to
+draw the gobo in the beam. The function <span class="ui">Gobo...</span> does everything at once: it takes the picture
+file as the preset's picture, its file name as the preset's name, and the file as its gobo. The button
+<span class="ui">...</span> of <span class="ui">High Res. Gobo</span> changes only the file.</p>
+<p>The profile keeps where the gobo file is: from the folder that holds <code>lib\images</code> when the picture is
+in it (for example <code>lib\images\gobo3.png</code>), otherwise from the editor's folder. Keep the gobo pictures in
+<code>lib\images</code> of the program folder: then the 3D finds them on any computer.</p>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../fe/channels.html" title="Previous">Channels and presets</a> &nbsp;|&nbsp; Up: <a href="../fe/index.html">LumiDMX Fixture Editor</a> &nbsp;|&nbsp; <a href="../fe/test.html" title="Next">Test and Save</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

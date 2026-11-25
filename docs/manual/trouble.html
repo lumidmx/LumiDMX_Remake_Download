@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Troubleshooting</title>
+<meta name="keywords" content="troubleshooting; problems; no light; activation window; profile not found; interface not found; disconnected - reconnecting; Art-Net problem; DMX mode; wrong channels; invert pan; invert tilt; Sound2Light problem; Level; 3D: no reader; 3D: off; 3D slow; MIDI problem">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="fe/files.html" title="Previous: Files and settings">&lt; Previous</a> <a href="glossary.html" title="Next: Glossary">Next &gt;</a></div><div class="crumbs"><a href="../index.html">LumiDMX Remake website</a> | <a href="contents.html">Contents</a> | <a href="welcome.html">LumiDMX Remake Help</a> &gt; <b>Troubleshooting</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Troubleshooting</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+<p>The usual problems and what to do, by subject. Find the line that looks like what you see.</p>
+<h2>Starting and activation</h2>
+<table class="wide">
+<tr><th>What happens</th><th>Why, and what to do</th></tr>
+<tr><td>The activation window appears again.</td><td>The program was started from another folder, without its <code>dmx_simulator_settings.json</code>, or the computer changed. See <a href="start/activation.html">Activation</a>.</td></tr>
+<tr><td>The Fixture Editor says <i>Please register LumiDMX Remake.</i></td><td>It is not in the folder of an activated LumiDMX Remake Full. Put it there.</td></tr>
+<tr><td>The 3D asks for a key although LumiDMX Remake is activated.</td><td>The 3D has its own key, kept in <code>3D LumiDmx Remake.json</code> next to it. See <a href="view3d/index.html">3D Previsualisation</a>.</td></tr>
+<tr><td>The window or a message does not fit on a small screen.</td><td>The program is made for 1366&times;768 and more. In Windows set the scaling (Display settings) to 100% or 125%.</td></tr>
+</table>
+<h2>Projects and profiles</h2>
+<table class="wide">
+<tr><th>What happens</th><th>Why, and what to do</th></tr>
+<tr><td>An <code>.xR</code> project does not open.</td><td>Only LumiDMX Remake Full opens <code>.xR</code>; the Player and LumiDMX X1 open <code>.x1</code>. See <a href="start/projects.html">Opening and saving a project</a>.</td></tr>
+<tr><td>After a project opens, the status line says <i>(2 fixture profile(s) not found)</i>.</td><td>The profiles (<code>.lfi2</code>) of some fixtures were not found, so the program does not know what their channels do. Put them next to the project, or choose their folder with <span class="ui">Options &gt; Fixtures folder (.lfi2)</span>. See <a href="start/folder.html">The program folder</a>.</td></tr>
+<tr><td>A profile cannot be saved in the Fixture Editor.</td><td>Test found problems: they are listed in the Test window. See <a href="fe/test.html">Test and Save</a>.</td></tr>
+<tr><td>A change is lost after the program is closed.</td><td>The project is saved only with <span class="ui">Save</span>. The settings of Sound2Light and of Correction Pan / Tilt and Focus are kept in <code>S2L.dat</code>, next to the project.</td></tr>
+</table>
+<h2>No light, or the wrong light</h2>
+<table class="wide">
+<tr><th>What happens</th><th>Why, and what to do</th></tr>
+<tr><td>No fixture gives light.</td><td>Look at the <a href="patch/hardware.html">DMX Hardware</a> tab: the interface must show <span class="ui">Universe N - device</span> and <span class="ui">Disconnect</span>. With <i>No unassigned FTDI devices detected.</i> the interface is not seen: plug it in again and press <span class="ui">Refresh</span>. Check also that Blackout is not on (see <a href="live/mixer.html">The General Mixer</a>).</td></tr>
+<tr><td>The interface shows <i>disconnected - reconnecting...</i></td><td>It was pulled out or does not answer. The program connects it again by itself when it comes back; if not, unplug it, wait a few seconds and plug it in.</td></tr>
+<tr><td>Only some fixtures give light.</td><td>They are on another universe than the interface sends, or on a wrong address. Compare the address set on the fixture with the one in <a href="patch/list.html">the patch list</a>, and the universe of the interface.</td></tr>
+<tr><td>Nothing goes over Art-Net.</td><td>The target IP must be in the network of the node (the first three numbers the same), or its broadcast address (ending in 255). The firewall must let LumiDMX send. See <a href="patch/hardware.html">DMX Hardware</a>.</td></tr>
+<tr><td>A fixture does strange things: the colour moves the head, the dimmer changes the gobo.</td><td>The fixture is in another DMX mode (another number of channels) than its profile. Set the mode on the fixture to the one of the profile, or patch it with the profile of its mode.</td></tr>
+<tr><td>Watching what really goes out.</td><td>Open <a href="live/dmxboard.html">the DMX Board</a>: every channel with its value, as it leaves the program.</td></tr>
+</table>
+<h2>Movements</h2>
+<table class="wide">
+<tr><th>What happens</th><th>Why, and what to do</th></tr>
+<tr><td>Pan or tilt goes the wrong way.</td><td>The fixture is hung the other way round. Use Invert Pan / Invert Tilt, or line it up in <a href="live/correction.html">Correction Pan / Tilt and Focus</a>.</td></tr>
+<tr><td>The beams of the same kind do not meet at the same point.</td><td>Each fixture is a little different. Correct each one in <a href="live/correction.html">Correction Pan / Tilt and Focus</a>; the correction is applied at the output, to everything.</td></tr>
+<tr><td>A movement is too big or too small.</td><td>Change the Size (Amp) of the effect, or Pan / Tilt Size in the main window. In <a href="live/effgen.html">the Effect Generator</a> every change is seen at once while the effect plays.</td></tr>
+<tr><td>The movement jumps at the end of a loop.</td><td>Set the Repeat and the Phase so that the loop closes; the graph of the Oscillator shows the whole loop. See <a href="live/effgen.html">Effect Generator</a>.</td></tr>
+</table>
+<h2>Sound2Light</h2>
+<table class="wide">
+<tr><th>What happens</th><th>Why, and what to do</th></tr>
+<tr><td>The Level does not move.</td><td>The wrong input is chosen, or Sound2Light is not started. Choose the loopback of the speakers for the music of this computer, or the line / microphone input, then <span class="ui">Start</span>. See <a href="s2l/audio.html">The sound</a>.</td></tr>
+<tr><td>The bars move but no list steps.</td><td>The squares are too high (no bar reaches them), or a square has no list. Lower the square or give it its list. See <a href="s2l/bands.html">Squares and bands</a> and <a href="s2l/test.html">Testing</a>.</td></tr>
+<tr><td>The light changes too often.</td><td>The square is too low, or the Beat threshold is too small. Raise them a little.</td></tr>
+<tr><td>The BPM is right but the light does not follow it.</td><td>The lists step on the squares, not on the BPM number. The BPM is shown only for you.</td></tr>
+</table>
+<h2>3D</h2>
+<table class="wide">
+<tr><th>What happens</th><th>Why, and what to do</th></tr>
+<tr><td>The indicator shows <i>3D: off</i>.</td><td>The 3D is not started. Press <span class="ui">Launch 3D</span>; right-click it to choose the program again if it was moved.</td></tr>
+<tr><td>The indicator shows <i>3D: no reader</i>.</td><td>The 3D runs but does not read the light. In the 3D, Live Mode, <span class="ui">DMX Input</span>: <span class="ui">Software DMX-In</span> must be ticked.</td></tr>
+<tr><td>The 3D shows the fixtures, but they stay dark.</td><td>Their universe and address in the 3D are not the ones of the patch. Use <span class="ui">Update Patch</span> or <span class="ui">Change DMX Address...</span>. See <a href="view3d/design.html">Design Mode</a>.</td></tr>
+<tr><td>A fixture has no beam, colour or gobo in the 3D.</td><td>Its profile was not found: set the folder with <span class="ui">File &gt; Fixture Library (ScanLib)...</span>. See <a href="view3d/howto.html">How to use</a> for how the 3D reads the profiles.</td></tr>
+<tr><td>The 3D is slow.</td><td>Lower Resolution and Light Beam Quality in Configuration, release Advanced Mode or Shadows. See <a href="view3d/visuals.html">Visuals and Configuration</a>.</td></tr>
+</table>
+<h2>MIDI and controllers</h2>
+<table class="wide">
+<tr><th>What happens</th><th>Why, and what to do</th></tr>
+<tr><td>A MIDI controller does nothing.</td><td>It was plugged in after the program started (press <span class="ui">Refresh</span> in the <a href="patch/midi.html">MIDI</a> tab and pick its In port), or another program uses it (close that program). The state turns green while the In port works.</td></tr>
+<tr><td>The pads of the APC mini have no colours.</td><td>Turn on the feedback (Colors In-Out). See <a href="patch/midi.html">MIDI</a>.</td></tr>
+</table>
+
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="fe/files.html" title="Previous">Files and settings</a> &nbsp;|&nbsp; Up: <a href="welcome.html">LumiDMX Remake Help</a> &nbsp;|&nbsp; <a href="glossary.html" title="Next">Glossary</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>

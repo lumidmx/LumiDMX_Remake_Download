@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Object Propertys</title>
+<meta name="keywords" content="Object Propertys; rename a button; new name; Rename everywhere ticked; Only the button; Live-Object Propertys; properties of a button; Trigger; Timecode; Step on Beat; Step on Remote; On Start; On Stop; StartCom; StopCom; Fixtures Manual / Auto; Name; Group Index; Loop; Reset Channels on stop; Start by 0; Fade Sequence; Flash Button; Speed Control; Shortcut; MIDI; Color; copy colour">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!--NAV--><div class="nav"><div class="pn"><a href="../live/buttons.html" title="Previous: Buttons of the Live panel">&lt; Previous</a> <a href="../live/sliders.html" title="Next: Sliders">Next &gt;</a></div><div class="crumbs"><a href="../../index.html">LumiDMX Remake website</a> | <a href="../contents.html">Contents</a> | <a href="../welcome.html">LumiDMX Remake Help</a> &gt; <a href="../live/index.html">Mixer &amp; Live</a> &gt; <b>Object Propertys</b></div></div><!--/NAV-->
+<div class="page">
+<h1>Object Propertys</h1>
+<p class="for">For: <span class="badge full">Full</span><span class="badge player">Player</span></p>
+
+<p>The settings of a button: right click on it &gt; <span class="ui">Object Propertys...</span>. The window is called
+<span class="ui">Live-Object Propertys</span>. <span class="ui">Ok</span> applies the changes to the open project at
+once; <span class="ui">Save</span> writes them into the project's file. <span class="ui">Abort</span> closes the window
+and leaves the button as it was.</p>
+
+<div class="pic"><img src="../img/live_object_propertys.png" alt="The Live-Object Propertys window"></div>
+<p class="cap">The settings of <span class="ui">Cerc fata</span>.</p>
+
+<h2>Trigger - how the button plays</h2>
+<ul>
+<li><span class="ui">Timecode</span> - the button plays its steps by their own times: each step's fade, then its wait
+  (see <a href="cuesteps.html">Edit Cue Steps</a>).</li>
+<li><span class="ui">Step on Remote</span> - the remote player steps it, together with the other <i>Step on Remote</i>
+  buttons started (mark STEP). See <a href="../remote/index.html">Remote, controllers and MIDI</a>.</li>
+<li><span class="ui">Step on Beat</span> - kept as the project has it. The Remake plays such a button as Timecode (the
+  window says: <i>not simulated</i>).</li>
+</ul>
+
+<h2>Commands</h2>
+<ul>
+<li><span class="ui">On Start</span> - one command, or the name of a macro, run when the button starts.</li>
+<li><span class="ui">On Stop</span> - the same, run when the button stops. A button stopped while its On Start macro still
+  waits (a <code>Wait</code> in it): the rest of that macro is dropped, then On Stop runs.</li>
+<li>For several commands, write them in a macro and put the macro's name here. See
+  <a href="../macros/index.html">Macros and the Command Line</a>.</li>
+<li><span class="ui">Fixtures Manual / Auto...</span> - the channels this button holds by hand while it runs: tick the
+  fixtures (or some of their channels) in the list. <span class="ui">Apply</span> writes the two macros for you: On
+  Start puts those channels on MAN after the button's first fade (plus 300 ms), On Stop gives them back (OUT). The
+  macros use only the commands <code>U</code>, <code>Wait</code> and <code>setchmode</code>, so they work the same on
+  the Command Line and in the original LumiDMX. What is applied there stays, even with Abort here.</li>
+</ul>
+
+<h2>Propertys</h2>
+<table class="wide">
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td><span class="ui">Name</span></td><td>The name on the button. Commands find the button by it (capitals and extra
+  blanks do not count). A new name: see <a href="#rename">below</a>.</td></tr>
+<tr><td><span class="ui">Group Index</span></td><td>0 = no group. Buttons with the same number are a group: starting one
+  stops the others of the group.</td></tr>
+<tr><td><span class="ui">Loop</span></td><td>After the last step it starts again from the first; without Loop it stops
+  there.</td></tr>
+<tr><td><span class="ui">Reset Channels on stop</span></td><td>When it stops, its channels go to 0 (those no other running
+  button holds).</td></tr>
+<tr><td><span class="ui">Start by 0</span></td><td>The first step fades in from 0. Not ticked: it fades in from the values
+  the channels have when it starts.</td></tr>
+<tr><td><span class="ui">Fade Sequence</span></td><td>When it stops, its light goes down in the release time of the
+  Option tab (with the Option tab's <span class="ui">Fade Sequence</span> ticked); the button shows FADE.</td></tr>
+<tr><td><span class="ui">Flash Button</span></td><td>It runs only while it is held (mouse, key or MIDI); it shows
+  FLASH.</td></tr>
+<tr><td><span class="ui">Speed Control</span></td><td>The speed track on the button (see
+  <a href="buttons.html">Buttons of the Live panel</a>).</td></tr>
+</table>
+<p id="rename"><b>A new name for a button.</b> Commands find a button by its name: a slider (<code>setseqspeed(...)</code>), the macros (<code>runobject(...)</code>, <code>stopobject(...)</code>, the macro with the button's name) and the On Start / On Stop of the buttons. When the name of a button changes and the old name is used somewhere, a window shows where, by kind: <span class="ui">Sliders</span>, <span class="ui">Buttons</span>, <span class="ui">Macros</span>, each with the number of places. <span class="ui">Rename everywhere ticked</span> writes the new name in the ticked kinds too; <span class="ui">Only the button</span> changes only the name on the button (the rest keeps the old name and no longer finds it); <span class="ui">Cancel</span> leaves everything as it was. Sound2Light, the Library and the Show Editor keep their own copies of the steps, so there is nothing to change there. A name that another object already has, or a macro's name, is refused with a message (capitals and extra blanks do not count: <i>cerc fata</i> is the same name as <i>Cerc fata</i>); a name given back to its own macro after <span class="ui">Only the button</span> is allowed.</p>
+
+<h2>Remote - key and MIDI</h2>
+<ul>
+<li><span class="ui">Shortcut</span> - tick it, click in the box under it and press the key: the key pressed is
+  written there.</li>
+<li><span class="ui">MIDI</span> - click in the box under it and press the pad or key of the controller: its message is
+  written there (such as <code>#90 #50 #255</code>) and MIDI is ticked. It needs a MIDI In port
+  (<a href="../patch/midi.html">Setup &amp; Patch &gt; MIDI</a>) or the APC mini link; without one the window says
+  so.</li>
+</ul>
+
+<h2>Visual - the colour</h2>
+<ul>
+<li>A click on the colour box opens the palette of the original LumiDMX.</li>
+<li><span class="ui">Change...</span> opens the Windows colour window (<i>Button color</i>).</li>
+<li><span class="ui">copy</span> (the small icon), or a right click on the colour box &gt; <span class="ui">Copy</span>,
+  keeps the colour; in the window of another button, a right click on its colour box &gt;
+  <span class="ui">Paste</span> gives it the same colour.</li>
+</ul>
+
+<div class="note"><p><b>Several buttons at once:</b> in <a href="design.html">Design Live-Panel</a>, select several
+buttons and right click one of them: one window opens for all. Only what you change there is set on each of them;
+everything else keeps each button's own value. Name, Shortcut, MIDI and Fixtures Manual / Auto belong to one button
+and cannot be set there.</p></div>
+</div>
+<!--FOOT--><div class="foot">&lt; <a href="../live/buttons.html" title="Previous">Buttons of the Live panel</a> &nbsp;|&nbsp; Up: <a href="../live/index.html">Mixer &amp; Live</a> &nbsp;|&nbsp; <a href="../live/sliders.html" title="Next">Sliders</a> &gt;<br>LumiDMX Remake Help - last update 24 Nov 2026</div><!--/FOOT-->
+</body>
+</html>
